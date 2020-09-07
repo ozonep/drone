@@ -64,7 +64,7 @@ label:before {
   border-radius: 50%;
   top: 0;
   left: 0;
-  background-color: #fff;
+  background-color: $surface-color;
 }
 
 label:hover:before {

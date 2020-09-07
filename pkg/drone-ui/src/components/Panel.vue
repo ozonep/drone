@@ -50,7 +50,7 @@ export default {
   position: fixed;
   top: $header-height;
   bottom: 0;
-  background-color: #fff;
+  background-color: $surface-color;
   overflow: auto;
   border: 1px solid rgba($color-text, 0.1);
 }

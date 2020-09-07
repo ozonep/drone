@@ -7,7 +7,7 @@
 
 span {
   display: inline-block;
-  background: rgba($color-text, 0.03);
+  background: rgba($color-text, 0.07);
   color: $color-text-secondary;
   font-size: 11px;
   text-transform: uppercase;

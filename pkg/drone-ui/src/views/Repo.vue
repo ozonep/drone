@@ -292,7 +292,7 @@ nav .router-link-exact-active {
   max-width: 300px;
   line-height: 18px;
   display: block;
-  color: #2364d2;
-  margin: 0px auto;
+  color: $color-primary;
+  margin: 0 auto;
 }
 </style>

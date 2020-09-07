@@ -837,7 +837,7 @@ $output-header-sticky-offset: 20px;
   cursor: pointer;
   width: 21px;
   height: 30px;
-  background: $color-text;
+  background: $terminal-color;
   color: rgba(255, 255, 255, 0.75);
   display: none;
   border-bottom-right-radius: 6px;

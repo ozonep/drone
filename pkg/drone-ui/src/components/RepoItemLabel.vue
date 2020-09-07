@@ -97,7 +97,7 @@ export default {
 @import "../assets/styles/variables";
 
 .repo-item-label {
-  background-color: rgba($color-primary, 0.07);
+  background-color: rgba($color-primary, 0.11);
   color: $color-primary;
   padding: 0 4px;
   border-radius: 2px;

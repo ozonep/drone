@@ -71,9 +71,9 @@ export default {
 .job-item {
   border-radius: 4px;
   box-sizing: border-box;
-  box-shadow: 0 2px 4px 0 rgba($color-text, 0.1);
+  box-shadow: 0 2px 4px 0 darken($body-color, 20%);
   border: solid 1px $border-color;
-  background-color: #ffffff;
+  background-color: $surface-color;
   color: $color-text;
   padding: 5px;
   transition: box-shadow linear 0.2s;

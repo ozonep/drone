@@ -51,10 +51,10 @@ export default {
   height: 18px;
   line-height: 18px;
   border-radius: 50%;
-  background: rgba($color-text, 0.3);
+  background: rgba($color-text, 0.4);
   text-align: center;
   font-weight: 700;
-  color: #fff;
+  color: $surface-color;
   cursor: pointer;
   user-select: none;
   @include hf {

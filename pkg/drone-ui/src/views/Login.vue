@@ -41,8 +41,8 @@ div.container {
   width: 340px;
   padding: 70px 20px 30px;
   border-radius: 5px;
-  box-shadow: 0 2px 4px 0 $border-color;
-  background-color: #ffffff;
+  box-shadow: 0 2px 4px 0 darken($body-color, 20%);
+  background-color: $surface-color;
   position: relative;
 }
 
@@ -51,7 +51,7 @@ div.container {
   padding: 16px;
   margin-bottom: 30px;
   position: absolute;
-  background: #fbfbfb;
+  background: #000;
   top: -41px;
   left: 50%;
   margin-left: -41px;

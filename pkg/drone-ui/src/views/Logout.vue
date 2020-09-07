@@ -6,10 +6,12 @@
   </div>
 </template>
 
-<style scoped>
+<style scoped lang="scss">
+@import "../assets/styles/mixins";
+
 div.container {
   align-items: center;
-  background: #fbfbfb;
+  background: $body-color;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -21,10 +23,10 @@ div.container {
 .logout {
   width: 300px;
 
-  background: #fff;
-  border: 1px solid #e8eaed;
+  background: $surface-color;
+  border: 1px solid $border-color;
   border-radius: 3px;
-  box-shadow: 0px 0px 8px 1px #e8eaed;
+  box-shadow: 0px 0px 8px 1px darken($body-color, 20%);
   padding: 30px;
 }
 </style>

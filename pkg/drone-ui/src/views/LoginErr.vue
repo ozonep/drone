@@ -22,10 +22,12 @@ export default {
 };
 </script>
 
-<style scoped>
+<style scoped lang="scss">
+@import "../assets/styles/mixins";
+
 div.container {
   align-items: center;
-  background: #fbfbfb;
+  background: $body-color;
   box-sizing: border-box;
   display: flex;
   justify-content: center;

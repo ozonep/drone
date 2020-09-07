@@ -23,7 +23,7 @@ input {
   padding: 10px 15px;
   height: 40px;
   line-height: 20px;
-  background: #fff;
+  background: $surface-color;
 }
 
 input[type="search"], input[type=text] {

@@ -44,11 +44,11 @@ export default {
 @import "../assets/styles/mixins";
 .popup {
   position: absolute;
-  background: #fff;
+  background: $surface-color;
   z-index: 5;
   border-radius: 3px;
-  box-shadow: 0 2px 4px 0 rgba(25, 45, 70, 0.05);
-  border: solid 1px #edeef1;
+  box-shadow: 0 2px 4px 0 #000000;
+  border: solid 1px $border-color;
   &.popup.evict {
     transform: translateX(-9999px);
   }

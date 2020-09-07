@@ -24,6 +24,7 @@ textarea {
   height: 40px;
   line-height: 40px;
   -webkit-appearance: none;
+  background: $surface-color;
 }
 
 textarea:focus {

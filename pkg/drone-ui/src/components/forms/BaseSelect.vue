@@ -27,7 +27,7 @@ select {
   height: 40px;
   line-height: 40px;
   -webkit-appearance: none;
-  background: #fff
+  background: $surface-color
     url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0naHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmcnIHdpZHRoPScxMDAnIGhlaWdodD0nMTAwJz48cG9seWdvbiBmaWxsPScjOThhMWFiJyBwb2ludHM9JzAsMzAgMTAwLCAzMCA1MCw5MCcvPjwvc3ZnPg==")
     no-repeat center right 10px;
   background-size: 10px;

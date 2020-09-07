@@ -36,9 +36,9 @@ export default {
   padding: $header-padding-side;
 }
 .modal-content {
-  background: #fff;
-  box-shadow: 0 2px 4px 0 rgba(25, 45, 70, 0.05);
-  border: solid 1px #edeef1;
+  background: $surface-color;
+  box-shadow: 0 2px 4px 0 darken($body-color, 20%);
+  border: solid 1px $border-color;
   border-radius: 3px;
   min-width: 0;
 }

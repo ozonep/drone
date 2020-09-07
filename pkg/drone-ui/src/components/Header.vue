@@ -103,7 +103,7 @@ export default {
 
 .header {
   height: $header-height;
-  box-shadow: 0 2px 4px 0 $border-color;
+  box-shadow: 0 2px 4px 0 #000000;
   background-color: $header-color;
   align-items: center;
   box-sizing: border-box;
@@ -216,7 +216,7 @@ export default {
   background-color: rgba(255, 255, 255, 0.1);
 
   @include hf {
-    background-color: #fff;
+    background-color: $surface-color;
     color: $body-color;
   }
 

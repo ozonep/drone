@@ -136,7 +136,7 @@ export default {
 }
 
 .button.theme-danger {
-  background-color: #ff4164;
+  background-color: $color-danger;
 }
 
 .button.outline {
@@ -156,7 +156,7 @@ export default {
 }
 
 .button.theme-danger.outline {
-  color: #ff4164;
+  color: $color-danger;
 }
 
 .button:focus {

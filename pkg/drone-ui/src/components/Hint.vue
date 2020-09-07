@@ -73,10 +73,10 @@ export default {
 .hint {
   position: absolute;
   max-width: 300px;
-  background: rgba($color-text, 0.9);
+  background: rgba($color-text, 0.95);
   border-radius: 2px;
   padding: 6px 8px;
-  color: #fff;
+  color: $surface-color;
   font-size: 13px;
   z-index: 1000;
 

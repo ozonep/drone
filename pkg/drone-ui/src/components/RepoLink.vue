@@ -40,7 +40,8 @@ export default {
 
 .repo-link.hover-type-box-shadow:focus .repo-item,
 .repo-link.hover-type-box-shadow:hover .repo-item {
-  box-shadow: 0 4px 10px 0 rgba($color-text, 0.2);
+  box-shadow: 0 4px 10px 0 darken($body-color, 20%);
+  background: lighten($surface-color, 3%);
 }
 
 .repo-link .repo-item.active-yes .header .title {

@@ -130,7 +130,8 @@ export default {
 
 .build:hover .repo-item,
 .build:focus .repo-item {
-  box-shadow: 0 4px 10px 0 rgba($color-text, 0.25);
+  background: lighten($surface-color, 3%);
+  box-shadow: 0 4px 10px 0 darken($body-color, 20%);
 }
 
 .build + .build {

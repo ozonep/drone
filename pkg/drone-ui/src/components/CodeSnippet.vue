@@ -77,8 +77,8 @@ header {
   align-items: center;
   display: flex;
   height: 50px;
-  padding: 0px 15px;
-  border-bottom: 1px solid #eff0f2;
+  padding: 0 15px;
+  border-bottom: 1px solid $border-color;
 }
 
 header h1,
