@@ -4,35 +4,35 @@ $bp-mobile: 480px;
 /*    mobile       tablet       desktop    */
 /* [-----------](-----------)[-----------> */
 /*           480px       980px             */
-
-$body-color: #f7f8fa;
+$surface-color: #161616;
+$body-color: #0a0a0a;
 $body-background-size: 100% 100%;
 
-$color-text: #1e375a;
-$color-text-secondary: rgba(#1e375a, 0.6);
-$color-primary: #2364d2;
-$color-warning: #ffbe00;
-$color-danger: #ff4164;
-$color-success: #19d78c;
-$color-info: #96a5be;
+$color-text: #e7f1ff;
+$color-text-secondary: rgba($color-text, 0.6);
+$color-primary: #4188ff;
+$color-warning: desaturate(#ffbe00, 20%);;
+$color-danger: desaturate(#ff4164, 20%);
+$color-success: desaturate(#19d78c, 20%);
+$color-info: desaturate(#96a5be, 20%);
 
 $bg-color-opacity: 0.07;
 $bg-color-opacity-hover: 0.1;
 $color-primary-bg: rgba($color-primary, $bg-color-opacity);
 $color-primary-bg-hover: rgba($color-primary, $bg-color-opacity-hover);
 
-$border-color: rgba($color-text, 0.05);
+$border-color: rgba($color-text, 0.08);
 
-$header-color: rgba($color-text, 0.97);
+$header-color: rgb(24, 24, 24);
 $header-height: 56px;
 $header-padding-side: 15px;
 
-$overlay-color: rgba($color-text, 0.9);
+$overlay-color: rgba($body-color, 0.9);
 $overlay-z-index: 10;
 
-$terminal-color: $color-text;
+$terminal-color: darken($color-text, 12%);
 
-$button-outline-hover-bg-opacity: 0.1;
+$button-outline-hover-bg-opacity: 0.15;
 
-$step-selected-bg-color: rgba($color-text, 0.03)
+$step-selected-bg-color: rgba($color-text, 0.05);
 
