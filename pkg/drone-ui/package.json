@@ -27,7 +27,7 @@
     "babel-eslint": "^10.1.0",
     "eslint": "^7.8.1",
     "eslint-plugin-prettier": "^3.1.4",
-    "eslint-plugin-vue": "^6.2.2",
+    "eslint-plugin-vue": "^7.0.0-beta.3",
     "node-sass": "^4.14.1",
     "sass-loader": "^10.0.2",
     "vue-template-compiler": "^2.6.12"
@@ -42,7 +42,10 @@
       "plugin:vue/essential",
       "@vue/prettier"
     ],
-    "rules": {},
+    "rules": {
+      "vue/return-in-computed-property": "off",
+      "vue/no-use-v-if-with-v-for": "off"
+    },
     "parserOptions": {
       "sourceType": "module",
       "ecmaVersion": 2020,
@@ -58,7 +61,7 @@
     "last 2 Chrome versions"
   ],
   "engines": {
-    "node": ">= 12.10.0"
+    "node": ">= 14.0.0"
   },
   "prettier": {
     "printWidth": 120

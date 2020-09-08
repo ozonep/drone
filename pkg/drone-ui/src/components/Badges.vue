@@ -54,8 +54,6 @@ export default {
           return `<a href="${this.instance}/${this.name}"><img src="${this.image}" /></a>`;
         case "ccmenu":
           return `${this.instance}/api/badges/${this.name}/cc.xml`;
-        default:
-          return "";
       }
     }
   }

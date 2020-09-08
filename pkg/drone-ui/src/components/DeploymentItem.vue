@@ -14,8 +14,6 @@
 <script>
 import Status from "@/components/Status.vue";
 import Card from "@/components/Card.vue";
-import BuildDescription from "@/components/BuildDescription";
-import RepoItemLabel from "@/components/RepoItemLabel";
 export default {
   name: "DeploymentItem",
   props: {
@@ -27,8 +25,6 @@ export default {
   },
   components: {
     Card,
-    BuildDescription,
-    RepoItemLabel,
     Status
   },
   computed: {

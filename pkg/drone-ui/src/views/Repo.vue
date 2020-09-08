@@ -75,13 +75,10 @@ import Alert from "@/components/Alert.vue";
 import AlertError from "@/components/AlertError.vue";
 import Breadcrumb from "@/components/Breadcrumb.vue";
 import IconArrow from "@/components/icons/IconArrow.vue";
-import IconCancel from "@/components/icons/IconCancel.vue";
 import IconActivateGear from "@/components/icons/IconActivateGear.vue";
 import Button from "@/components/buttons/Button.vue";
 import Card from "@/components/Card.vue";
 import PageHeader from "@/components/PageHeader";
-import Link from "@/components/Link";
-import IconRestart from "@/components/icons/IconRestart.vue";
 import Loading from "@/components/Loading.vue";
 
 export default {
@@ -92,13 +89,10 @@ export default {
     AlertError,
     Breadcrumb,
     IconArrow,
-    IconCancel,
-    IconRestart,
     IconActivateGear,
     Button,
     Card,
-    Loading,
-    Link
+    Loading
   },
   computed: {
     slug() {

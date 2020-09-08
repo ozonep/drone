@@ -27,7 +27,6 @@
 </template>
 
 <script>
-import Alert from "@/components/Alert.vue";
 import AlertError from "@/components/AlertError.vue";
 import Breadcrumb from "@/components/Breadcrumb.vue";
 import IconSync from "@/components/icons/IconSync.vue";
@@ -44,7 +43,6 @@ export default {
   name: "Home",
   components: {
     PageHeader,
-    Alert,
     AlertError,
     Breadcrumb,
     MoreButton,

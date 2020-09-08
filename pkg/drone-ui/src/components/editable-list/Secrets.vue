@@ -33,7 +33,6 @@
 import BaseCheckbox from "@/components/forms/BaseCheckbox.vue";
 import BaseInput from "@/components/forms/BaseInput.vue";
 import BaseTextArea from "@/components/forms/BaseTextArea.vue";
-import Button from "@/components/buttons/Button.vue";
 import EditableListItem from "@/components/editable-list/EditableListItem";
 import EditableList from "@/components/editable-list/EditableList";
 import IconSecretsEmpty from "@/components/icons/IconSecretsEmpty";
@@ -47,7 +46,6 @@ export default {
     BaseCheckbox,
     BaseInput,
     BaseTextArea,
-    Button,
     IconSecretsEmpty,
     Help
   },
