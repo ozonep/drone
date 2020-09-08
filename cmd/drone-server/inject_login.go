@@ -23,7 +23,7 @@ import (
 	"github.com/drone/go-login/login/gitlab"
 	"github.com/drone/go-login/login/gogs"
 	"github.com/drone/go-login/login/stash"
-	"github.com/drone/go-scm/scm/transport/oauth2"
+	"github.com/ozonep/drone/pkg/scm/transport/oauth2"
 	"strings"
 
 	"github.com/google/wire"

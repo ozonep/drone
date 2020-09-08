@@ -10,8 +10,8 @@ import (
 	"net/url"
 	"time"
 
-	"github.com/drone/go-scm/scm"
-	"github.com/drone/go-scm/scm/driver/internal/null"
+	"github.com/ozonep/drone/pkg/scm"
+	"github.com/ozonep/drone/pkg/scm/driver/internal/null"
 )
 
 type issueService struct {

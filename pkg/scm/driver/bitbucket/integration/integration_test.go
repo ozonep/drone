@@ -10,8 +10,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/drone/go-scm/scm/driver/bitbucket"
-	"github.com/drone/go-scm/scm/transport"
+	"github.com/ozonep/drone/pkg/scm/driver/bitbucket"
+	"github.com/ozonep/drone/pkg/scm/transport"
 )
 
 var noContext = context.Background()

@@ -20,8 +20,8 @@ import (
 
 	"github.com/drone/drone/core"
 
-	"github.com/drone/go-scm/scm"
-	"github.com/drone/go-scm/scm/transport/oauth2"
+	"github.com/ozonep/drone/pkg/scm"
+	"github.com/ozonep/drone/pkg/scm/transport/oauth2"
 )
 
 // expiryDelta determines how earlier a token should be considered

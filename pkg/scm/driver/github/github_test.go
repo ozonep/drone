@@ -8,7 +8,7 @@ import (
 	"net/url"
 	"testing"
 
-	"github.com/drone/go-scm/scm"
+	"github.com/ozonep/drone/pkg/scm"
 )
 
 var mockHeaders = map[string]string{

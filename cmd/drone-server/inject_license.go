@@ -18,7 +18,7 @@ import (
 	"github.com/drone/drone/cmd/drone-server/config"
 	"github.com/drone/drone/core"
 	"github.com/drone/drone/service/license"
-	"github.com/drone/go-scm/scm"
+	"github.com/ozonep/drone/pkg/scm"
 
 	"github.com/google/wire"
 	"github.com/sirupsen/logrus"

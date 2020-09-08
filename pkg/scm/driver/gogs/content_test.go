@@ -8,7 +8,7 @@ import (
 	"context"
 	"testing"
 
-	"github.com/drone/go-scm/scm"
+	"github.com/ozonep/drone/pkg/scm"
 	"github.com/h2non/gock"
 )
 

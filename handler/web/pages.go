@@ -21,7 +21,7 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/drone/drone-ui/dist"
+	"github.com/ozonep/drone/pkg/drone-ui/dist"
 	"github.com/drone/drone/core"
 	"github.com/drone/drone/handler/web/landingpage"
 )

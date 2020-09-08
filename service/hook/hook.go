@@ -19,7 +19,7 @@ import (
 	"time"
 
 	"github.com/drone/drone/core"
-	"github.com/drone/go-scm/scm"
+	"github.com/ozonep/drone/pkg/scm"
 )
 
 // New returns a new HookService.

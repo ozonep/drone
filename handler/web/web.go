@@ -17,13 +17,13 @@ package web
 import (
 	"net/http"
 
-	"github.com/drone/drone-ui/dist"
+	"github.com/ozonep/drone/pkg/drone-ui/dist"
 	"github.com/drone/drone/core"
 	"github.com/drone/drone/handler/web/landingpage"
 	"github.com/drone/drone/handler/web/link"
 	"github.com/drone/drone/logger"
 	"github.com/drone/go-login/login"
-	"github.com/drone/go-scm/scm"
+	"github.com/ozonep/drone/pkg/scm"
 
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"

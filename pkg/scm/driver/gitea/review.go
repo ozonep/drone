@@ -7,7 +7,7 @@ package gitea
 import (
 	"context"
 
-	"github.com/drone/go-scm/scm"
+	"github.com/ozonep/drone/pkg/scm"
 )
 
 type reviewService struct {

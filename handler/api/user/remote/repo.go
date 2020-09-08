@@ -21,8 +21,7 @@ import (
 	"github.com/drone/drone/handler/api/render"
 	"github.com/drone/drone/handler/api/request"
 	"github.com/drone/drone/logger"
-	"github.com/drone/go-scm/scm"
-
+    "github.com/ozonep/drone/pkg/scm"
 	"github.com/go-chi/chi"
 )
 

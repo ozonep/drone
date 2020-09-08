@@ -18,7 +18,7 @@ import (
 	"context"
 	"net/url"
 
-	"github.com/drone/go-scm/scm"
+	"github.com/ozonep/drone/pkg/scm"
 )
 
 func replaceHook(ctx context.Context, client *scm.Client, repo string, hook *scm.HookInput) error {

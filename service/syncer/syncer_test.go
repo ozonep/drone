@@ -12,7 +12,7 @@ import (
 
 	"github.com/drone/drone/core"
 	"github.com/drone/drone/mock"
-	"github.com/drone/go-scm/scm"
+	"github.com/ozonep/drone/pkg/scm"
 	"github.com/sirupsen/logrus"
 
 	"github.com/golang/mock/gomock"

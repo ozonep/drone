@@ -13,7 +13,7 @@ import (
 	"net/url"
 	"strings"
 
-	"github.com/drone/go-scm/scm"
+	"github.com/ozonep/drone/pkg/scm"
 )
 
 // New returns a new Bitbucket API client.

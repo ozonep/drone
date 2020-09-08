@@ -20,7 +20,7 @@ package trigger
 // 	"strconv"
 
 // 	"github.com/drone/drone/core"
-// 	"github.com/drone/go-scm/scm"
+// 	"github.com/ozonep/drone/pkg/scm"
 // )
 
 // func listChanges(client *scm.Client, repo *core.Repository, build *core.Build) ([]string, error) {

@@ -16,7 +16,7 @@ package repo
 
 import (
 	"github.com/drone/drone/core"
-	"github.com/drone/go-scm/scm"
+	"github.com/ozonep/drone/pkg/scm"
 )
 
 // convertRepository is a helper function that converts a

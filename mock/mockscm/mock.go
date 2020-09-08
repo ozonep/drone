@@ -6,4 +6,4 @@
 
 package mockscm
 
-//go:generate mockgen -package=mockscm -destination=mock_gen.go github.com/drone/go-scm/scm ContentService,GitService,OrganizationService,PullRequestService,RepositoryService,UserService
+//go:generate mockgen -package=mockscm -destination=mock_gen.go "github.com/ozonep/drone/pkg/scm" ContentService,GitService,OrganizationService,PullRequestService,RepositoryService,UserService

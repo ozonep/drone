@@ -7,7 +7,7 @@ package bitbucket
 import (
 	"context"
 
-	"github.com/drone/go-scm/scm"
+	"github.com/ozonep/drone/pkg/scm"
 )
 
 type issueService struct {
