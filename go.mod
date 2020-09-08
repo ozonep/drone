@@ -5,6 +5,7 @@ replace github.com/docker/docker => github.com/docker/engine v17.12.0-ce-rc1.0.2
 require (
 	github.com/99designs/httpsignatures-go v0.0.0-20170731043157-88528bf4ca7e
 	github.com/Azure/azure-storage-blob-go v0.8.0
+	github.com/Azure/go-autorest/autorest/adal v0.9.2 // indirect
 	github.com/Microsoft/go-winio v0.4.15-0.20200113171025-3fe6c5262873 // indirect
 	github.com/asaskevich/govalidator v0.0.0-20180315120708-ccb8e960c48f
 	github.com/aws/aws-sdk-go v1.25.41
@@ -61,9 +62,9 @@ require (
 	google.golang.org/genproto v0.0.0-20191230161307-f3c370f40bfb // indirect
 	gopkg.in/check.v1 v1.0.0-20200227125254-8fa46927fb4f // indirect
 	gopkg.in/yaml.v2 v2.3.0
-	k8s.io/api v0.18.4
-	k8s.io/apimachinery v0.18.4
-	k8s.io/client-go v12.0.0+incompatible
+	k8s.io/api v0.0.0-20181130031204-d04500c8c3dd
+	k8s.io/apimachinery v0.0.0-20181204150028-eb8c8024849b
+	k8s.io/client-go v10.0.0+incompatible
 )
 
 replace github.com/h2non/gock => gopkg.in/h2non/gock.v1 v1.0.14
