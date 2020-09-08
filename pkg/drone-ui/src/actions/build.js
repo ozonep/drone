@@ -119,9 +119,11 @@ export const createBuild = async ({ commit }, { namespace, name, build }) => {
 export const createDeployment = async ({ commit }, { namespace, name, build, target, action, params }) => {
   commit(BUILD_RETRY_LOADING);
 
-  const query = {target, ...params};
+  const query = { target, ...params };
   const encode = encodeURIComponent;
-  const queryString = Object.keys(query).map(key => encode(key) + '=' + encode(query[key])).join('&');
+  const queryString = Object.keys(query)
+    .map(key => encode(key) + "=" + encode(query[key]))
+    .join("&");
   const req = await fetch(`${instance}/api/repos/${namespace}/${name}/builds/${build}/${action}?${queryString}`, {
     headers,
     method: "POST",

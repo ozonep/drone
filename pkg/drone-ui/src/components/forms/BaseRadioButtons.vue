@@ -1,12 +1,14 @@
 <template>
   <div class="base-radio-buttons">
     <div class="option" v-for="(oName, oValue) in options" :key="oValue">
-      <input type="radio"
-             :name="name"
-             :value="oValue"
-             :checked="oValue === value"
-             :id="`${name}-${oValue}`"
-             @change="$emit('input', $event.target.value)"/>
+      <input
+        type="radio"
+        :name="name"
+        :value="oValue"
+        :checked="oValue === value"
+        :id="`${name}-${oValue}`"
+        @change="$emit('input', $event.target.value)"
+      />
       <label :for="`${name}-${oValue}`">{{ oName }}</label>
     </div>
   </div>

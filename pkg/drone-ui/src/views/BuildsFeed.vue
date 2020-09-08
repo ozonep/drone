@@ -6,7 +6,7 @@
     </PageHeader>
 
     <RepoList :items="items" :repoToProps="repoToProps">
-      <NoRecentBuilds slot="emptyMessage"/>
+      <NoRecentBuilds slot="emptyMessage" />
     </RepoList>
   </div>
 </template>

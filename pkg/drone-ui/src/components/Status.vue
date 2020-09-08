@@ -2,12 +2,12 @@
   <div :class="{ status: true, [`status-${status}`]: true, [`theme-${theme}`]: true }">
     <Hint showOn="hover" :offset="-7.5">{{ statusHumanized }}</Hint>
 
-    <Failure v-if="['failure', 'error'].includes(status)"/>
-    <Cancelled v-else-if="['killed', 'skipped', 'declined'].includes(status)"/>
-    <Pending v-else-if="['waiting_on_dependencies', 'pending', 'blocked'].includes(status)"/>
-    <Success v-else-if="status === 'success'"/>
-    <Running v-else-if="status === 'running'"/>
-    <div class="no" v-else/>
+    <Failure v-if="['failure', 'error'].includes(status)" />
+    <Cancelled v-else-if="['killed', 'skipped', 'declined'].includes(status)" />
+    <Pending v-else-if="['waiting_on_dependencies', 'pending', 'blocked'].includes(status)" />
+    <Success v-else-if="status === 'success'" />
+    <Running v-else-if="status === 'running'" />
+    <div class="no" v-else />
   </div>
 </template>
 

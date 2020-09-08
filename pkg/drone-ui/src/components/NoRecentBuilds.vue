@@ -1,6 +1,6 @@
 <template>
   <div class="no-recent-builds">
-    <IconDroneSleep/>
+    <IconDroneSleep />
 
     <div class="message">No recent builds</div>
   </div>

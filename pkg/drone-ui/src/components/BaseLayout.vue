@@ -1,6 +1,6 @@
 <template>
   <div class="wrap">
-    <Title/>
+    <Title />
 
     <slot name="header"></slot>
 
@@ -14,12 +14,18 @@
       <BuildsFeedPanel v-if="$store.state.mediaType === 'desktop' && $store.getters.userPresent" />
     </div>
 
-    <SystemAlert v-if="isLicenseExpired">Your Server License Is Expired <a href="https://docs.drone.io/license-is-expired" target="_blank">Learn More</a></SystemAlert>
-    <SystemAlert v-if="isLicenseExceeded">Your License Limit Is Exceeded <a href="https://docs.drone.io/license-is-exceeded" target="_blank">Learn More</a></SystemAlert>
+    <SystemAlert v-if="isLicenseExpired"
+      >Your Server License Is Expired
+      <a href="https://docs.drone.io/license-is-expired" target="_blank">Learn More</a></SystemAlert
+    >
+    <SystemAlert v-if="isLicenseExceeded"
+      >Your License Limit Is Exceeded
+      <a href="https://docs.drone.io/license-is-exceeded" target="_blank">Learn More</a></SystemAlert
+    >
 
-    <Notifications/>
+    <Notifications />
 
-    <portal-target name="body"/>
+    <portal-target name="body" />
   </div>
 </template>
 

@@ -1,23 +1,29 @@
 <template>
-  <EditableList title="Secrets"
-                itemCreateButtonTitle="add a secret"
-                :items="items"
-                :dispatchCreate="dispatchCreate"
-                :dispatchDelete="dispatchDelete">
-    <IconSecretsEmpty slot="empty"/>
+  <EditableList
+    title="Secrets"
+    itemCreateButtonTitle="add a secret"
+    :items="items"
+    :dispatchCreate="dispatchCreate"
+    :dispatchDelete="dispatchDelete"
+  >
+    <IconSecretsEmpty slot="empty" />
 
     <Help slot="help" title="Secrets" href="https://docs.drone.io/configure/secrets/">
       To be used in pipeline steps
     </Help>
 
-    <EditableListItem slot="item" slot-scope="slotProps" :tags="tags(slotProps.item)"
-                      :name="slotProps.item.name"
-                      :deleting="slotProps.deleting"
-                      @delete="slotProps.onDelete"/>
+    <EditableListItem
+      slot="item"
+      slot-scope="slotProps"
+      :tags="tags(slotProps.item)"
+      :name="slotProps.item.name"
+      :deleting="slotProps.deleting"
+      @delete="slotProps.onDelete"
+    />
 
     <template slot="fields">
-      <BaseInput name="secret.name" v-model="secret.name" placeholder="Secret Name" type="text"/>
-      <BaseTextArea name="secret.data" v-model="secret.data" placeholder="Secret Value"/>
+      <BaseInput name="secret.name" v-model="secret.name" placeholder="Secret Name" type="text" />
+      <BaseTextArea name="secret.data" v-model="secret.data" placeholder="Secret Value" />
       <BaseCheckbox v-model="secret.pullRequest" style="margin-bottom: 12px;">Allow Pull Requests</BaseCheckbox>
     </template>
   </EditableList>

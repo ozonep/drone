@@ -23,7 +23,12 @@
             - If Enabled, blocks pipeline if the yaml signature cannot be verified.
           </p>
           <p class="help-p">
-            <a href="https://docker-runner.docs.drone.io/configuration/steps/#privileged-mode" target="_blank" class="link">Trusted</a>
+            <a
+              href="https://docker-runner.docs.drone.io/configuration/steps/#privileged-mode"
+              target="_blank"
+              class="link"
+              >Trusted</a
+            >
             - Enables privileged capabilities: an ability to start privileged containers and mount host machine volumes.
           </p>
         </Help>
@@ -32,9 +37,11 @@
       <div class="control-group">
         <label class="control-label">Project visibility</label>
         <div class="controls">
-          <BaseRadioButtons v-model="repo.visibility"
-                            name="visibility"
-                            :options="{ public: 'Public', private: 'Private', internal: 'Internal'}"/>
+          <BaseRadioButtons
+            v-model="repo.visibility"
+            name="visibility"
+            :options="{ public: 'Public', private: 'Private', internal: 'Internal' }"
+          />
         </div>
         <!-- todo href for help -->
         <Help title="Project visibility">Provides the repository visibility level.</Help>
@@ -43,7 +50,7 @@
       <div v-if="isRoot" class="control-group">
         <label class="control-label">Timeout</label>
         <div class="controls">
-          <BaseSelect v-model="repo.timeout" :options="timeoutsOptions"/>
+          <BaseSelect v-model="repo.timeout" :options="timeoutsOptions" />
         </div>
         <!--todo help for timeout. Now I don't know what is it-->
         <!--<Help title="Timeout">Text text</Help>-->
@@ -52,12 +59,14 @@
       <div class="control-group">
         <label class="control-label">Configuration</label>
         <div class="controls">
-          <BaseInput v-model="repo.config_path"
-                     autocomplete="off"
-                     autocorrect="off"
-                     autocapitalize="off"
-                     spellcheck="false"
-                     type="text"/>
+          <BaseInput
+            v-model="repo.config_path"
+            autocomplete="off"
+            autocorrect="off"
+            autocapitalize="off"
+            spellcheck="false"
+            type="text"
+          />
         </div>
         <Help title="Configuration" href="https://docs.drone.io/configure/overview/">
           The name of a file with the pipeline definition.
@@ -85,10 +94,12 @@
     <Badges />
 
     <div v-if="repo.active && isAdmin" class="disable">
-      <ButtonConfirm @click="disable"
-                     theme="danger"
-                     size="l"
-                     :message="`Are you sure to disable repository ${repo.slug}`">
+      <ButtonConfirm
+        @click="disable"
+        theme="danger"
+        size="l"
+        :message="`Are you sure to disable repository ${repo.slug}`"
+      >
         Disable Repository
       </ButtonConfirm>
       <span>to stop processing builds.</span>

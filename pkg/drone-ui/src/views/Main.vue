@@ -1,10 +1,10 @@
 <template>
   <base-layout>
-    <Header slot="header"/>
+    <Header slot="header" />
 
     <template>
       <transition name="fadein" mode="out-in">
-        <router-view/>
+        <router-view />
       </transition>
     </template>
   </base-layout>

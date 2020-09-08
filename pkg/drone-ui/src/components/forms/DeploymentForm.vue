@@ -10,11 +10,7 @@
         <label>Type</label>
       </div>
       <div class="controls">
-        <BaseRadioButtons 
-          v-model="action"
-          name="action"
-          :options="{ promote: 'Promote', rollback: 'Rollback'}"
-        />
+        <BaseRadioButtons v-model="action" name="action" :options="{ promote: 'Promote', rollback: 'Rollback' }" />
       </div>
     </div>
     <div class="control-group">
@@ -39,8 +35,16 @@
       <div class="controls param-list-container">
         <ul class="param-list">
           <li v-for="(val, key) in params" :key="key" class="param-list-item">
-            <code>{{key}}={{val}}</code>
-            <Button @click.native.prevent="(e) => handleRmParam(key, e)" type="button" theme="danger" size="m" outline borderless>Remove</Button>
+            <code>{{ key }}={{ val }}</code>
+            <Button
+              @click.native.prevent="e => handleRmParam(key, e)"
+              type="button"
+              theme="danger"
+              size="m"
+              outline
+              borderless
+              >Remove</Button
+            >
           </li>
         </ul>
         <BaseForm @submit.native.prevent="handleAddParam" class="param-list-form">
@@ -97,14 +101,19 @@ export default {
         key: "",
         value: ""
       }
-    }
+    };
   },
   props: {
-    targets: {type: Array, default() { return [] }}
+    targets: {
+      type: Array,
+      default() {
+        return [];
+      }
+    }
   },
   methods: {
     handleSubmit(e) {
-      this.$emit("submit", {action: this.action, target: this.target, params: this.params});
+      this.$emit("submit", { action: this.action, target: this.target, params: this.params });
     },
     handleCancel(e) {
       this.$emit("cancel");
@@ -131,7 +140,7 @@ export default {
   header {
     height: 50px;
     line-height: 50px;
-    border-bottom: 1px solid rgba(30,55,90,.05);
+    border-bottom: 1px solid rgba(30, 55, 90, 0.05);
     padding: 0 15px;
     display: flex;
     align-items: center;
@@ -167,8 +176,8 @@ export default {
   }
   .param-list {
     &:not(:empty) {
-      margin-bottom: 16px; 
-    } 
+      margin-bottom: 16px;
+    }
   }
   .param-list-item {
     display: flex;

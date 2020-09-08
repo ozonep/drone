@@ -1,5 +1,5 @@
 <template>
-  <textarea :value="value" @input="$emit('input', $event.target.value)"/>
+  <textarea :value="value" @input="$emit('input', $event.target.value)" />
 </template>
 
 <script>

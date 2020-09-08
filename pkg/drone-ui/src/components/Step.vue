@@ -1,8 +1,8 @@
 <template>
   <section :class="{ selected, step: true }">
-    <Status :status="status"/>
+    <Status :status="status" />
     <span class="name" :title="name">{{ name }}</span>
-    <time-elapsed v-if="started" :started="started" :stopped="stopped"/>
+    <time-elapsed v-if="started" :started="started" :stopped="stopped" />
   </section>
 </template>
 

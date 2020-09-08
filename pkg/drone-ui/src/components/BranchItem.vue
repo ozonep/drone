@@ -1,8 +1,8 @@
 <template>
   <Card class="branch-item" slim :hoverable="hoverable">
     <div class="branch">{{ branch }}</div>
-    <BuildDescription :build="shrinkedBuild" :linkRepo="linkRepo"/>
-    <Status :status="status"/>
+    <BuildDescription :build="shrinkedBuild" :linkRepo="linkRepo" />
+    <Status :status="status" />
   </Card>
 </template>
 
@@ -96,8 +96,4 @@ export default {
     margin-right: auto;
   }
 }
-
-
-
-
 </style>

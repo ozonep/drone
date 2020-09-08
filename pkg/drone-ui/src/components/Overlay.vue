@@ -1,7 +1,7 @@
 <template>
   <transition name="fade">
     <div class="overlay" v-show="opened">
-      <slot/>
+      <slot />
     </div>
   </transition>
 </template>

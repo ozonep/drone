@@ -1,8 +1,10 @@
 <template>
-  <router-link class="repo-link"
-               :to="to"
-               :class="{ [`hover-type-${hoverType}`]: true, 'repo-active': repo.active }"
-               :tabindex="focusable ? 0 : -1">
+  <router-link
+    class="repo-link"
+    :to="to"
+    :class="{ [`hover-type-${hoverType}`]: true, 'repo-active': repo.active }"
+    :tabindex="focusable ? 0 : -1"
+  >
     <slot></slot>
   </router-link>
 </template>

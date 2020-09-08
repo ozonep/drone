@@ -1,17 +1,13 @@
 <template>
   <div class="deployments-page">
-    <AlertError v-if="showState === 'loadingError'" :error="collection.error"/>
-    <Loading v-if="showState === 'loading'" text="Loading builds"/>
+    <AlertError v-if="showState === 'loadingError'" :error="collection.error" />
+    <Loading v-if="showState === 'loading'" text="Loading builds" />
 
     <template v-if="showState === 'data'">
       <Card v-if="items.length < 1">Your Build List is Empty.</Card>
 
       <router-link v-for="build in items" :key="build.id" :to="`/${slug}/${build.number}`">
-        <DeploymentItem hoverable
-                    :branch="build.deploy_to"
-                    :status="build.status"
-                    :build="build"
-                    :linkRepo="repo"/>
+        <DeploymentItem hoverable :branch="build.deploy_to" :status="build.status" :build="build" :linkRepo="repo" />
       </router-link>
     </template>
   </div>
@@ -48,7 +44,12 @@ export default {
     },
     items() {
       // return this.collection ? Object.values(this.collection.data).map(x => x.data) : [];
-      return this.collection ? Object.values(this.collection.data).map(x => x.data).sort((a, b) => b.number - a.number).slice(0, 10) : [];
+      return this.collection
+        ? Object.values(this.collection.data)
+            .map(x => x.data)
+            .sort((a, b) => b.number - a.number)
+            .slice(0, 10)
+        : [];
     },
     showState() {
       if (!this.collection) return;

@@ -1,10 +1,10 @@
 <template>
   <portal to="body">
     <div :class="{ [className]: true, modal: true }">
-      <Overlay opened/>
+      <Overlay opened />
 
       <div class="modal-container">
-        <div class="modal-content"><slot/></div>
+        <div class="modal-content"><slot /></div>
       </div>
     </div>
   </portal>

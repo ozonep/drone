@@ -3,21 +3,24 @@
     <div v-if="!loaded" class="text">Loading...</div>
     <div v-if="empty" class="text">{{ emptyText }}</div>
 
-    <RepoLink v-if="loaded"
-              v-for="(repo, index) in repos"
-              :focusable="false"
-              :class="{selected: selectionIndex === index }"
-              :hoverType="'none'"
-              :key="`${repo.id}-${repo.build && repo.build.id}`"
-              :repo="repo"
-              @mouseenter.native="onItemHover(index)"
-              @click.native="triggerItemSelect">
-
-      <RepoItem :active="repo.active"
-                :title="`${repo.namespace}/${repo.name}`"
-                :build="repo.build"
-                :status="repo.build && repo.build.status"
-                :avatar="repo.build && repo.build.author_avatar"/>
+    <RepoLink
+      v-if="loaded"
+      v-for="(repo, index) in repos"
+      :focusable="false"
+      :class="{ selected: selectionIndex === index }"
+      :hoverType="'none'"
+      :key="`${repo.id}-${repo.build && repo.build.id}`"
+      :repo="repo"
+      @mouseenter.native="onItemHover(index)"
+      @click.native="triggerItemSelect"
+    >
+      <RepoItem
+        :active="repo.active"
+        :title="`${repo.namespace}/${repo.name}`"
+        :build="repo.build"
+        :status="repo.build && repo.build.status"
+        :avatar="repo.build && repo.build.author_avatar"
+      />
     </RepoLink>
   </Popup>
 </template>

@@ -1,35 +1,39 @@
 <template>
   <div class="build">
-    <Loading v-if="buildShowState === 'loading'"/>
+    <Loading v-if="buildShowState === 'loading'" />
 
     <portal v-if="buildShowState === 'data'" to="secondary-page-header-actions">
       <div class="header-actions">
         <Button outline class="button-source" :href="link" target="_blank">
           <span>View source</span>
-          <IconSource/>
+          <IconSource />
         </Button>
 
-        <Button outline v-if="isBuildFinished(build)"
-                class="button-restart"
-                @click.native="handleRestart"
-                :disabled="!isCollaborator">
+        <Button
+          outline
+          v-if="isBuildFinished(build)"
+          class="button-restart"
+          @click.native="handleRestart"
+          :disabled="!isCollaborator"
+        >
           <span>Restart</span>
-          <IconRestart/>
+          <IconRestart />
         </Button>
 
-        <Button theme="primary" v-if="showDeployButton"
-                class="button-promote"
-                @click.native="openDeployModal">
+        <Button theme="primary" v-if="showDeployButton" class="button-promote" @click.native="openDeployModal">
           <span>Deploy</span>
-          <IconDeploy/>
+          <IconDeploy />
         </Button>
 
-        <ButtonConfirm v-if="showCancelButton" outline
-                       @click="handleCancel"
-                       :message="`Are you sure to cancel build #${build.number}?`"
-                       class="button-cancel">
+        <ButtonConfirm
+          v-if="showCancelButton"
+          outline
+          @click="handleCancel"
+          :message="`Are you sure to cancel build #${build.number}?`"
+          class="button-cancel"
+        >
           <span>Cancel</span>
-          <IconCancel/>
+          <IconCancel />
         </ButtonConfirm>
       </div>
     </portal>
@@ -45,24 +49,24 @@
       :title="build.title || build.message"
       :avatar="build.author_avatar"
       :linkRepo="repo"
-      :build="Object.assign({}, build, { message: null })"/>
+      :build="Object.assign({}, build, { message: null })"
+    />
 
-    <AlertError v-if="buildShowState === 'loadingError'" :error="this.buildCollection.error"/>
+    <AlertError v-if="buildShowState === 'loadingError'" :error="this.buildCollection.error" />
     <Alert v-if="buildShowState === 'buildError'" theme="danger">{{ build.error }}</Alert>
 
-    <Loading v-if="buildShowState === 'data' && stagesShowState === 'loading'" text="Loading stages and steps"/>
+    <Loading v-if="buildShowState === 'data' && stagesShowState === 'loading'" text="Loading stages and steps" />
 
     <div class="build-content" v-if="buildShowState === 'data' && stagesShowState === 'data'">
       <div class="stages" ref="stages">
-        <div class="stage-container" v-for="(_stage) in build.stages" :key="_stage.id">
-
+        <div class="stage-container" v-for="_stage in build.stages" :key="_stage.id">
           <!--
             If the stage is not selected it is collapsed
             and rendered as a link. Clicking the link will
             change the route and expand the section.
           -->
-          <router-link v-if="_stage !== stage" :to="'/'+slug+'/'+build.number+'/'+_stage.number+'/1'">
-            <Stage :stage="_stage"/>
+          <router-link v-if="_stage !== stage" :to="'/' + slug + '/' + build.number + '/' + _stage.number + '/1'">
+            <Stage :stage="_stage" />
           </router-link>
 
           <!--
@@ -70,77 +74,91 @@
             all steps are displayed.
           -->
           <Stage v-else :stage="_stage">
-            <div v-for="(_step) in _stage.steps" :key="_step.id" class="step-container">
-              <Step v-if="_step === step"
-                    selected
-                    :name="_step.name"
-                    :status="_step.status"
-                    :created="_step.created"
-                    :started="_step.started"
-                    :stopped="_step.stopped"/>
+            <div v-for="_step in _stage.steps" :key="_step.id" class="step-container">
+              <Step
+                v-if="_step === step"
+                selected
+                :name="_step.name"
+                :status="_step.status"
+                :created="_step.created"
+                :started="_step.started"
+                :stopped="_step.stopped"
+              />
 
-              <router-link v-else :to="'/'+slug+'/'+build.number+'/'+_stage.number+'/'+_step.number">
+              <router-link v-else :to="'/' + slug + '/' + build.number + '/' + _stage.number + '/' + _step.number">
                 <Step
                   :name="_step.name"
                   :status="_step.status"
                   :created="_step.created"
                   :started="_step.started"
-                  :stopped="_step.stopped">
+                  :stopped="_step.stopped"
+                >
                 </Step>
               </router-link>
             </div>
           </Stage>
-        </div> <!-- end: step loop -->
+        </div>
+        <!-- end: step loop -->
       </div>
 
-      <ScrollLock v-if="outputFullscreen"/>
+      <ScrollLock v-if="outputFullscreen" />
 
       <div class="stage-content" v-if="stage">
         <Alert v-if="stageError" class="stage-error" theme="danger">{{ stage.name }}: {{ stage.error }}</Alert>
 
-        <div v-if="['loading', 'data'].includes(logsShowState)"
-             class="output"
-             :class="{'output-fullscreen': outputFullscreen, 'show-to-top': logsShowState === 'data' && showToTop}"
-             ref="output">
+        <div
+          v-if="['loading', 'data'].includes(logsShowState)"
+          class="output"
+          :class="{ 'output-fullscreen': outputFullscreen, 'show-to-top': logsShowState === 'data' && showToTop }"
+          ref="output"
+        >
           <div ref="topAnchor"></div>
 
           <div class="output-header" ref="outputHeader">
-            <div class="output-header-visibility-fix" ref="visibilityFix"/>
+            <div class="output-header-visibility-fix" ref="visibilityFix" />
             <div class="output-header-content">
               <div class="output-title" :title="stage && step && `${stage.name} - ${step.name}`">
                 <span class="output-title-stage">{{ stage && stage.name }}</span>
                 <span class="output-title-step"> — {{ step && step.name }}</span>
               </div>
-              <time-elapsed v-if="step && step.started"
-                            :started="step.started"
-                            :stopped="step.stopped"
-                            class="output-time-elapsed"/>
+              <time-elapsed
+                v-if="step && step.started"
+                :started="step.started"
+                :stopped="step.stopped"
+                class="output-time-elapsed"
+              />
               <div class="output-actions">
-                <PlayButton v-if="step && !step.stopped"
-                            title="Follow logs"
-                            @click.native="toggleFollow"
-                            :pause="follow"/>
+                <PlayButton
+                  v-if="step && !step.stopped"
+                  title="Follow logs"
+                  @click.native="toggleFollow"
+                  :pause="follow"
+                />
                 <div v-if="step && !step.stopped" class="divider"></div>
-                <Button outline borderless v-if="readyToDownload"
-                        title="Download"
-                        @click.native="download"
-                        theme="light"
-                        class="download">
-                  <IconDownload :close="outputFullscreen"/>
+                <Button
+                  outline
+                  borderless
+                  v-if="readyToDownload"
+                  title="Download"
+                  @click.native="download"
+                  theme="light"
+                  class="download"
+                >
+                  <IconDownload :close="outputFullscreen" />
                 </Button>
                 <div v-if="readyToDownload" class="divider"></div>
                 <Button title="Fullscreen" @click.native="toggleOutputFullscreen" theme="light" outline borderless>
-                  <IconFullscreen :close="outputFullscreen"/>
+                  <IconFullscreen :close="outputFullscreen" />
                 </Button>
               </div>
             </div>
           </div>
           <div class="output-content" ref="outputContent" @scroll="onOutputContentScroll">
-            <Loading v-if="logsShowState === 'loading'"/>
+            <Loading v-if="logsShowState === 'loading'" />
 
             <div class="output-content-actions" v-if="moreCount">
               <Button size="l" outline borderless class="output-button" @click.native="handleMore">
-                Show {{Math.min(moreCount, logStep)}} lines more
+                Show {{ Math.min(moreCount, logStep) }} lines more
               </Button>
               <Button size="l" outline borderless class="output-button" @click.native="handleAll">
                 Show all lines
@@ -149,28 +167,29 @@
 
             <table class="output-lines">
               <tbody>
-              <tr v-for="line in shownLogs" :key="line.pos">
-                <td class="ol-pos">{{line.pos+1}}</td>
-                <td class="ol-html" v-html="line._html"></td>
-                <td class="ol-time">{{line.time}}s</td>
-              </tr>
+                <tr v-for="line in shownLogs" :key="line.pos">
+                  <td class="ol-pos">{{ line.pos + 1 }}</td>
+                  <td class="ol-html" v-html="line._html"></td>
+                  <td class="ol-time">{{ line.time }}s</td>
+                </tr>
               </tbody>
             </table>
           </div>
 
-
           <div ref="bottomAnchor"></div>
 
           <div class="to-top" @click="scrollToTop">
-            <IconArrow direction="up"/>
+            <IconArrow direction="up" />
           </div>
         </div>
 
-        <AlertError v-else-if="logsShowState === 'loadingError'" :error="logsCollection.error"/>
+        <AlertError v-else-if="logsShowState === 'loadingError'" :error="logsCollection.error" />
 
-        <Alert v-else-if="!step || logsShowState === 'empty'"
-               :theme="getThemeByStatus(step ? step.status : stage.status)">
-          {{ stage.name }}{{ step ? ` – ${step.name}` : '' }}: {{ humanizeStatus(step ? step.status : stage.status) }}
+        <Alert
+          v-else-if="!step || logsShowState === 'empty'"
+          :theme="getThemeByStatus(step ? step.status : stage.status)"
+        >
+          {{ stage.name }}{{ step ? ` – ${step.name}` : "" }}: {{ humanizeStatus(step ? step.status : stage.status) }}
         </Alert>
 
         <template v-if="stage && stage.status === 'blocked'">
@@ -245,7 +264,7 @@ export default {
       logStep: 250,
       logLimit: 250,
       showToTop: false,
-      showDeploymentModal: false,
+      showDeploymentModal: false
     };
   },
   mounted() {
@@ -276,8 +295,7 @@ export default {
       return this.buildCollection.data;
     },
     link() {
-      return this.build && this.repo &&
-        `/link/${this.repo.slug}/tree/${this.build.ref}?sha=${this.build.after}`
+      return this.build && this.repo && `/link/${this.repo.slug}/tree/${this.build.ref}?sha=${this.build.after}`;
     },
     buildShowState() {
       if (this.buildCollection.lStatus === "error") return "loadingError";

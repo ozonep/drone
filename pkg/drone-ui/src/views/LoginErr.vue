@@ -1,9 +1,9 @@
 <template>
   <div class="container">
-      <Alert>
-        Login Failed.
-        <small>{{ error }}</small>
-      </Alert>
+    <Alert>
+      Login Failed.
+      <small>{{ error }}</small>
+    </Alert>
   </div>
 </template>
 

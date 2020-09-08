@@ -4,8 +4,8 @@
       <h1>User Settings</h1>
     </header>
 
-    <Loading v-if="showLoading"/>
-    <AlertError v-else-if="error" :error="error"/>
+    <Loading v-if="showLoading" />
+    <AlertError v-else-if="error" :error="error" />
     <CardGroup v-else-if="user && user.token">
       <Card>
         <h2 slot="header">Token</h2>
@@ -25,13 +25,12 @@
           <CodeSnippet lang="terminal">
             <h3 slot="header">Example CLI Usage:</h3>
             <code>export DRONE_SERVER={{ instance }}</code>
-            <code>export DRONE_TOKEN={{user.token}}</code>
+            <code>export DRONE_TOKEN={{ user.token }}</code>
             <code>drone info</code>
           </CodeSnippet>
         </CodeSnippetGroup>
       </Card>
     </CardGroup>
-
   </div>
 </template>
 

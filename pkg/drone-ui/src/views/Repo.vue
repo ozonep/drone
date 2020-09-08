@@ -5,7 +5,9 @@
         <router-link v-if="userPresent" :to="'/'" class="link">Repositories</router-link>
         <span v-else>Repositories</span>
 
-        <router-link v-if="$route.params.build" :to="'/'+slug" class="link repo-name-breadcrumb" :title="slug">{{ slug }}</router-link>
+        <router-link v-if="$route.params.build" :to="'/' + slug" class="link repo-name-breadcrumb" :title="slug">{{
+          slug
+        }}</router-link>
         <span :title="slug" v-else>{{ slug }}</span>
 
         <span v-if="$route.params.build">#{{ $route.params.build }}</span>
@@ -16,11 +18,11 @@
       Repository Not Found.
     </AlertError>
 
-    <Loading v-if="loading" text="Loading repository"/>
+    <Loading v-if="loading" text="Loading repository" />
 
     <PageHeader class="secondary-page-header">
       <h1 v-if="repo">{{ repo.name }}</h1>
-      <portal-target name="secondary-page-header-actions" slim/>
+      <portal-target name="secondary-page-header-actions" slim />
     </PageHeader>
 
     <!--
@@ -29,17 +31,17 @@
          page.
     -->
     <nav v-if="$route.params.build">
-      <router-link :to="'/'+slug" class="manually-active">
-        <IconArrow direction="left"/>
+      <router-link :to="'/' + slug" class="manually-active">
+        <IconArrow direction="left" />
         <span>Activity Feed</span>
       </router-link>
     </nav>
 
     <nav v-else-if="showTabs">
-      <router-link :to="'/'+slug" :disabled="!repo.active">Activity Feed</router-link>
-      <router-link :to="'/'+slug + '/branches'" :disabled="!repo.active">Branches</router-link>
-      <router-link :to="'/'+slug + '/deployments'" :disabled="!repo.active">Deployments</router-link>
-      <router-link :to="'/'+slug + '/settings'" v-if="showSettings">Settings</router-link>
+      <router-link :to="'/' + slug" :disabled="!repo.active">Activity Feed</router-link>
+      <router-link :to="'/' + slug + '/branches'" :disabled="!repo.active">Branches</router-link>
+      <router-link :to="'/' + slug + '/deployments'" :disabled="!repo.active">Deployments</router-link>
+      <router-link :to="'/' + slug + '/settings'" v-if="showSettings">Settings</router-link>
     </nav>
 
     <Alert v-if="repoEnablingErr && repoEnablingErr.status === 402">
@@ -52,8 +54,10 @@
     </Alert>
     <Alert v-else-if="repoEnabling">Activating...</Alert>
     <Card v-else-if="showActivatePrompt" class="activate" contentPadding="40px">
-      <IconActivateGear/>
-      <span v-if="!isAdmin" class="alert-admin-activate">Please contact a repository administrator to activate this project.</span>
+      <IconActivateGear />
+      <span v-if="!isAdmin" class="alert-admin-activate"
+        >Please contact a repository administrator to activate this project.</span
+      >
       <Button v-if="isAdmin" theme="primary" @click.native="handleActivate" :disabled="repoEnabling" size="l">
         Activate repository
       </Button>
@@ -135,7 +139,7 @@ export default {
       return (this.repo && this.repo.permissions && this.repo.permissions.write) || (this.user && this.user.admin);
     },
     isAdmin() {
-      return (this.repo && this.repo.permissions && this.repo.permissions.admin);
+      return this.repo && this.repo.permissions && this.repo.permissions.admin;
     },
     build() {
       const collection = this.$store.state.builds[this.slug];

@@ -1,10 +1,6 @@
 <template>
   <div class="base-checkbox">
-    <input type="checkbox"
-           :id="name"
-           :checked="value"
-           @change="$emit('input', $event.target.checked)"
-    />
+    <input type="checkbox" :id="name" :checked="value" @change="$emit('input', $event.target.checked)" />
     <label :for="name">
       <slot></slot>
     </label>

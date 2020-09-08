@@ -1,23 +1,23 @@
 <template>
-  <BaseForm :class="{ [`opened-${opened ? 'yes' : 'no'}`]: true , search: true }"
-            @submit.native="(e) => e.preventDefault()"
-            @focusin.native="open"
-            @focusout.native="closeDelayed">
-    <BaseInput type="search"
-               ref="searchInput"
-               v-model="query"
-               :placeholder="placeholder"
-               @input="onInput"/>
+  <BaseForm
+    :class="{ [`opened-${opened ? 'yes' : 'no'}`]: true, search: true }"
+    @submit.native="e => e.preventDefault()"
+    @focusin.native="open"
+    @focusout.native="closeDelayed"
+  >
+    <BaseInput type="search" ref="searchInput" v-model="query" :placeholder="placeholder" @input="onInput" />
     <div class="icon">/</div>
 
-    <ReposPopup v-if="popupOpened"
-                emptyText="Repositories not found"
-                :repos="results"
-                :loaded="loaded"
-                :popupProps="{position: 'bottom', align: 'both'}"
-                @itemSelect="onItemSelect"/>
+    <ReposPopup
+      v-if="popupOpened"
+      emptyText="Repositories not found"
+      :repos="results"
+      :loaded="loaded"
+      :popupProps="{ position: 'bottom', align: 'both' }"
+      @itemSelect="onItemSelect"
+    />
 
-    <Overlay ref="overlay" :opened="opened"/>
+    <Overlay ref="overlay" :opened="opened" />
   </BaseForm>
 </template>
 

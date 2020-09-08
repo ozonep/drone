@@ -1,30 +1,28 @@
 <template>
   <div class="builds">
-    <AlertError v-if="loadingError" :error="loadingError"/>
+    <AlertError v-if="loadingError" :error="loadingError" />
 
     <template v-else>
       <Alert v-if="showEmptyListAlert">
-        <IconDroneSleep/>
+        <IconDroneSleep />
         <div class="empty-message">Your Build List is Empty.</div>
       </Alert>
 
-      <router-link
-        class="build"
-        v-for="build in builds"
-        :key="build.id"
-        :to="'/'+slug + '/' + build.number">
-        <RepoItem :number="build.number"
-                  :title="build.title || build.message"
-                  :status="build.status"
-                  :build="shrinkBuild(build)"
-                  :avatar="build.author_avatar"
-                  :linkRepo="repo"/>
+      <router-link class="build" v-for="build in builds" :key="build.id" :to="'/' + slug + '/' + build.number">
+        <RepoItem
+          :number="build.number"
+          :title="build.title || build.message"
+          :status="build.status"
+          :build="shrinkBuild(build)"
+          :avatar="build.author_avatar"
+          :linkRepo="repo"
+        />
       </router-link>
 
       <MoreButton v-if="showHasMore" @click.native="showMore">Show more</MoreButton>
     </template>
 
-    <Loading v-if="showLoading" text="Loading builds"/>
+    <Loading v-if="showLoading" text="Loading builds" />
   </div>
 </template>
 

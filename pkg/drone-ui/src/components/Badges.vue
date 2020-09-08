@@ -1,11 +1,11 @@
 <template>
   <Card>
     <h2 slot="header">Badges</h2>
-    <img slot="header" :src="image" alt="badge"/>
+    <img slot="header" :src="image" alt="badge" />
 
     <div class="options">
-      <BaseSelect v-model="lang" :options="langs"/>
-      <BaseInput v-model="branch" placeholder="master" type="text"/>
+      <BaseSelect v-model="lang" :options="langs" />
+      <BaseInput v-model="branch" placeholder="master" type="text" />
     </div>
 
     <CodeSnippet>
@@ -54,12 +54,18 @@ export default {
           return `<a href="${this.instance}/${this.name}"><img src="${this.image}" /></a>`;
         case "ccmenu":
           return `${this.instance}/api/badges/${this.name}/cc.xml`;
+        default:
+          return "";
       }
     }
   }
 };
 
-const langs = [["markdown", "Markdown"], ["markup", "Markup"], ["ccmenu", "CCMenu"]];
+const langs = [
+  ["markdown", "Markdown"],
+  ["markup", "Markup"],
+  ["ccmenu", "CCMenu"]
+];
 </script>
 
 <style scoped lang="scss">

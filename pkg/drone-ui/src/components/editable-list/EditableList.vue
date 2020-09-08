@@ -1,26 +1,25 @@
 <template>
   <Card contentPadding="0 15px" class="editable-list">
     <h2 class="title" slot="header">{{ title }}</h2>
-    <slot name="help" slot="header"/>
+    <slot name="help" slot="header" />
 
     <div v-if="items.length === 0" class="empty">
-      <slot name="empty"/>
+      <slot name="empty" />
       {{ title }} list is empty.
     </div>
 
     <div v-for="item in items" :key="item.id" class="editable-list-item-wrapper">
-      <slot name='item' :item="item" :deleting="deleting[item.id]" :onDelete="() => handleDelete(item)"/>
+      <slot name="item" :item="item" :deleting="deleting[item.id]" :onDelete="() => handleDelete(item)" />
     </div>
 
     <form @submit.prevent="handleSubmit" autocomplete="off" slot="footer">
-      <slot name="fields"/>
+      <slot name="fields" />
 
       <div class="control-actions">
         <Button type="submit" theme="primary" size="l" :loading="creating">{{ itemCreateButtonTitle }}</Button>
         <div class="error-message" v-if="error">{{ error.message || error.toString() }}</div>
       </div>
     </form>
-
   </Card>
 </template>
 

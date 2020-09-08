@@ -1,27 +1,34 @@
 <template>
-  <EditableList title="Cron Jobs"
-                itemCreateButtonTitle="add a cron job"
-                :items="items"
-                :dispatchCreate="dispatchCreate"
-                :dispatchDelete="dispatchDelete">
-    <IconCronJobsEmpty slot="empty"/>
+  <EditableList
+    title="Cron Jobs"
+    itemCreateButtonTitle="add a cron job"
+    :items="items"
+    :dispatchCreate="dispatchCreate"
+    :dispatchDelete="dispatchDelete"
+  >
+    <IconCronJobsEmpty slot="empty" />
     <Help slot="help" title="Crons" href="https://docs.drone.io/configure/cron/">
-    Setup regularly schedule pipeline executions.
+      Setup regularly schedule pipeline executions.
     </Help>
 
-    <EditableListItem slot="item" slot-scope="slotProps"
-                      :name="slotProps.item.name"
-                      :tags="[slotProps.item.expr, slotProps.item.branch]"
-                      :deleting="slotProps.deleting"
-                      @delete="slotProps.onDelete"/>
+    <EditableListItem
+      slot="item"
+      slot-scope="slotProps"
+      :name="slotProps.item.name"
+      :tags="[slotProps.item.expr, slotProps.item.branch]"
+      :deleting="slotProps.deleting"
+      @delete="slotProps.onDelete"
+    />
 
     <template slot="fields">
-      <BaseInput placeholder="Cron Job Name" name="cron.name" v-model="cron.name" type="text"/>
-      <BaseInput :placeholder="`Cron Job Branch (default: ${defaultBranch})`"
-                 name="cron.branch"
-                 v-model="cron.branch"
-                 type="text"/>
-      <BaseSelect v-model="cron.expr" name="cron.expr" :options="cronExprOptions"/>
+      <BaseInput placeholder="Cron Job Name" name="cron.name" v-model="cron.name" type="text" />
+      <BaseInput
+        :placeholder="`Cron Job Branch (default: ${defaultBranch})`"
+        name="cron.branch"
+        v-model="cron.branch"
+        type="text"
+      />
+      <BaseSelect v-model="cron.expr" name="cron.expr" :options="cronExprOptions" />
     </template>
   </EditableList>
 </template>

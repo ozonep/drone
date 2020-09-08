@@ -1,8 +1,8 @@
 <template>
-<Button class="more-button" theme="primary" outline borderless>
-  <IconArrow direction="down"/>
-  <span><slot></slot></span>
-</Button>
+  <Button class="more-button" theme="primary" outline borderless>
+    <IconArrow direction="down" />
+    <span><slot></slot></span>
+  </Button>
 </template>
 
 <script>

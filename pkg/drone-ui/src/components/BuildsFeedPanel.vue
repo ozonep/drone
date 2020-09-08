@@ -1,12 +1,12 @@
 <template>
   <Panel name="builds-feed" :opened="opened" side="right" class="builds-feed-panel">
     <portal to="status-bar">
-      <BuildsFeedIndicator :collection="$store.state.buildsFeed" @click.native="toggle" :filled="opened"/>
+      <BuildsFeedIndicator :collection="$store.state.buildsFeed" @click.native="toggle" :filled="opened" />
     </portal>
 
     <BuildsFeed>
       <Button slot="header" outline borderless @click.native="toggle">
-        <IconCancel/>
+        <IconCancel />
       </Button>
     </BuildsFeed>
   </Panel>

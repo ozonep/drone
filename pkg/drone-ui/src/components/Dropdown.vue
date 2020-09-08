@@ -2,10 +2,10 @@
   <div class="dropdown" v-click-outside="close">
     <Button @click.native="toggle" v-bind="buttonProps">
       <span>{{ title }}</span>
-      <IconArrowDropdown :direction="opened ? 'up' : 'down'"/>
+      <IconArrowDropdown :direction="opened ? 'up' : 'down'" />
     </Button>
 
-    <Popup v-if="opened" position="bottom" v-bind="popupProps"><slot/></Popup>
+    <Popup v-if="opened" position="bottom" v-bind="popupProps"><slot /></Popup>
   </div>
 </template>
 

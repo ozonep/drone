@@ -6,37 +6,34 @@
         <div>
           <Button @click.native="refresh" outline :loading="showState === 'loading'">
             <span>Refresh</span>
-            <IconSync/>
+            <IconSync />
           </Button>
         </div>
       </slot>
     </PageHeader>
 
-    <AlertError v-if="showState === 'loadingError'" :error="incompleteBuilds.error"/>
+    <AlertError v-if="showState === 'loadingError'" :error="incompleteBuilds.error" />
 
     <Loading v-if="showState === 'loading'" text="Loading job queue" />
     <Alert v-else-if="isEmpty">
-      <IconDroneSleep/>
+      <IconDroneSleep />
       <div class="empty-message">Job Queue is Empty.</div>
     </Alert>
     <div v-else>
       <div v-for="item in items" :key="item.build.id">
-        <router-link
-            class="build"
-            :to="'/'+item.slug + '/' + item.build.number">
-          <RepoItem :show-repo="true"
-                    :number="item.build.number"
-                    :title="item.build.title || item.build.message"
-                    :status="item.build.status"
-                    :build="shrinkBuild(item.build)"
-                    :avatar="item.build.author_avatar"
-                    :linkRepo="item"/>
+        <router-link class="build" :to="'/' + item.slug + '/' + item.build.number">
+          <RepoItem
+            :show-repo="true"
+            :number="item.build.number"
+            :title="item.build.title || item.build.message"
+            :status="item.build.status"
+            :build="shrinkBuild(item.build)"
+            :avatar="item.build.author_avatar"
+            :linkRepo="item"
+          />
         </router-link>
         <div class="jobs">
-          <JobItem
-              v-for="job in jobs[item.build.id]"
-              :key="job.id"
-              :stage="job"/>
+          <JobItem v-for="job in jobs[item.build.id]" :key="job.id" :stage="job" />
         </div>
       </div>
     </div>

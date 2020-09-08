@@ -1,5 +1,5 @@
 <template>
-  <input class="base-input" :value="value" @input="$emit('input', $event.target.value)"/>
+  <input class="base-input" :value="value" @input="$emit('input', $event.target.value)" />
 </template>
 
 <script>
@@ -26,7 +26,8 @@ input {
   background: $surface-color;
 }
 
-input[type="search"], input[type=text] {
+input[type="search"],
+input[type="text"] {
   appearance: none;
 }
 

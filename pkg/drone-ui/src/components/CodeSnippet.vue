@@ -1,24 +1,24 @@
 <template>
-<div class="code-snippet">
-  <header v-if="$slots.header">
-    <slot name="header"></slot>
+  <div class="code-snippet">
+    <header v-if="$slots.header">
+      <slot name="header"></slot>
 
-    <div v-if="copyAvailable" class="copy" @click="handleCopy" style="position: relative">
-      <transition name="fade"><Hint align="right" v-show="copied">Copied</Hint></transition>
-      <IconCopy/>
-    </div>
-  </header>
-  <div ref="snippet" :class="{'with-copy': !$slots.header}">
-    <div v-if="!$slots.header && copyAvailable" class="copy" @click="handleCopy">
-      <transition name="fade"><Hint align="right" v-show="copied">Copied</Hint></transition>
-      <IconCopy/>
-    </div>
+      <div v-if="copyAvailable" class="copy" @click="handleCopy" style="position: relative">
+        <transition name="fade"><Hint align="right" v-show="copied">Copied</Hint></transition>
+        <IconCopy />
+      </div>
+    </header>
+    <div ref="snippet" :class="{ 'with-copy': !$slots.header }">
+      <div v-if="!$slots.header && copyAvailable" class="copy" @click="handleCopy">
+        <transition name="fade"><Hint align="right" v-show="copied">Copied</Hint></transition>
+        <IconCopy />
+      </div>
 
-    <pre :class="{ [`lang-${lang}`]: true }">
+      <pre :class="{ [`lang-${lang}`]: true }">
       <slot></slot>
     </pre>
+    </div>
   </div>
-</div>
 </template>
 
 <script>

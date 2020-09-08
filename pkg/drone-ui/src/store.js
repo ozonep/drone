@@ -325,7 +325,6 @@ export default new Vuex.Store({
       applyFailure(state.deployments[slug], error);
     },
 
-
     DEPLOYMENT_LIST_SUCCESS(state, { params, res }) {
       const slug = `${params.namespace}/${params.name}`;
 
@@ -563,7 +562,7 @@ export default new Vuex.Store({
         insertBuildCollection(state.builds[slug].data, slug, build);
       }
 
-      updateBuildsFeedByBuild(state, build)
+      updateBuildsFeedByBuild(state, build);
     },
 
     BUILDS_FEED_LOADING(state) {

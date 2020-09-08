@@ -2,7 +2,7 @@
   <section class="job-item" v-if="stage">
     <div class="container-left">
       <template v-if="stage.status">
-        <Status :status="stage.status"/>
+        <Status :status="stage.status" />
       </template>
     </div>
     <div class="content">
@@ -11,7 +11,7 @@
           <span>{{ stage.kind }}: </span>
           <span>{{ stage.name }}</span>
           <span class="info">
-            <span class="label">type: {{stage.type}}</span>
+            <span class="label">type: {{ stage.type }}</span>
             <span class="label" v-if="stage.os">os: {{ stage.os }}</span>
             <span class="label" v-if="stage.arch">arch: {{ stage.arch }}</span>
             <span class="label" v-if="stage.machine">machine: {{ stage.machine }}</span>
@@ -21,7 +21,7 @@
         <div class="time">
           <div v-if="showElapsedTime" class="time-elapsed">
             <Hint showOn="hover" align="center" position="bottom">Stage duration</Hint>
-            <TimeElapsed :started="stage.started" :stopped="stage.finished"/>
+            <TimeElapsed :started="stage.started" :stopped="stage.finished" />
           </div>
           <span v-if="showElapsedTime && stage.created" class="dot"></span>
           <span v-if="stage.created" class="time-started">

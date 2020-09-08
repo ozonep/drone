@@ -1,7 +1,7 @@
 <template>
-<div class="card-group">
-  <slot></slot>
-</div>
+  <div class="card-group">
+    <slot></slot>
+  </div>
 </template>
 
 <style scoped>

@@ -2,28 +2,29 @@
   <header :class="{ header: true, loading }">
     <div class="logo">
       <router-link to="/">
-        <Logo/>
+        <Logo />
       </router-link>
     </div>
 
-    <Search v-if="userPresent && mediaType === 'desktop'"
-            placeholder="Search repositories or jump to …"/>
+    <Search v-if="userPresent && mediaType === 'desktop'" placeholder="Search repositories or jump to …" />
 
     <div class="status-bar" v-if="userPresent">
-      <router-link v-if="mediaType !== 'desktop'"
-                   class="search-button"
-                   :to="urlOrGoBack('search')"
-                   :class="{ filled: $route.name === 'search' }">
-        <IconMagnifier/>
+      <router-link
+        v-if="mediaType !== 'desktop'"
+        class="search-button"
+        :to="urlOrGoBack('search')"
+        :class="{ filled: $route.name === 'search' }"
+      >
+        <IconMagnifier />
       </router-link>
 
       <router-link v-if="showBuildsFeedIndicatorLink" :to="urlOrGoBack('builds-feed')" class="builds-feed-link">
-        <BuildsFeedIndicator :collection="$store.state.buildsFeed" :filled="$route.name === 'builds-feed'"/>
+        <BuildsFeedIndicator :collection="$store.state.buildsFeed" :filled="$route.name === 'builds-feed'" />
       </router-link>
 
-      <portal-target name="status-bar" slim/>
+      <portal-target name="status-bar" slim />
 
-      <UserMenu :user="user"/>
+      <UserMenu :user="user" />
     </div>
 
     <Button v-if="!userPresent" href="/login" class="login" size="l" theme="light">Login</Button>

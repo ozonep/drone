@@ -1,6 +1,6 @@
 <template>
   <div v-if="$slots.default" class="time-elapsed">
-    <time>{{ time }}<slot/></time>
+    <time>{{ time }}<slot /></time>
   </div>
 
   <time v-else>{{ time }}</time>

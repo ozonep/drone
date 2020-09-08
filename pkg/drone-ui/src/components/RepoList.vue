@@ -1,15 +1,15 @@
 <template>
   <div class="repo-list">
     <template v-if="!loading && !items.length">
-      <slot name="emptyMessage" v-if="$slots.emptyMessage"/>
-      <Alert v-else-if="emptyMessage">{{emptyMessage}}</Alert>
+      <slot name="emptyMessage" v-if="$slots.emptyMessage" />
+      <Alert v-else-if="emptyMessage">{{ emptyMessage }}</Alert>
     </template>
 
-    <Loading v-if="loading"/>
+    <Loading v-if="loading" />
 
     <div v-if="!loading" class="list-item" v-for="repo in items" :key="`${repo.id}.${repo.build && repo.build.id}`">
       <RepoLink :repo="repo">
-        <RepoItem v-bind='repoToProps(repo)'/>
+        <RepoItem v-bind="repoToProps(repo)" />
       </RepoLink>
     </div>
   </div>

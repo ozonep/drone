@@ -1,7 +1,7 @@
 <template>
   <Button theme="light" outline borderless>
-    <IconPlay v-if="!pause"/>
-    <IconPause v-if="pause"/>
+    <IconPlay v-if="!pause" />
+    <IconPause v-if="pause" />
   </Button>
 </template>
 

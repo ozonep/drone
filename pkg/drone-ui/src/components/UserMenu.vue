@@ -1,9 +1,6 @@
 <template>
-  <div class="user-menu"
-       :class="{ clicked }"
-       @click="toggle"
-       v-click-outside="close">
-    <img class='avatar' :src="user.avatar" alt="avatar"/>
+  <div class="user-menu" :class="{ clicked }" @click="toggle" v-click-outside="close">
+    <img class="avatar" :src="user.avatar" alt="avatar" />
 
     <Popup :position="'bottom'" :align="'right'" :evict="!this.opened">
       <router-link to="/account" @focus.native="open" @blur.native="closeDelayed">User settings</router-link>

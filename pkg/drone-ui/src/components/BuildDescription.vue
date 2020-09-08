@@ -2,8 +2,8 @@
   <div class="build-description">
     <span>{{ build.author_login }}</span>
     <span> {{ action }} </span>
-    <RepoItemLabel type="actionTarget" :build="build" :repo="linkRepo" :link="!!linkRepo"/>
-    <RepoItemLabel class="to" type="to" :build="build" :repo="linkRepo" :link="!!linkRepo" prefix=" to "/>
+    <RepoItemLabel type="actionTarget" :build="build" :repo="linkRepo" :link="!!linkRepo" />
+    <RepoItemLabel class="to" type="to" :build="build" :repo="linkRepo" :link="!!linkRepo" prefix=" to " />
     <span class="commit-message" v-if="build.message" :title="build.message"> — {{ build.message }}</span>
   </div>
 </template>

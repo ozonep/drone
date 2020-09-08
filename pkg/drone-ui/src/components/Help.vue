@@ -6,7 +6,7 @@
       <div class="content">
         <slot></slot>
         <template v-if="href">
-          <br/>
+          <br />
           <a :href="href" class="link" target="_blank">View Documentation</a>
         </template>
       </div>

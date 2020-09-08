@@ -1,11 +1,10 @@
 <template>
   <Modal v-if="asModal" :className="`popup${evict ? ' evict' : ''}`">
-    <slot/>
+    <slot />
   </Modal>
 
-  <div v-else :style="style"
-       :class="{ [`position-${position}`]: true, [`align-${align}`]: true, popup: true, evict }">
-    <slot/>
+  <div v-else :style="style" :class="{ [`position-${position}`]: true, [`align-${align}`]: true, popup: true, evict }">
+    <slot />
   </div>
 </template>
 

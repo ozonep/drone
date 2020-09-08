@@ -2,12 +2,12 @@
   <Card class="branch-item" slim :hoverable="hoverable">
     <div class="branch">{{ branch }}</div>
     <div class="build-description">
-        <span>{{ build.sender }}</span>
-        <span> {{ action }} </span>
-        <span class="build-number"># {{ build.parent }}</span>
-        <span class="commit-message" v-if="build.message" :title="build.message"> — {{ build.message }}</span>
+      <span>{{ build.sender }}</span>
+      <span> {{ action }} </span>
+      <span class="build-number"># {{ build.parent }}</span>
+      <span class="commit-message" v-if="build.message" :title="build.message"> — {{ build.message }}</span>
     </div>
-    <Status :status="status"/>
+    <Status :status="status" />
   </Card>
 </template>
 

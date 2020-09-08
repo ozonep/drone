@@ -1,7 +1,7 @@
 <template>
-<div class="code-snippet-group">
-  <slot></slot>
-</div>
+  <div class="code-snippet-group">
+    <slot></slot>
+  </div>
 </template>
 
 <style scoped>

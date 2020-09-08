@@ -2,7 +2,7 @@
   <transition-group name="list" tag="div" class="notifications">
     <div v-for="notification in items" :key="notification.id" class="notification">
       <span>{{ notification.message }}</span>
-      <Button @click.native="close(notification)" theme="light" outline borderless><IconCancel/></Button>
+      <Button @click.native="close(notification)" theme="light" outline borderless><IconCancel /></Button>
     </div>
   </transition-group>
 </template>
