@@ -1,6 +1,6 @@
 module github.com/drone/drone
 
-replace github.com/docker/docker => github.com/docker/engine v17.12.0-ce-rc1.0.20200309214505-aa6a9891b09c+incompatible
+replace github.com/docker/docker => github.com/docker/engine v19.03.12+incompatible
 
 require (
 	github.com/99designs/httpsignatures-go v0.0.0-20170731043157-88528bf4ca7e
@@ -15,12 +15,10 @@ require (
 	github.com/dgrijalva/jwt-go v3.2.0+incompatible
 	github.com/drone/drone-go v1.3.2-0.20200826185551-24929e4d2cfc
 	github.com/drone/drone-runtime v1.1.1-0.20200623162453-61e33e2cab5d
-	github.com/drone/drone-ui v0.0.0-20200701170131-2b91a041998b
 	github.com/drone/drone-yaml v1.2.4-0.20200326192514-6f4d6dfb39e4
 	github.com/drone/envsubst v1.0.3-0.20200709231038-aa43e1c1a629
 	github.com/drone/go-license v1.0.2
 	github.com/drone/go-login v1.0.4-0.20190311170324-2a4df4f242a2
-	github.com/drone/go-scm v1.7.1-0.20200621203823-3731ec1f1136
 	github.com/drone/signal v1.0.0
 	github.com/dustin/go-humanize v1.0.0
 	github.com/go-chi/chi v3.3.3+incompatible
@@ -50,7 +48,7 @@ require (
 	github.com/joho/godotenv v1.3.0
 	github.com/kelseyhightower/envconfig v1.3.0
 	github.com/lib/pq v1.1.0
-	github.com/mattn/go-sqlite3 v1.9.0
+	github.com/mattn/go-sqlite3 v1.14.2
 	github.com/mitchellh/go-testing-interface v1.14.1 // indirect
 	github.com/mitchellh/hashstructure v1.0.0 // indirect
 	github.com/oxtoacart/bpool v0.0.0-20150712133111-4e1c5567d7c2
@@ -73,4 +71,4 @@ require (
 
 replace github.com/h2non/gock => gopkg.in/h2non/gock.v1 v1.0.14
 
-go 1.13
+go 1.15
