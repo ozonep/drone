@@ -9,6 +9,7 @@ require (
 	github.com/Microsoft/go-winio v0.4.15-0.20200113171025-3fe6c5262873 // indirect
 	github.com/asaskevich/govalidator v0.0.0-20180315120708-ccb8e960c48f
 	github.com/aws/aws-sdk-go v1.25.41
+	github.com/bradrydzewski/togo v0.0.0-20180401185031-50a0e4726e74 // indirect
 	github.com/codegangsta/negroni v1.0.0 // indirect
 	github.com/coreos/go-semver v0.3.0
 	github.com/dchest/authcookie v0.0.0-20120917135355-fbdef6e99866
@@ -55,6 +56,7 @@ require (
 	github.com/segmentio/ksuid v1.0.2
 	github.com/sirupsen/logrus v1.6.0
 	github.com/unrolled/secure v0.0.0-20181022170031-4b6b7cf51606
+	github.com/urfave/cli v1.22.4 // indirect
 	golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9
 	golang.org/x/oauth2 v0.0.0-20200107190931-bf48bf16ab8d // indirect
 	golang.org/x/sync v0.0.0-20200317015054-43a5402ce75a
