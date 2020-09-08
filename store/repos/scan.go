@@ -17,8 +17,8 @@ package repos
 import (
 	"database/sql"
 
-	"github.com/drone/drone/core"
-	"github.com/drone/drone/store/shared/db"
+	"github.com/ozonep/drone/core"
+	"github.com/ozonep/drone/store/shared/db"
 )
 
 // ToParams converts the Repository structure to a set

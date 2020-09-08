@@ -17,7 +17,7 @@
 package converter
 
 import (
-	"github.com/drone/drone/core"
+	"github.com/ozonep/drone/core"
 )
 
 // Memoize caches the conversion results for subsequent calls.

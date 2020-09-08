@@ -16,7 +16,7 @@
 
 package logs
 
-import "github.com/drone/drone/core"
+import "github.com/ozonep/drone/core"
 
 // New returns a zero value LogStore.
 func NewAzureBlobEnv(containerName, storageAccountName, storageAccessKey string) core.LogStore {

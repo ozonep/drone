@@ -11,7 +11,7 @@ import (
 	"fmt"
 	"time"
 
-	"github.com/drone/drone/core"
+	"github.com/ozonep/drone/core"
 )
 
 type CCProjects struct {

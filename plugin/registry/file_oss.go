@@ -16,7 +16,7 @@
 
 package registry
 
-import "github.com/drone/drone/core"
+import "github.com/ozonep/drone/core"
 
 // FileSource returns a no-op registry credential provider.
 func FileSource(string) core.RegistryService {

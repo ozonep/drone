@@ -19,7 +19,7 @@ package admission
 import (
 	"time"
 
-	"github.com/drone/drone/core"
+	"github.com/ozonep/drone/core"
 )
 
 // Nobot is a no-op admission controller

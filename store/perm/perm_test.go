@@ -9,10 +9,10 @@ import (
 	"database/sql"
 	"testing"
 
-	"github.com/drone/drone/store/shared/db/dbtest"
-	"github.com/drone/drone/core"
-	"github.com/drone/drone/store/repos"
-	"github.com/drone/drone/store/user"
+	"github.com/ozonep/drone/store/shared/db/dbtest"
+	"github.com/ozonep/drone/core"
+	"github.com/ozonep/drone/store/repos"
+	"github.com/ozonep/drone/store/user"
 )
 
 var noContext = context.TODO()

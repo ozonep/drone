@@ -17,7 +17,7 @@ package admission
 import (
 	"context"
 
-	"github.com/drone/drone/core"
+	"github.com/ozonep/drone/core"
 )
 
 // Combine combines admission services.

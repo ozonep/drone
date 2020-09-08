@@ -9,7 +9,7 @@ package rpc2
 import (
 	"net/http"
 
-	"github.com/drone/drone/operator/manager"
+	"github.com/ozonep/drone/operator/manager"
 
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"

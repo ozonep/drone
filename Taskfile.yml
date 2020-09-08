@@ -57,7 +57,7 @@ tasks:
     cmds:
     - cmd: >
         go build -o release/linux/amd64/drone-{{.name}}
-        github.com/drone/drone/cmd/drone-{{.name}}
+        github.com/ozonep/drone/cmd/drone-{{.name}}
 
   cleanup:
     cmds:
@@ -126,18 +126,18 @@ tasks:
           mysql:5.7
           --character-set-server=utf8mb4
           --collation-server=utf8mb4_unicode_ci
-      - cmd: go test -count=1 github.com/drone/drone/store/batch
-      - cmd: go test -count=1 github.com/drone/drone/store/batch2
-      - cmd: go test -count=1 github.com/drone/drone/store/build
-      - cmd: go test -count=1 github.com/drone/drone/store/cron
-      - cmd: go test -count=1 github.com/drone/drone/store/logs
-      - cmd: go test -count=1 github.com/drone/drone/store/perm
-      - cmd: go test -count=1 github.com/drone/drone/store/repos
-      - cmd: go test -count=1 github.com/drone/drone/store/secret
-      - cmd: go test -count=1 github.com/drone/drone/store/secret/global
-      - cmd: go test -count=1 github.com/drone/drone/store/stage
-      - cmd: go test -count=1 github.com/drone/drone/store/step
-      - cmd: go test -count=1 github.com/drone/drone/store/user
+      - cmd: go test -count=1 github.com/ozonep/drone/store/batch
+      - cmd: go test -count=1 github.com/ozonep/drone/store/batch2
+      - cmd: go test -count=1 github.com/ozonep/drone/store/build
+      - cmd: go test -count=1 github.com/ozonep/drone/store/cron
+      - cmd: go test -count=1 github.com/ozonep/drone/store/logs
+      - cmd: go test -count=1 github.com/ozonep/drone/store/perm
+      - cmd: go test -count=1 github.com/ozonep/drone/store/repos
+      - cmd: go test -count=1 github.com/ozonep/drone/store/secret
+      - cmd: go test -count=1 github.com/ozonep/drone/store/secret/global
+      - cmd: go test -count=1 github.com/ozonep/drone/store/stage
+      - cmd: go test -count=1 github.com/ozonep/drone/store/step
+      - cmd: go test -count=1 github.com/ozonep/drone/store/user
       - cmd: docker kill mysql
 
   test-postgres:
@@ -159,17 +159,17 @@ tasks:
           --detach
           --rm
           postgres:9-alpine
-      - cmd: go test -count=1 github.com/drone/drone/store/batch
-      - cmd: go test -count=1 github.com/drone/drone/store/batch2
-      - cmd: go test -count=1 github.com/drone/drone/store/build
-      - cmd: go test -count=1 github.com/drone/drone/store/cron
-      - cmd: go test -count=1 github.com/drone/drone/store/logs
-      - cmd: go test -count=1 github.com/drone/drone/store/perm
-      - cmd: go test -count=1 github.com/drone/drone/store/repos
-      - cmd: go test -count=1 github.com/drone/drone/store/secret
-      - cmd: go test -count=1 github.com/drone/drone/store/secret/global
-      - cmd: go test -count=1 github.com/drone/drone/store/stage
-      - cmd: go test -count=1 github.com/drone/drone/store/step
-      - cmd: go test -count=1 github.com/drone/drone/store/user
+      - cmd: go test -count=1 github.com/ozonep/drone/store/batch
+      - cmd: go test -count=1 github.com/ozonep/drone/store/batch2
+      - cmd: go test -count=1 github.com/ozonep/drone/store/build
+      - cmd: go test -count=1 github.com/ozonep/drone/store/cron
+      - cmd: go test -count=1 github.com/ozonep/drone/store/logs
+      - cmd: go test -count=1 github.com/ozonep/drone/store/perm
+      - cmd: go test -count=1 github.com/ozonep/drone/store/repos
+      - cmd: go test -count=1 github.com/ozonep/drone/store/secret
+      - cmd: go test -count=1 github.com/ozonep/drone/store/secret/global
+      - cmd: go test -count=1 github.com/ozonep/drone/store/stage
+      - cmd: go test -count=1 github.com/ozonep/drone/store/step
+      - cmd: go test -count=1 github.com/ozonep/drone/store/user
       - cmd: docker kill postgres
         silent: true

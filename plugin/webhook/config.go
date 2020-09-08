@@ -14,7 +14,7 @@
 
 package webhook
 
-import "github.com/drone/drone/core"
+import "github.com/ozonep/drone/core"
 
 // Config provides the webhook configuration.
 type Config struct {

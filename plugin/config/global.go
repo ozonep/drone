@@ -12,7 +12,7 @@ import (
 
 	"github.com/drone/drone-go/drone"
 	"github.com/drone/drone-go/plugin/config"
-	"github.com/drone/drone/core"
+	"github.com/ozonep/drone/core"
 )
 
 // Global returns a configuration service that fetches the yaml

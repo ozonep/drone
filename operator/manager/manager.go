@@ -21,8 +21,8 @@ import (
 	"time"
 
 	"github.com/drone/drone-yaml/yaml/converter"
-	"github.com/drone/drone/core"
-	"github.com/drone/drone/store/shared/db"
+	"github.com/ozonep/drone/core"
+	"github.com/ozonep/drone/store/shared/db"
 
 	"github.com/hashicorp/go-multierror"
 	"github.com/sirupsen/logrus"

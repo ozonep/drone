@@ -11,7 +11,7 @@ import (
 	"sync"
 	"testing"
 
-	"github.com/drone/drone/core"
+	"github.com/ozonep/drone/core"
 )
 
 func TestBus(t *testing.T) {

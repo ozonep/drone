@@ -11,7 +11,7 @@ import (
 	"errors"
 	"time"
 
-	"github.com/drone/drone/core"
+	"github.com/ozonep/drone/core"
 )
 
 // ErrCannotVerify is returned when attempting to verify the

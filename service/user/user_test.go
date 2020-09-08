@@ -9,8 +9,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/drone/drone/core"
-	"github.com/drone/drone/mock/mockscm"
+	"github.com/ozonep/drone/core"
+	"github.com/ozonep/drone/mock/mockscm"
 	"github.com/ozonep/drone/pkg/scm"
 	"github.com/google/go-cmp/cmp"
 

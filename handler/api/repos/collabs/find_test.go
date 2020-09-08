@@ -14,9 +14,9 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/drone/drone/core"
-	"github.com/drone/drone/handler/api/errors"
-	"github.com/drone/drone/mock"
+	"github.com/ozonep/drone/core"
+	"github.com/ozonep/drone/handler/api/errors"
+	"github.com/ozonep/drone/mock"
 	"github.com/sirupsen/logrus"
 
 	"github.com/go-chi/chi"

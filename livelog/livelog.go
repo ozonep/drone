@@ -19,7 +19,7 @@ import (
 	"errors"
 	"sync"
 
-	"github.com/drone/drone/core"
+	"github.com/ozonep/drone/core"
 )
 
 // error returned when a stream is not registered with

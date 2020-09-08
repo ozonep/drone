@@ -10,8 +10,8 @@ import (
 	"io/ioutil"
 	"testing"
 
-	"github.com/drone/drone/core"
-	"github.com/drone/drone/mock"
+	"github.com/ozonep/drone/core"
+	"github.com/ozonep/drone/mock"
 	"github.com/ozonep/drone/pkg/scm"
 	"github.com/sirupsen/logrus"
 

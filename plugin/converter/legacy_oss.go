@@ -17,7 +17,7 @@
 package converter
 
 import (
-	"github.com/drone/drone/core"
+	"github.com/ozonep/drone/core"
 )
 
 // Legacy returns a conversion service that converts the

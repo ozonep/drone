@@ -17,7 +17,7 @@
 package main
 
 import (
-	"github.com/drone/drone/cmd/drone-server/config"
+	"github.com/ozonep/drone/cmd/drone-server/config"
 	"github.com/google/wire"
 )
 

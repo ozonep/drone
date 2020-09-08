@@ -17,10 +17,10 @@ package user
 import (
 	"net/http"
 
-	"github.com/drone/drone/core"
-	"github.com/drone/drone/handler/api/render"
-	"github.com/drone/drone/handler/api/request"
-	"github.com/drone/drone/logger"
+	"github.com/ozonep/drone/core"
+	"github.com/ozonep/drone/handler/api/render"
+	"github.com/ozonep/drone/handler/api/request"
+	"github.com/ozonep/drone/logger"
 )
 
 // HandleRepos returns an http.HandlerFunc that write a json-encoded

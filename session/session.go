@@ -19,7 +19,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/drone/drone/core"
+	"github.com/ozonep/drone/core"
 
 	"github.com/dchest/authcookie"
 )

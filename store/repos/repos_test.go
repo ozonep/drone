@@ -12,9 +12,9 @@ import (
 	"io/ioutil"
 	"testing"
 
-	"github.com/drone/drone/core"
-	"github.com/drone/drone/store/shared/db"
-	"github.com/drone/drone/store/shared/db/dbtest"
+	"github.com/ozonep/drone/core"
+	"github.com/ozonep/drone/store/shared/db"
+	"github.com/ozonep/drone/store/shared/db/dbtest"
 
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"

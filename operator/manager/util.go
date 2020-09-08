@@ -15,7 +15,7 @@
 package manager
 
 import (
-	"github.com/drone/drone/core"
+	"github.com/ozonep/drone/core"
 )
 
 func isBuildComplete(stages []*core.Stage) bool {

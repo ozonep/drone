@@ -1,7 +1,7 @@
 FROM golang:buster as buster
 ENV GOPATH /go
-COPY . ${GOPATH}/src/github.com/drone/drone
-WORKDIR ${GOPATH}/src/github.com/drone/drone
+COPY . ${GOPATH}/src/github.com/ozonep/drone
+WORKDIR ${GOPATH}/src/github.com/ozonep/drone
 RUN  chmod +x ./build.sh
 RUN ./build.sh
 
@@ -19,5 +19,5 @@ ENV DRONE_SERVER_PORT=:80
 ENV DRONE_SERVER_HOST=localhost
 ENV DRONE_DATADOG_ENABLED=false
 COPY --from=alpine /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
-COPY --from=buster /go/src/github.com/drone/drone/release/linux/amd64/drone-server /bin/
+COPY --from=buster /go/src/github.com/ozonep/drone/release/linux/amd64/drone-server /bin/
 ENTRYPOINT ["/bin/drone-server"]

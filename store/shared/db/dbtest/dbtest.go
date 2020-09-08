@@ -17,7 +17,7 @@ package dbtest
 import (
 	"os"
 
-	"github.com/drone/drone/store/shared/db"
+	"github.com/ozonep/drone/store/shared/db"
 
 	// blank imports are used to load database drivers
 	// for unit tests. Only unit tests should be importing

@@ -19,7 +19,7 @@ package webhook
 import (
 	"context"
 
-	"github.com/drone/drone/core"
+	"github.com/ozonep/drone/core"
 )
 
 // New returns a no-op Webhook sender.

@@ -17,7 +17,7 @@
 package validator
 
 import (
-	"github.com/drone/drone/core"
+	"github.com/ozonep/drone/core"
 )
 
 // Remote returns a conversion service that converts the

@@ -10,8 +10,8 @@ import (
 	"context"
 	"testing"
 
-	"github.com/drone/drone/core"
-	"github.com/drone/drone/store/shared/db/dbtest"
+	"github.com/ozonep/drone/core"
+	"github.com/ozonep/drone/store/shared/db/dbtest"
 )
 
 var noContext = context.TODO()

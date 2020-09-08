@@ -7,7 +7,7 @@
 package metric
 
 import (
-	"github.com/drone/drone/core"
+	"github.com/ozonep/drone/core"
 
 	"github.com/prometheus/client_golang/prometheus"
 )

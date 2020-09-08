@@ -15,7 +15,7 @@
 package syncer
 
 import (
-	"github.com/drone/drone/core"
+	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/pkg/scm"
 )
 

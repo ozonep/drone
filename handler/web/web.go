@@ -18,10 +18,10 @@ import (
 	"net/http"
 
 	"github.com/ozonep/drone/pkg/drone-ui/dist"
-	"github.com/drone/drone/core"
-	"github.com/drone/drone/handler/web/landingpage"
-	"github.com/drone/drone/handler/web/link"
-	"github.com/drone/drone/logger"
+	"github.com/ozonep/drone/core"
+	"github.com/ozonep/drone/handler/web/landingpage"
+	"github.com/ozonep/drone/handler/web/link"
+	"github.com/ozonep/drone/logger"
 	"github.com/drone/go-login/login"
 	"github.com/ozonep/drone/pkg/scm"
 

@@ -9,8 +9,8 @@ package crons
 import (
 	"net/http"
 
-	"github.com/drone/drone/core"
-	"github.com/drone/drone/handler/api/render"
+	"github.com/ozonep/drone/core"
+	"github.com/ozonep/drone/handler/api/render"
 
 	"github.com/go-chi/chi"
 )

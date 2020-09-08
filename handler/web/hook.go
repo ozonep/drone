@@ -24,8 +24,8 @@ import (
 
 	"github.com/sirupsen/logrus"
 
-	"github.com/drone/drone/core"
-	"github.com/drone/drone/logger"
+	"github.com/ozonep/drone/core"
+	"github.com/ozonep/drone/logger"
 	"github.com/ozonep/drone/pkg/scm"
 )
 

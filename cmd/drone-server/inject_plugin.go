@@ -15,15 +15,15 @@
 package main
 
 import (
-	spec "github.com/drone/drone/cmd/drone-server/config"
-	"github.com/drone/drone/core"
-	"github.com/drone/drone/plugin/admission"
-	"github.com/drone/drone/plugin/config"
-	"github.com/drone/drone/plugin/converter"
-	"github.com/drone/drone/plugin/registry"
-	"github.com/drone/drone/plugin/secret"
-	"github.com/drone/drone/plugin/validator"
-	"github.com/drone/drone/plugin/webhook"
+	spec "github.com/ozonep/drone/cmd/drone-server/config"
+	"github.com/ozonep/drone/core"
+	"github.com/ozonep/drone/plugin/admission"
+	"github.com/ozonep/drone/plugin/config"
+	"github.com/ozonep/drone/plugin/converter"
+	"github.com/ozonep/drone/plugin/registry"
+	"github.com/ozonep/drone/plugin/secret"
+	"github.com/ozonep/drone/plugin/validator"
+	"github.com/ozonep/drone/plugin/webhook"
 	"github.com/ozonep/drone/pkg/scm"
 
 	"github.com/google/wire"

@@ -19,7 +19,7 @@ package validator
 import (
 	"context"
 
-	"github.com/drone/drone/core"
+	"github.com/ozonep/drone/core"
 )
 
 type noop struct{}

@@ -11,7 +11,7 @@ import (
 	"errors"
 	"strings"
 
-	"github.com/drone/drone/core"
+	"github.com/ozonep/drone/core"
 )
 
 // ErrMembership is returned when attempting to create a new

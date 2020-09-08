@@ -24,7 +24,7 @@ import (
 	"net/http"
 	"strings"
 
-	"github.com/drone/drone/core"
+	"github.com/ozonep/drone/core"
 	"github.com/drone/go-license/license"
 	"github.com/drone/go-license/license/licenseutil"
 )

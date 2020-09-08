@@ -9,9 +9,9 @@ package secret
 import (
 	"database/sql"
 
-	"github.com/drone/drone/core"
-	"github.com/drone/drone/store/shared/db"
-	"github.com/drone/drone/store/shared/encrypt"
+	"github.com/ozonep/drone/core"
+	"github.com/ozonep/drone/store/shared/db"
+	"github.com/ozonep/drone/store/shared/encrypt"
 )
 
 // helper function converts the User structure to a set

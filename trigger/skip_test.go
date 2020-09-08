@@ -10,7 +10,7 @@ import (
 	"testing"
 
 	"github.com/drone/drone-yaml/yaml"
-	"github.com/drone/drone/core"
+	"github.com/ozonep/drone/core"
 )
 
 func Test_skipBranch(t *testing.T) {
