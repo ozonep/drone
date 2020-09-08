@@ -3,10 +3,8 @@ module github.com/ozonep/drone
 replace github.com/docker/docker => github.com/docker/engine v17.12.0-ce-rc1.0.20200309214505-aa6a9891b09c+incompatible
 
 require (
-	cloud.google.com/go v0.51.0 // indirect
-	docker.io/go-docker v1.0.0 // indirect
 	github.com/99designs/httpsignatures-go v0.0.0-20170731043157-88528bf4ca7e
-	github.com/Azure/azure-storage-blob-go v0.10.0
+	github.com/Azure/azure-storage-blob-go v0.8.0
 	github.com/Microsoft/go-winio v0.4.15-0.20200113171025-3fe6c5262873 // indirect
 	github.com/asaskevich/govalidator v0.0.0-20180315120708-ccb8e960c48f
 	github.com/aws/aws-sdk-go v1.25.41
@@ -48,9 +46,7 @@ require (
 	github.com/lib/pq v1.1.0
 	github.com/mattn/go-sqlite3 v1.14.2
 	github.com/mitchellh/go-testing-interface v1.14.1 // indirect
-	github.com/natessilva/dag v0.0.0-20180124060714-7194b8dcc5c4 // indirect
 	github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e // indirect
-	github.com/opencontainers/image-spec v1.0.1 // indirect
 	github.com/oxtoacart/bpool v0.0.0-20150712133111-4e1c5567d7c2
 	github.com/prometheus/client_golang v1.4.0
 	github.com/rainycape/unidecode v0.0.0-20150907023854-cb7f23ec59be // indirect
@@ -62,10 +58,9 @@ require (
 	golang.org/x/oauth2 v0.0.0-20200107190931-bf48bf16ab8d // indirect
 	golang.org/x/sync v0.0.0-20200317015054-43a5402ce75a
 	golang.org/x/time v0.0.0-20191024005414-555d28b269f0 // indirect
-	google.golang.org/appengine v1.6.6 // indirect
+	google.golang.org/genproto v0.0.0-20191230161307-f3c370f40bfb // indirect
 	gopkg.in/check.v1 v1.0.0-20200227125254-8fa46927fb4f // indirect
 	gopkg.in/yaml.v2 v2.3.0
-	gotest.tools v2.2.0+incompatible // indirect
 	k8s.io/api v0.18.4
 	k8s.io/apimachinery v0.18.4
 	k8s.io/client-go v12.0.0+incompatible
