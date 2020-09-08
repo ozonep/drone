@@ -3,10 +3,10 @@ module github.com/ozonep/drone
 replace github.com/docker/docker => github.com/docker/engine v17.12.0-ce-rc1.0.20200309214505-aa6a9891b09c+incompatible
 
 require (
+	cloud.google.com/go v0.51.0 // indirect
 	docker.io/go-docker v1.0.0 // indirect
 	github.com/99designs/httpsignatures-go v0.0.0-20170731043157-88528bf4ca7e
 	github.com/Azure/azure-storage-blob-go v0.10.0
-	github.com/Azure/go-autorest/autorest/adal v0.9.2 // indirect
 	github.com/Microsoft/go-winio v0.4.15-0.20200113171025-3fe6c5262873 // indirect
 	github.com/asaskevich/govalidator v0.0.0-20180315120708-ccb8e960c48f
 	github.com/aws/aws-sdk-go v1.25.41
@@ -19,8 +19,8 @@ require (
 	github.com/docker/go-connections v0.4.0 // indirect
 	github.com/docker/go-units v0.4.0 // indirect
 	github.com/drone/drone-go v1.3.2
-	github.com/drone/drone-runtime v0.0.0-20190210191445-ad403a0ca24e
-	github.com/drone/drone-yaml v1.0.6
+	github.com/drone/drone-runtime v1.1.1-0.20200623162453-61e33e2cab5d
+	github.com/drone/drone-yaml v1.2.4-0.20200326192514-6f4d6dfb39e4
 	github.com/drone/envsubst v1.0.3-0.20200709231038-aa43e1c1a629
 	github.com/drone/go-license v1.0.2
 	github.com/drone/go-login v1.0.4-0.20190311170324-2a4df4f242a2
@@ -61,14 +61,14 @@ require (
 	golang.org/x/crypto v0.0.0-20200622213623-75b288015ac9
 	golang.org/x/oauth2 v0.0.0-20200107190931-bf48bf16ab8d // indirect
 	golang.org/x/sync v0.0.0-20200317015054-43a5402ce75a
+	golang.org/x/time v0.0.0-20191024005414-555d28b269f0 // indirect
 	google.golang.org/appengine v1.6.6 // indirect
 	gopkg.in/check.v1 v1.0.0-20200227125254-8fa46927fb4f // indirect
 	gopkg.in/yaml.v2 v2.3.0
 	gotest.tools v2.2.0+incompatible // indirect
-	k8s.io/api v0.19.0
-	k8s.io/apimachinery v0.19.0
-	k8s.io/client-go v0.19.0
-	k8s.io/utils v0.0.0-20200821003339-5e75c0163111 // indirect
+	k8s.io/api v0.18.4
+	k8s.io/apimachinery v0.18.4
+	k8s.io/client-go v12.0.0+incompatible
 )
 
 replace github.com/h2non/gock => gopkg.in/h2non/gock.v1 v1.0.14
