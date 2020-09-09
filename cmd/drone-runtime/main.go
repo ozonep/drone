@@ -14,11 +14,11 @@ import (
 
 	"github.com/mattn/go-isatty"
 
+	"github.com/ozonep/drone/pkg/runtime"
 	"github.com/ozonep/drone/pkg/runtime/engine"
 	"github.com/ozonep/drone/pkg/runtime/engine/docker"
 	"github.com/ozonep/drone/pkg/runtime/engine/docker/auth"
 	"github.com/ozonep/drone/pkg/runtime/engine/kube"
-	"github.com/ozonep/drone/pkg/runtime"
 	"github.com/ozonep/drone/pkg/runtime/term"
 	"github.com/ozonep/drone/pkg/signal"
 )
@@ -61,7 +61,7 @@ func main() {
 		config.Docker.Auths = append(config.Docker.Auths, auths...)
 	}
 
-	if *d == true {
+	if *d {
 		println(kube.Print(config))
 		return
 	}

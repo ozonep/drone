@@ -23,8 +23,8 @@ import (
 )
 
 var (
-	errSecretNameInvalid = errors.New("Invalid Secret Name")
-	errSecretDataInvalid = errors.New("Invalid Secret Value")
+	errSecretNameInvalid = errors.New("invalid secret name")
+	errSecretDataInvalid = errors.New("invalid secret value")
 )
 
 type (

@@ -22,8 +22,8 @@ import (
 )
 
 var (
-	errUsernameLen  = errors.New("Invalid username length")
-	errUsernameChar = errors.New("Invalid character in username")
+	errUsernameLen  = errors.New("invalid username length")
+	errUsernameChar = errors.New("invalid character in username")
 )
 
 type (

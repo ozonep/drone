@@ -24,9 +24,9 @@ import (
 )
 
 var (
-	errCronExprInvalid   = errors.New("Invalid Cronjob Expression")
-	errCronNameInvalid   = errors.New("Invalid Cronjob Name")
-	errCronBranchInvalid = errors.New("Invalid Cronjob Branch")
+	errCronExprInvalid   = errors.New("invalid cronjob expression")
+	errCronNameInvalid   = errors.New("invalid cronjob name")
+	errCronBranchInvalid = errors.New("invalid cronjob branch")
 )
 
 type (

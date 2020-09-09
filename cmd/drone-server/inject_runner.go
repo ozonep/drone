@@ -15,11 +15,11 @@
 package main
 
 import (
-	"github.com/ozonep/drone/pkg/runtime/engine/docker"
 	"github.com/ozonep/drone/cmd/drone-server/config"
 	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/operator/manager"
 	"github.com/ozonep/drone/operator/runner"
+	"github.com/ozonep/drone/pkg/runtime/engine/docker"
 
 	"github.com/google/wire"
 	"github.com/sirupsen/logrus"
@@ -40,7 +40,7 @@ func provideRunner(
 ) *runner.Runner {
 	// the local runner is only created when the nomad scheduler,
 	// kubernetes scheduler, and remote agents are disabled
-	if config.Nomad.Enabled || config.Kube.Enabled || (config.Agent.Disabled == false) {
+	if config.Nomad.Enabled || config.Kube.Enabled || !config.Agent.Disabled {
 		return nil
 	}
 	engine, err := docker.NewEnv()

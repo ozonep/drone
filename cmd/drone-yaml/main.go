@@ -232,7 +232,7 @@ func runCompile() error {
 	// the user has the option to disable the git clone
 	// if the pipeline is being executed on the local
 	// codebase.
-	if *clone == false {
+	if !*clone {
 		p.Clone.Disable = true
 	}
 

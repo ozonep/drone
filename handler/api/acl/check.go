@@ -65,15 +65,15 @@ func CheckAccess(read, write, admin bool) func(http.Handler) http.Handler {
 
 			user, ok := request.UserFrom(ctx)
 			switch {
-			case ok == false && write == true:
+			case !ok && write:
 				render.Unauthorized(w, errors.ErrUnauthorized)
 				log.Debugln("api: authentication required for write access")
 				return
-			case ok == false && admin == true:
+			case !ok && admin:
 				render.Unauthorized(w, errors.ErrUnauthorized)
 				log.Debugln("api: authentication required for admin access")
 				return
-			case ok == true && user.Admin == true:
+			case ok && user.Admin:
 				log.Debugln("api: root access granted")
 				next.ServeHTTP(w, r)
 				return
@@ -92,17 +92,17 @@ func CheckAccess(read, write, admin bool) func(http.Handler) http.Handler {
 			log = log.WithField("visibility", repo.Visibility)
 
 			switch {
-			case admin == true: // continue
-			case write == true: // continue
+			case admin: // continue
+			case write: // continue
 			case repo.Visibility == core.VisibilityPublic:
 				log.Debugln("api: read access granted")
 				next.ServeHTTP(w, r)
 				return
-			case ok == false:
+			case !ok:
 				render.Unauthorized(w, errors.ErrUnauthorized)
 				log.Debugln("api: authentication required")
 				return
-			case ok == true && repo.Visibility == core.VisibilityInternal:
+			case ok && repo.Visibility == core.VisibilityInternal:
 				log.Debugln("api: read access granted")
 				next.ServeHTTP(w, r)
 				return
@@ -123,16 +123,16 @@ func CheckAccess(read, write, admin bool) func(http.Handler) http.Handler {
 			)
 
 			switch {
-			case user.Active == false:
+			case !user.Active:
 				render.Forbidden(w, errors.ErrForbidden)
 				log.Debugln("api: active account required")
-			case read == true && perm.Read == false:
+			case read && !perm.Read:
 				render.NotFound(w, errors.ErrNotFound)
 				log.Debugln("api: read access required")
-			case write == true && perm.Write == false:
+			case write && !perm.Write:
 				render.NotFound(w, errors.ErrNotFound)
 				log.Debugln("api: write access required")
-			case admin == true && perm.Admin == false:
+			case admin && !perm.Admin:
 				render.NotFound(w, errors.ErrNotFound)
 				log.Debugln("api: admin access required")
 			default:

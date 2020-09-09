@@ -26,7 +26,7 @@ import (
 	"github.com/sirupsen/logrus"
 )
 
-var errMissingToken = errors.New("You must provide the machine account token")
+var errMissingToken = errors.New("you must provide the machine account token")
 
 // New returns a new account bootstrapper.
 func New(users core.UserStore) *Bootstrapper {

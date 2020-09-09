@@ -71,5 +71,5 @@ type (
 
 // Expired returns true if the license is expired.
 func (l *License) Expired() bool {
-	return l.Expires.IsZero() == false && time.Now().After(l.Expires)
+	return !l.Expires.IsZero() && time.Now().After(l.Expires)
 }

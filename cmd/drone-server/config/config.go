@@ -98,7 +98,7 @@ type (
 	}
 
 	Cleanup struct {
-		Disabled  bool         `envconfig:"DRONE_CLEANUP_DISABLED"`
+		Disabled bool          `envconfig:"DRONE_CLEANUP_DISABLED"`
 		Interval time.Duration `envconfig:"DRONE_CLEANUP_INTERVAL"         default:"24h"`
 		Running  time.Duration `envconfig:"DRONE_CLEANUP_DEADLINE_RUNNING" default:"24h"`
 		Pending  time.Duration `envconfig:"DRONE_CLEANUP_DEADLINE_PENDING" default:"24h"`
@@ -546,7 +546,7 @@ func configureGithub(c *Config) {
 
 func kubernetesServiceConflict(c *Config) error {
 	if strings.HasPrefix(c.Server.Port, "tcp://") {
-		return errors.New("Invalid port configuration. See https://discourse.drone.io/t/drone-server-changing-ports-protocol/4144")
+		return errors.New("invalid port configuration, see https://discourse.drone.io/t/drone-server-changing-ports-protocol/4144")
 	}
 	return nil
 }

@@ -87,7 +87,7 @@ func provideMetric(session core.Session, config config.Config) *metric.Server {
 // providePprof is a Wire provider function that returns the
 // pprof server endpoints.
 func providePprof(config config.Config) pprofHandler {
-	if config.Server.Pprof == false {
+	if !config.Server.Pprof {
 		return pprofHandler(
 			http.NotFoundHandler(),
 		)
