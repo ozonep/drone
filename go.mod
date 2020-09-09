@@ -5,9 +5,9 @@ replace github.com/docker/docker => github.com/docker/engine v17.12.0-ce-rc1.0.2
 replace (
 	github.com/googleapis/gnostic => github.com/googleapis/gnostic v0.4.0
 	github.com/h2non/gock => gopkg.in/h2non/gock.v1 v1.0.14
-	k8s.io/api => k8s.io/api v0.0.0-20190918155943-95b840bb6a1f
-	k8s.io/apimachinery => k8s.io/apimachinery v0.0.0-20190913080033-27d36303b655
-	k8s.io/client-go => k8s.io/client-go v0.0.0-20190918160344-1fbdaa4c8d90
+	k8s.io/api => k8s.io/api v0.16.15
+	k8s.io/apimachinery => k8s.io/apimachinery v0.16.15
+	k8s.io/client-go => k8s.io/client-go v0.16.15
 )
 
 require (
@@ -52,7 +52,7 @@ require (
 	github.com/hashicorp/go-multierror v1.1.0
 	github.com/hashicorp/go-retryablehttp v0.6.7
 	github.com/hashicorp/golang-lru v0.5.4
-	github.com/hashicorp/nomad/api v0.0.0-20200908134546-e0f038c8c72b
+	github.com/hashicorp/nomad/api v0.0.0-20200908210522-302011166a4d
 	github.com/imdario/mergo v0.3.11 // indirect
 	github.com/jmoiron/sqlx v1.2.0
 	github.com/joho/godotenv v1.3.0
@@ -76,7 +76,6 @@ require (
 	github.com/segmentio/ksuid v1.0.3
 	github.com/sergi/go-diff v1.1.0
 	github.com/sirupsen/logrus v1.6.0
-	github.com/spf13/pflag v1.0.5 // indirect
 	github.com/stretchr/testify v1.6.1
 	github.com/unrolled/secure v1.0.8
 	github.com/vinzenz/yaml v0.0.0-20170920082545-91409cdd725d
@@ -92,10 +91,9 @@ require (
 	gopkg.in/check.v1 v1.0.0-20200902074654-038fdea0a05b // indirect
 	gopkg.in/yaml.v2 v2.3.0
 	gotest.tools v2.2.0+incompatible // indirect
-	k8s.io/api v0.19.0
-	k8s.io/apimachinery v0.19.0
-	k8s.io/client-go v11.0.0+incompatible
-	k8s.io/klog v1.0.0 // indirect
+	k8s.io/api v0.16.15
+	k8s.io/apimachinery v0.16.15
+	k8s.io/client-go v0.16.15
 	sigs.k8s.io/yaml v1.2.0 // indirect
 )
 
