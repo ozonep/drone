@@ -14,7 +14,7 @@
 
 package compiler
 
-import "github.com/drone/drone-yaml/yaml"
+import "github.com/ozonep/drone/pkg/yaml"
 
 // SkipData provides build metadata use to determine if a
 // pipeline step should be skipped.

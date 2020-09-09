@@ -15,7 +15,7 @@
 package pretty
 
 import (
-	"github.com/drone/drone-yaml/yaml"
+	"github.com/ozonep/drone/pkg/yaml"
 )
 
 // helper function pretty prints the signature resource.

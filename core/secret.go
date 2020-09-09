@@ -19,7 +19,7 @@ import (
 	"errors"
 	"regexp"
 
-	"github.com/drone/drone-yaml/yaml"
+	"github.com/ozonep/drone/pkg/yaml"
 )
 
 var (

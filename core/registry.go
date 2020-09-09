@@ -17,7 +17,7 @@ package core
 import (
 	"context"
 
-	"github.com/drone/drone-yaml/yaml"
+	"github.com/ozonep/drone/pkg/yaml"
 )
 
 const (

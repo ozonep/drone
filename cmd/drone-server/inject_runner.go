@@ -15,7 +15,7 @@
 package main
 
 import (
-	"github.com/drone/drone-runtime/engine/docker"
+	"github.com/ozonep/drone/pkg/runtime/engine/docker"
 	"github.com/ozonep/drone/cmd/drone-server/config"
 	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/operator/manager"

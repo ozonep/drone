@@ -7,7 +7,7 @@ package oauth1
 import (
 	"net/http"
 
-	"github.com/drone/go-login/login"
+	"github.com/ozonep/drone/pkg/login"
 )
 
 // Handler returns a Handler that runs h at the completion

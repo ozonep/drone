@@ -7,7 +7,7 @@ package runtime
 import (
 	"testing"
 
-	"github.com/drone/drone-runtime/engine"
+	"github.com/ozonep/drone/pkg/runtime/engine"
 )
 
 func TestWithHooks(t *testing.T) {

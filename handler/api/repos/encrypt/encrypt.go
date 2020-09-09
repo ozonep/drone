@@ -23,7 +23,7 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/drone/drone-go/drone"
+	"github.com/ozonep/drone/pkg/drone"
 	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/handler/api/render"
 	"github.com/go-chi/chi"

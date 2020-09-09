@@ -316,7 +316,7 @@ func convertPushHook(src *pushHook) *scm.PushHook {
 		Sender:  *convertUser(&src.Sender),
 		Commits: commits,
 	}
-	// fix https://github.com/drone/go-scm/issues/8
+
 	if scm.IsTag(dst.Ref) && src.Head.ID != "" {
 		dst.Commit.Sha = src.Head.ID
 		dst.After = src.Head.ID

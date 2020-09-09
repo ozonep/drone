@@ -22,7 +22,7 @@ import (
 	"os"
 	"strings"
 
-	"github.com/drone/drone-runtime/engine"
+	"github.com/ozonep/drone/pkg/runtime/engine"
 )
 
 // config represents the Docker client configuration,

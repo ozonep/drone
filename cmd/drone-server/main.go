@@ -27,7 +27,7 @@ import (
 	"github.com/ozonep/drone/service/canceler/reaper"
 	"github.com/ozonep/drone/server"
 	"github.com/ozonep/drone/trigger/cron"
-	"github.com/drone/signal"
+	"github.com/ozonep/drone/pkg/signal"
 
 	"github.com/joho/godotenv"
 	"github.com/sirupsen/logrus"

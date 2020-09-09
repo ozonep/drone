@@ -17,8 +17,8 @@ package compiler
 import (
 	"strings"
 
-	"github.com/drone/drone-runtime/engine"
-	"github.com/drone/drone-yaml/yaml"
+	"github.com/ozonep/drone/pkg/runtime/engine"
+	"github.com/ozonep/drone/pkg/yaml"
 )
 
 func toIgnoreErr(from *yaml.Container) bool {

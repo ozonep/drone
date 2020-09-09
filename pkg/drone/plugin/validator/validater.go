@@ -18,7 +18,7 @@ import (
 	"context"
 	"errors"
 
-	"github.com/drone/drone-go/drone"
+	"github.com/ozonep/drone/pkg/drone"
 )
 
 // V1 is version 1 of the validator API

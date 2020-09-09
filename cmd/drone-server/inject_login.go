@@ -16,13 +16,13 @@ package main
 
 import (
 	"github.com/ozonep/drone/cmd/drone-server/config"
-	"github.com/drone/go-login/login"
-	"github.com/drone/go-login/login/bitbucket"
-	"github.com/drone/go-login/login/gitea"
-	"github.com/drone/go-login/login/github"
-	"github.com/drone/go-login/login/gitlab"
-	"github.com/drone/go-login/login/gogs"
-	"github.com/drone/go-login/login/stash"
+	"github.com/ozonep/drone/pkg/login"
+	"github.com/ozonep/drone/pkg/login/bitbucket"
+	"github.com/ozonep/drone/pkg/login/gitea"
+	"github.com/ozonep/drone/pkg/login/github"
+	"github.com/ozonep/drone/pkg/login/gitlab"
+	"github.com/ozonep/drone/pkg/login/gogs"
+	"github.com/ozonep/drone/pkg/login/stash"
 	"github.com/ozonep/drone/pkg/scm/transport/oauth2"
 	"strings"
 

@@ -8,7 +8,7 @@ import (
 	"path"
 	"testing"
 
-	"github.com/drone/drone-yaml/yaml"
+	"github.com/ozonep/drone/pkg/yaml"
 )
 
 func TestLint(t *testing.T) {

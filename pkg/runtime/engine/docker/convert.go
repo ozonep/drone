@@ -17,7 +17,7 @@ package docker
 import (
 	"strings"
 
-	"github.com/drone/drone-runtime/engine"
+	"github.com/ozonep/drone/pkg/runtime/engine"
 
 	"github.com/docker/docker/api/types/container"
 	"github.com/docker/docker/api/types/mount"

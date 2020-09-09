@@ -7,7 +7,7 @@ package compiler
 import (
 	"testing"
 
-	"github.com/drone/drone-yaml/yaml"
+	"github.com/ozonep/drone/pkg/yaml"
 )
 
 func TestSkipFunc(t *testing.T) {

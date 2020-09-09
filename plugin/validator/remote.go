@@ -10,8 +10,8 @@ import (
 	"context"
 	"time"
 
-	"github.com/drone/drone-go/drone"
-	"github.com/drone/drone-go/plugin/validator"
+	"github.com/ozonep/drone/pkg/drone"
+	"github.com/ozonep/drone/pkg/drone/plugin/validator"
 	"github.com/ozonep/drone/core"
 )
 

@@ -10,12 +10,12 @@ import (
 	"context"
 	"time"
 
-	"github.com/drone/drone-yaml/yaml"
+	"github.com/ozonep/drone/pkg/yaml"
 	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/logger"
 
-	"github.com/drone/drone-go/drone"
-	"github.com/drone/drone-go/plugin/secret"
+	"github.com/ozonep/drone/pkg/drone"
+	"github.com/ozonep/drone/pkg/drone/plugin/secret"
 )
 
 // External returns a new external Secret controller.

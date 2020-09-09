@@ -25,8 +25,8 @@ import (
 	"strings"
 
 	"github.com/ozonep/drone/core"
-	"github.com/drone/go-license/license"
-	"github.com/drone/go-license/license/licenseutil"
+	"github.com/ozonep/drone/pkg/license"
+	"github.com/ozonep/drone/pkg/license/licenseutil"
 )
 
 // embedded public key used to verify license signatures.

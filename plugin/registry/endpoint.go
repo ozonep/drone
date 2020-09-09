@@ -9,7 +9,7 @@ package registry
 import (
 	"context"
 
-	"github.com/drone/drone-go/plugin/registry"
+	"github.com/ozonep/drone/pkg/drone/plugin/registry"
 	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/logger"
 )

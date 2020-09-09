@@ -17,7 +17,7 @@ package trigger
 import (
 	"strings"
 
-	"github.com/drone/drone-yaml/yaml"
+	"github.com/ozonep/drone/pkg/yaml"
 	"github.com/ozonep/drone/core"
 )
 

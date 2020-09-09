@@ -17,10 +17,10 @@ package compiler
 import (
 	"strings"
 
-	"github.com/drone/drone-runtime/engine"
-	"github.com/drone/drone-yaml/yaml"
-	"github.com/drone/drone-yaml/yaml/compiler/image"
-	"github.com/drone/drone-yaml/yaml/compiler/internal/rand"
+	"github.com/ozonep/drone/pkg/runtime/engine"
+	"github.com/ozonep/drone/pkg/yaml"
+	"github.com/ozonep/drone/pkg/yaml/compiler/image"
+	"github.com/ozonep/drone/pkg/yaml/compiler/internal/rand"
 )
 
 func createStep(spec *engine.Spec, src *yaml.Container) *engine.Step {
@@ -88,7 +88,6 @@ func createStep(spec *engine.Spec, src *yaml.Container) *engine.Step {
 	// appends the environment variables to the
 	// container definition.
 	for key, value := range src.Environment {
-		// fix https://github.com/drone/drone-yaml/issues/13
 		if value == nil {
 			continue
 		}
@@ -106,7 +105,6 @@ func createStep(spec *engine.Spec, src *yaml.Container) *engine.Step {
 	// appends the settings variables to the
 	// container definition.
 	for key, value := range src.Settings {
-		// fix https://github.com/drone/drone-yaml/issues/13
 		if value == nil {
 			continue
 		}

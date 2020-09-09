@@ -13,7 +13,7 @@ package runtime
 // 	"testing"
 
 // 	"github.com/drone/autoscaler/mocks"
-// 	"github.com/drone/drone-runtime/engine"
+// 	"github.com/ozonep/drone/pkg/runtime/engine"
 // 	"github.com/golang/mock/gomock"
 // )
 

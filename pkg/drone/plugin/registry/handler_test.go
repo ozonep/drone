@@ -23,8 +23,8 @@ import (
 	"testing"
 	"time"
 
-	"github.com/drone/drone-go/drone"
-	"github.com/drone/drone-go/plugin/internal/aesgcm"
+	"github.com/ozonep/drone/pkg/drone"
+	"github.com/ozonep/drone/pkg/drone/plugin/internal/aesgcm"
 
 	"github.com/99designs/httpsignatures-go"
 )

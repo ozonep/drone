@@ -7,8 +7,8 @@ package compiler
 import (
 	"testing"
 
-	"github.com/drone/drone-runtime/engine"
-	"github.com/drone/drone-yaml/yaml"
+	"github.com/ozonep/drone/pkg/runtime/engine"
+	"github.com/ozonep/drone/pkg/yaml"
 )
 
 func TestCloneImage(t *testing.T) {

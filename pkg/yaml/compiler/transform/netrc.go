@@ -17,8 +17,8 @@ package transform
 import (
 	"fmt"
 
-	"github.com/drone/drone-runtime/engine"
-	"github.com/drone/drone-yaml/yaml/compiler/internal/rand"
+	"github.com/ozonep/drone/pkg/runtime/engine"
+	"github.com/ozonep/drone/pkg/yaml/compiler/internal/rand"
 )
 
 const (
@@ -43,7 +43,6 @@ func WithNetrc(machine, username, password string) func(*engine.Spec) {
 		if disableNetrcMount == false {
 			// Currently file mounts don't seem to work in Windows so environment
 			// variables are used instead
-			// FIXME: https://github.com/drone/drone-yaml/issues/20
 			if spec.Platform.OS != "windows" {
 				netrc := generateNetrc(machine, username, password)
 				spec.Files = append(spec.Files, &engine.File{

@@ -20,7 +20,7 @@ import (
 	"io"
 	"time"
 
-	"github.com/drone/drone-yaml/yaml/converter"
+	"github.com/ozonep/drone/pkg/yaml/converter"
 	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/store/shared/db"
 

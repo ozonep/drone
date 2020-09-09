@@ -9,7 +9,7 @@ package trigger
 import (
 	"testing"
 
-	"github.com/drone/drone-yaml/yaml"
+	"github.com/ozonep/drone/pkg/yaml"
 	"github.com/ozonep/drone/core"
 )
 

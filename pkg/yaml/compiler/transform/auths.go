@@ -14,7 +14,7 @@
 
 package transform
 
-import "github.com/drone/drone-runtime/engine"
+import "github.com/ozonep/drone/pkg/runtime/engine"
 
 // WithAuths is a transform function that adds a set
 // of global registry credentials to the container.

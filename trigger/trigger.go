@@ -20,10 +20,10 @@ import (
 	"strings"
 	"time"
 
-	"github.com/drone/drone-yaml/yaml"
-	"github.com/drone/drone-yaml/yaml/converter"
-	"github.com/drone/drone-yaml/yaml/linter"
-	"github.com/drone/drone-yaml/yaml/signer"
+	"github.com/ozonep/drone/pkg/yaml"
+	"github.com/ozonep/drone/pkg/yaml/converter"
+	"github.com/ozonep/drone/pkg/yaml/linter"
+	"github.com/ozonep/drone/pkg/yaml/signer"
 
 	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/trigger/dag"

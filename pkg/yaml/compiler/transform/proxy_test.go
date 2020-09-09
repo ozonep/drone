@@ -8,7 +8,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/drone/drone-runtime/engine"
+	"github.com/ozonep/drone/pkg/runtime/engine"
 )
 
 func TestWithProxy(t *testing.T) {

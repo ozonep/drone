@@ -18,7 +18,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/drone/drone-runtime/engine"
+	"github.com/ozonep/drone/pkg/runtime/engine"
 )
 
 // Line represents a line in the container logs.

@@ -18,9 +18,9 @@ import (
 	unixpath "path"
 	"strings"
 
-	"github.com/drone/drone-runtime/engine"
-	"github.com/drone/drone-yaml/yaml"
-	"github.com/drone/drone-yaml/yaml/compiler/internal/rand"
+	"github.com/ozonep/drone/pkg/runtime/engine"
+	"github.com/ozonep/drone/pkg/yaml"
+	"github.com/ozonep/drone/pkg/yaml/compiler/internal/rand"
 )
 
 const (

@@ -11,8 +11,8 @@ import (
 	"strings"
 	"time"
 
-	"github.com/drone/drone-go/drone"
-	"github.com/drone/drone-go/plugin/converter"
+	"github.com/ozonep/drone/pkg/drone"
+	"github.com/ozonep/drone/pkg/drone/plugin/converter"
 	"github.com/ozonep/drone/core"
 )
 

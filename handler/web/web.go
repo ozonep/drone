@@ -22,7 +22,7 @@ import (
 	"github.com/ozonep/drone/handler/web/landingpage"
 	"github.com/ozonep/drone/handler/web/link"
 	"github.com/ozonep/drone/logger"
-	"github.com/drone/go-login/login"
+	"github.com/ozonep/drone/pkg/login"
 	"github.com/ozonep/drone/pkg/scm"
 
 	"github.com/go-chi/chi"

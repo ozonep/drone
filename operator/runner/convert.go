@@ -17,8 +17,8 @@ package runner
 import (
 	"strings"
 
-	"github.com/drone/drone-runtime/engine"
-	"github.com/drone/drone-runtime/runtime"
+	"github.com/ozonep/drone/pkg/runtime/engine"
+	"github.com/ozonep/drone/pkg/runtime"
 	"github.com/ozonep/drone/core"
 )
 
