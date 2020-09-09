@@ -187,9 +187,7 @@ func (e *kubeEngine) Wait(ctx context.Context, spec *engine.Spec, step *engine.S
 	// TODO Cancel on ctx.Done
 	<-stopper
 
-	pod, err := e.client.CoreV1().Pods(spec.Metadata.Namespace).Get(step.Metadata.UID, metav1.GetOptions{
-		IncludeUninitialized: true,
-	})
+	pod, err := e.client.CoreV1().Pods(spec.Metadata.Namespace).Get(step.Metadata.UID, metav1.GetOptions{})
 	if err != nil {
 		return nil, err
 	}
