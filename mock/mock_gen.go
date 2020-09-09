@@ -6,8 +6,8 @@ package mock
 
 import (
 	context "context"
-	core "github.com/ozonep/drone/core"
 	gomock "github.com/golang/mock/gomock"
+	core "github.com/ozonep/drone/core"
 	io "io"
 	http "net/http"
 	reflect "reflect"
