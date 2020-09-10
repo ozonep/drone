@@ -20,13 +20,13 @@ func TestExpired(t *testing.T) {
 
 	license = &License{}
 	license.Exp = time.Now().Add(time.Hour)
-	if license.Expired() == true {
+	if license.Expired() {
 		t.Errorf("Expect license is not expired")
 	}
 
 	license = &License{}
 	license.Exp = time.Now().Add(time.Hour * -1)
-	if license.Expired() == false {
+	if !license.Expired() {
 		t.Errorf("Expect license is expired")
 	}
 }

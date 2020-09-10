@@ -43,14 +43,14 @@ var statusNotFailed = []string{
 func TestStageIsDone(t *testing.T) {
 	for _, status := range statusDone {
 		v := Stage{Status: status}
-		if v.IsDone() == false {
+		if !v.IsDone() {
 			t.Errorf("Expect status %s is done", status)
 		}
 	}
 
 	for _, status := range statusNotDone {
 		v := Stage{Status: status}
-		if v.IsDone() == true {
+		if v.IsDone() {
 			t.Errorf("Expect status %s is not done", status)
 		}
 	}
@@ -59,14 +59,14 @@ func TestStageIsDone(t *testing.T) {
 func TestStageIsFailed(t *testing.T) {
 	for _, status := range statusFailed {
 		v := Stage{Status: status}
-		if v.IsFailed() == false {
+		if !v.IsFailed() {
 			t.Errorf("Expect status %s is failed", status)
 		}
 	}
 
 	for _, status := range statusNotFailed {
 		v := Stage{Status: status}
-		if v.IsFailed() == true {
+		if v.IsFailed() {
 			t.Errorf("Expect status %s is not failed", status)
 		}
 	}

@@ -211,10 +211,6 @@ func (e *dockerEngine) Wait(ctx context.Context, spec *engine.Spec, step *engine
 	if err != nil {
 		return nil, err
 	}
-	if info.State.Running {
-		// TODO(bradrydewski) if the state is still running
-		// we should call wait again.
-	}
 
 	return &engine.State{
 		Exited:    true,

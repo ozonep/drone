@@ -51,8 +51,7 @@ func (c *staticController) List(ctx context.Context, in *core.RegistryArgs) ([]*
 		// The secret can be restricted to non-pull request
 		// events. If the secret is restricted, return
 		// empty results.
-		if secret.PullRequest == false &&
-			in.Build.Event == core.EventPullRequest {
+		if !secret.PullRequest && in.Build.Event == core.EventPullRequest {
 			logger.Trace("registry: database: pull_request access denied")
 			continue
 		}

@@ -40,7 +40,7 @@ func WithNetrc(machine, username, password string) func(*engine.Spec) {
 		// TODO(bradrydzewski) temporarily disable mounting
 		// the netrc file due to issues with kubernetes
 		// compatibility.
-		if disableNetrcMount == false {
+		if !disableNetrcMount {
 			// Currently file mounts don't seem to work in Windows so environment
 			// variables are used instead
 			if spec.Platform.OS != "windows" {

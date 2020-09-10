@@ -39,12 +39,10 @@ import (
 
 var (
 	format     = kingpin.Command("fmt", "format the yaml file")
-	formatPriv = format.Flag("privileged", "privileged mode").Short('p').Bool()
 	formatSave = format.Flag("save", "save result to source").Short('s').Bool()
 	formatFile = format.Arg("source", "source file location").Default(".drone.yml").File()
 
 	convert     = kingpin.Command("convert", "convert the yaml file")
-	convertSave = convert.Flag("save", "save result to source").Short('s').Bool()
 	convertFile = convert.Arg("source", "source file location").Default(".drone.yml").File()
 	convertAddr = convert.Flag("addr", "remote repository address").String()
 

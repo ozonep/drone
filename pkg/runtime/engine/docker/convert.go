@@ -54,8 +54,8 @@ func toConfig(spec *engine.Spec, step *engine.Step) *container.Config {
 	// useful when you need to launch containers outside
 	// the pipeline that are attached to the same network
 	// as the pipeline itself.
-// 	config.Env = append(config.Env, "DOCKER_NETWORK_ID="+spec.Metadata.UID)
-// 	config.Env = append(config.Env, "DRONE_DOCKER_NETWORK_ID="+spec.Metadata.UID)
+	// 	config.Env = append(config.Env, "DOCKER_NETWORK_ID="+spec.Metadata.UID)
+	// 	config.Env = append(config.Env, "DRONE_DOCKER_NETWORK_ID="+spec.Metadata.UID)
 
 	if len(step.Docker.Args) != 0 {
 		config.Cmd = step.Docker.Args
@@ -143,7 +143,7 @@ func toDeviceSlice(spec *engine.Spec, step *engine.Step) []container.DeviceMappi
 		if !ok {
 			continue
 		}
-		if isDevice(device) == false {
+		if !isDevice(device) {
 			continue
 		}
 		to = append(to, container.DeviceMapping{
@@ -173,7 +173,7 @@ func toVolumeSet(spec *engine.Spec, step *engine.Step) map[string]struct{} {
 		if isNamedPipe(volume) {
 			continue
 		}
-		if isBindMount(volume) == false {
+		if !isBindMount(volume) {
 			continue
 		}
 		set[mount.Path] = struct{}{}

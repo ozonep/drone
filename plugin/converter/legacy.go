@@ -25,7 +25,7 @@ type legacyPlugin struct {
 }
 
 func (p *legacyPlugin) Convert(ctx context.Context, req *core.ConvertArgs) (*core.Config, error) {
-	if p.enabled == false {
+	if !p.enabled {
 		return nil, nil
 	}
 	return &core.Config{

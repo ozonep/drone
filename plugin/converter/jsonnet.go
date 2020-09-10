@@ -32,13 +32,13 @@ type jsonnetPlugin struct {
 }
 
 func (p *jsonnetPlugin) Convert(ctx context.Context, req *core.ConvertArgs) (*core.Config, error) {
-	if p.enabled == false {
+	if !p.enabled {
 		return nil, nil
 	}
 
 	// if the file extension is not jsonnet we can
 	// skip this plugin by returning zero values.
-	if strings.HasSuffix(req.Repo.Config, ".jsonnet") == false {
+	if !strings.HasSuffix(req.Repo.Config, ".jsonnet") {
 		return nil, nil
 	}
 

@@ -28,7 +28,7 @@ func Load(home, match string) ([]*Config, error) {
 	// and capture a list of matching subdirectories.
 	var machines []*Config
 	for _, entry := range entries {
-		if entry.IsDir() == false {
+		if !entry.IsDir() {
 			continue
 		}
 		name := entry.Name()

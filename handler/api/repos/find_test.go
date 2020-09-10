@@ -11,8 +11,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/ozonep/drone/handler/api/request"
 	"github.com/ozonep/drone/core"
+	"github.com/ozonep/drone/handler/api/request"
 	"github.com/sirupsen/logrus"
 
 	"github.com/go-chi/chi"
@@ -32,21 +32,6 @@ var (
 		Slug:      "octocat/hello-world",
 		Counter:   42,
 		Branch:    "master",
-	}
-
-	mockRepos = []*core.Repository{
-		{
-			ID:        1,
-			Namespace: "octocat",
-			Name:      "hello-world",
-			Slug:      "octocat/hello-world",
-		},
-		{
-			ID:        1,
-			Namespace: "octocat",
-			Name:      "spoon-knife",
-			Slug:      "octocat/spoon-knife",
-		},
 	}
 )
 

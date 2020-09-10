@@ -34,10 +34,10 @@ func TestCache(t *testing.T) {
 	if got, want := service.cache.Len(), 1; got != want {
 		t.Errorf("Expect cache size %d, got %d", want, got)
 	}
-	if admin == false {
+	if !admin {
 		t.Errorf("Expect admin true, got false")
 	}
-	if member == false {
+	if !member {
 		t.Errorf("Expect member true, got false")
 	}
 
@@ -48,10 +48,10 @@ func TestCache(t *testing.T) {
 	if got, want := service.cache.Len(), 1; got != want {
 		t.Errorf("Expect cache size still %d, got %d", want, got)
 	}
-	if admin == false {
+	if !admin {
 		t.Errorf("Expect cached admin true, got false")
 	}
-	if member == false {
+	if !member {
 		t.Errorf("Expect cached member true, got false")
 	}
 }
@@ -81,10 +81,10 @@ func TestCache_Expired(t *testing.T) {
 	if got, want := service.cache.Len(), 1; got != want {
 		t.Errorf("Expect cache size still %d, got %d", want, got)
 	}
-	if admin == false {
+	if !admin {
 		t.Errorf("Expect cached admin true, got false")
 	}
-	if member == false {
+	if !member {
 		t.Errorf("Expect cached member true, got false")
 	}
 }

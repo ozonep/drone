@@ -10,9 +10,9 @@ import (
 	"context"
 	"time"
 
-	"github.com/ozonep/drone/pkg/yaml"
 	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/logger"
+	"github.com/ozonep/drone/pkg/yaml"
 
 	"github.com/ozonep/drone/pkg/drone"
 	"github.com/ozonep/drone/pkg/drone/plugin/secret"
@@ -83,7 +83,7 @@ func (c *externalController) Find(ctx context.Context, in *core.SecretArgs) (*co
 	// the secret can be restricted to non-pull request
 	// events. If the secret is restricted, return
 	// empty results.
-	if (res.Pull == false && res.PullRequest == false) &&
+	if (!res.Pull && !res.PullRequest) &&
 		in.Build.Event == core.EventPullRequest {
 		logger.Trace("secret: external: restricted from forks")
 		return nil, nil

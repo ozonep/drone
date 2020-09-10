@@ -76,7 +76,7 @@ func (s *Synchronizer) Sync(ctx context.Context, user *core.User) (*core.Batch, 
 		s.users.Update(context.Background(), user)
 	}()
 
-	if user.Syncing == false {
+	if !user.Syncing {
 		user.Syncing = true
 		err := s.users.Update(ctx, user)
 		if err != nil {

@@ -37,7 +37,7 @@ type License struct {
 
 // Expired returns true if the license is expired.
 func (l *License) Expired() bool {
-	return l.Exp.IsZero() == false && time.Now().After(l.Exp)
+	return !l.Exp.IsZero() && time.Now().After(l.Exp)
 }
 
 // Encode generates returns a PEM encoded license key that is

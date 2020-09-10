@@ -11,14 +11,14 @@ import "testing"
 func TestStepIsDone(t *testing.T) {
 	for _, status := range statusDone {
 		v := Step{Status: status}
-		if v.IsDone() == false {
+		if !v.IsDone() {
 			t.Errorf("Expect status %s is done", status)
 		}
 	}
 
 	for _, status := range statusNotDone {
 		v := Step{Status: status}
-		if v.IsDone() == true {
+		if v.IsDone() {
 			t.Errorf("Expect status %s is not done", status)
 		}
 	}

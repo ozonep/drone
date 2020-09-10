@@ -61,7 +61,7 @@ func (s *sender) Send(ctx context.Context, in *core.WebhookData) error {
 	if len(s.Endpoints) == 0 {
 		return nil
 	}
-	if s.match(in.Event, in.Action) == false {
+	if !s.match(in.Event, in.Action) {
 		return nil
 	}
 	wrapper := payload{

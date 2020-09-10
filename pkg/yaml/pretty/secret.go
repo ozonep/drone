@@ -34,7 +34,7 @@ func printSecret(w writer, v *yaml.Secret) {
 		w.WriteTagValue("name", v.Name)
 		printData(w, v.Data)
 	}
-	if isSecretGetEmpty(v.Get) == false {
+	if !isSecretGetEmpty(v.Get) {
 		w.WriteTagValue("name", v.Name)
 		w.WriteByte('\n')
 		printGet(w, v.Get)

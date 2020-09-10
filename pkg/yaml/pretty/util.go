@@ -45,7 +45,7 @@ func isSlice(v interface{}) bool {
 func isZero(v interface{}) bool {
 	switch v := v.(type) {
 	case bool:
-		return v == false
+		return !v
 	case string:
 		return len(v) == 0
 	case int:

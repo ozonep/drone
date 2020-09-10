@@ -10,9 +10,9 @@ import (
 	"net/http/httptest"
 	"testing"
 
+	"github.com/golang/mock/gomock"
 	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/mock"
-	"github.com/golang/mock/gomock"
 )
 
 func TestHandleMetrics(t *testing.T) {
@@ -31,7 +31,7 @@ func TestHandleMetrics(t *testing.T) {
 		t.Errorf("Want status code %d, got %d", want, got)
 	}
 
-	if got, want := w.HeaderMap.Get("Content-Type"), "text/plain; version=0.0.4; charset=utf-8"; got != want {
+	if got, want := w.Header().Get("Content-Type"), "text/plain; version=0.0.4; charset=utf-8"; got != want {
 		t.Errorf("Want prometheus header %q, got %q", want, got)
 	}
 }

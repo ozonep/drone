@@ -116,7 +116,7 @@ func (t *triggerer) Trigger(ctx context.Context, repo *core.Repository, base *co
 		return nil, err
 	}
 
-	if user.Active == false {
+	if !user.Active {
 		logger.Infoln("trigger: skipping hook. repository owner is inactive")
 		return nil, nil
 	}
@@ -413,7 +413,7 @@ func (t *triggerer) Trigger(ctx context.Context, repo *core.Repository, base *co
 		if stage.Name == "" {
 			stage.Name = "default"
 		}
-		if verified == false {
+		if !verified {
 			stage.Status = core.StatusBlocked
 		} else if len(stage.DependsOn) == 0 {
 			stage.Status = core.StatusPending

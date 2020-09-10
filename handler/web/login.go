@@ -134,7 +134,7 @@ func HandleLogin(
 			return
 		}
 
-		if user.Active == false {
+		if !user.Active {
 			writeLoginErrorStr(w, r, "Account is not active")
 			return
 		}
@@ -197,10 +197,6 @@ func writeLoginError(w http.ResponseWriter, r *http.Request, err error) {
 
 func writeLoginErrorStr(w http.ResponseWriter, r *http.Request, s string) {
 	writeLoginError(w, r, errors.New(s))
-}
-
-func writeCookie(w http.ResponseWriter, cookie *http.Cookie) {
-	w.Header().Set("Set-Cookie", cookie.String()+"; SameSite=lax")
 }
 
 // HandleLoginForm creates and http.HandlerFunc that presents the

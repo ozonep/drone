@@ -22,7 +22,6 @@ import (
 	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/store/shared/db"
 
-	"github.com/hashicorp/go-multierror"
 	"github.com/sirupsen/logrus"
 )
 
@@ -147,20 +146,6 @@ func (s *setup) do(ctx context.Context, stage *core.Stage) error {
 	}
 
 	return nil
-}
-
-// TODO(bradrydzewski) this should really be encapsulated into a single
-// function call that internally uses a database transaction so that we
-// can rollback if any operations fail.
-func (s *setup) createSteps(ctx context.Context, stage *core.Stage) error {
-	var errs error
-	for _, step := range stage.Steps {
-		err := s.Steps.Create(ctx, step)
-		if err != nil {
-			errs = multierror.Append(errs, err)
-		}
-	}
-	return errs
 }
 
 // helper function that updates the build status from pending to running.

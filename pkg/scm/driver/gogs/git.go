@@ -121,14 +121,6 @@ func convertBranch(src *branch) *scm.Reference {
 	}
 }
 
-// func convertCommitList(src []*commit) []*scm.Commit {
-// 	dst := []*scm.Commit{}
-// 	for _, v := range src {
-// 		dst = append(dst, convertCommit(v))
-// 	}
-// 	return dst
-// }
-
 func convertCommit(src *commitDetail) *scm.Commit {
 	return &scm.Commit{
 		Sha:       src.Sha,

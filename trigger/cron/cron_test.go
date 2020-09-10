@@ -373,26 +373,6 @@ var (
 		Login: "octocat",
 	}
 
-	dummyBuild = &core.Build{
-		Number:       dummyRepo.Counter,
-		RepoID:       dummyRepo.ID,
-		Status:       core.StatusPending,
-		Event:        core.EventCron,
-		Link:         "https://github.com/octocat/Hello-World/commit/7fd1a60b01f91b314f59955a4e4d4e80d8edf11d",
-		Timestamp:    1299283200,
-		Message:      "first commit",
-		Before:       "553c2077f0edc3d5dc5d17262f6aa498e69d6f8e",
-		After:        "7fd1a60b01f91b314f59955a4e4d4e80d8edf11d",
-		Ref:          "refs/heads/master",
-		Source:       "master",
-		Target:       "master",
-		Author:       "octocat",
-		AuthorName:   "The Octocat",
-		AuthorEmail:  "octocat@hello-world.com",
-		AuthorAvatar: "https://avatars3.githubusercontent.com/u/583231",
-		Sender:       "octocat",
-	}
-
 	dummyRepo = &core.Repository{
 		ID:         1,
 		UID:        "1296269",

@@ -16,7 +16,6 @@ package web
 
 import (
 	"encoding/json"
-	"errors"
 	"net/http"
 	"os"
 	"strconv"
@@ -30,20 +29,6 @@ func init() {
 		os.Getenv("HTTP_JSON_INDENT"),
 	)
 }
-
-var (
-	// errInvalidToken is returned when the api request token is invalid.
-	errInvalidToken = errors.New("Invalid or missing token")
-
-	// errUnauthorized is returned when the user is not authorized.
-	errUnauthorized = errors.New("Unauthorized")
-
-	// errForbidden is returned when user access is forbidden.
-	errForbidden = errors.New("Forbidden")
-
-	// errNotFound is returned when a resource is not found.
-	errNotFound = errors.New("Not Found")
-)
 
 // Error represents a json-encoded API error.
 type Error struct {

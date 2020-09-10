@@ -14,7 +14,7 @@ import (
 	"github.com/ozonep/drone/pkg/runtime/engine"
 	"github.com/ozonep/drone/pkg/runtime/engine/docker/auth"
 
-	"k8s.io/api/core/v1"
+	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/util/wait"
 	"k8s.io/client-go/informers"
@@ -102,18 +102,6 @@ func (e *kubeEngine) Setup(ctx context.Context, spec *engine.Spec) error {
 			return err
 		}
 	}
-
-	// pv := toPersistentVolume(e.node, spec.Metadata.Namespace, spec.Metadata.Namespace, filepath.Join("/tmp", spec.Metadata.Namespace))
-	// _, err = e.client.CoreV1().PersistentVolumes().Create(pv)
-	// if err != nil {
-	// 	return err
-	// }
-
-	// pvc := toPersistentVolumeClaim(spec.Metadata.Namespace, spec.Metadata.Namespace)
-	// _, err = e.client.CoreV1().PersistentVolumeClaims(spec.Metadata.Namespace).Create(pvc)
-	// if err != nil {
-	// 	return err
-	// }
 
 	return nil
 }

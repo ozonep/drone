@@ -20,8 +20,8 @@ import (
 	"io"
 	"time"
 
-	"github.com/ozonep/drone/pkg/yaml/converter"
 	"github.com/ozonep/drone/core"
+	"github.com/ozonep/drone/pkg/yaml/converter"
 	"github.com/ozonep/drone/store/shared/db"
 
 	"github.com/hashicorp/go-multierror"
@@ -326,15 +326,14 @@ func (m *Manager) Details(ctx context.Context, id int64) (*Context, error) {
 	// secrets to the agent? If not, we should add
 	// unit tests.
 	for _, secret := range tmpSecrets {
-		if secret.PullRequest == false &&
+		if !secret.PullRequest &&
 			build.Event == core.EventPullRequest {
 			continue
 		}
 		secrets = append(secrets, secret)
 	}
 	for _, secret := range tmpGlobalSecrets {
-		if secret.PullRequest == false &&
-			build.Event == core.EventPullRequest {
+		if !secret.PullRequest && build.Event == core.EventPullRequest {
 			continue
 		}
 		secrets = append(secrets, secret)

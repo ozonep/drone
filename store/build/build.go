@@ -26,7 +26,7 @@ import (
 
 // regular expression to extract the pull request number
 // from the git ref (e.g. refs/pulls/{d}/head)
-var pr = regexp.MustCompile("\\d+")
+var pr = regexp.MustCompile(`\d+`)
 
 // New returns a new Buildcore.
 func New(db *db.DB) core.BuildStore {
@@ -531,18 +531,6 @@ WHERE EXISTS (
     AND stages.stage_status = 'running'
 )
 ORDER BY build_id ASC
-`
-
-// const queryRunningOLD = queryBase + `
-// FROM builds
-// WHERE build_status = 'running'
-// ORDER BY build_id ASC
-// `
-
-const queryAll = queryBase + `
-FROM builds
-WHERE build_id > :build_id
-LIMIT :limit OFFSET :offset
 `
 
 const stmtUpdate = `

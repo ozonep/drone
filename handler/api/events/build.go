@@ -33,11 +33,6 @@ import (
 // connection.
 var pingInterval = time.Second * 30
 
-// implements a 24-hour timeout for connections. This
-// should not be necessary, but is put in place just
-// in case we encounter dangling connections.
-var timeout = time.Hour * 24
-
 // HandleEvents creates an http.HandlerFunc that streams builds events
 // to the http.Response in an event stream format.
 func HandleEvents(

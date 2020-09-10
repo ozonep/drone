@@ -30,7 +30,7 @@ func TestDag(t *testing.T) {
 	dag.Add("backend", "frontend")
 	dag.Add("frontend", "backend")
 	dag.Add("notify", "backend", "frontend")
-	if dag.DetectCycles() == false {
+	if !dag.DetectCycles() {
 		t.Errorf("Expect cycles detected")
 	}
 
@@ -38,7 +38,7 @@ func TestDag(t *testing.T) {
 	dag.Add("backend", "backend")
 	dag.Add("frontend", "backend")
 	dag.Add("notify", "backend", "frontend")
-	if dag.DetectCycles() == false {
+	if !dag.DetectCycles() {
 		t.Errorf("Expect cycles detected")
 	}
 
@@ -46,7 +46,7 @@ func TestDag(t *testing.T) {
 	dag.Add("backend")
 	dag.Add("frontend")
 	dag.Add("notify", "backend", "frontend", "notify")
-	if dag.DetectCycles() == false {
+	if !dag.DetectCycles() {
 		t.Errorf("Expect cycles detected")
 	}
 }

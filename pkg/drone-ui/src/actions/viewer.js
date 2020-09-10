@@ -87,7 +87,7 @@ export const syncPoll = async context => {
     if (req.status > 299) {
       clearInterval(interval);
       context.commit(VIEWER_SYNC_FAILURE, res);
-    } else if (res.syncing === false) {
+    } else if (!res.syncing) {
       clearInterval(interval);
       context.commit(VIEWER_SYNC_SUCCESS, res);
       context.dispatch("fetchReposLatest");

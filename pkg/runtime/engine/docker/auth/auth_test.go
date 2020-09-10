@@ -114,7 +114,7 @@ func TestEncode(t *testing.T) {
 		return
 	}
 	want := []byte(`{"username":"octocat","password":"correct-horse-battery-staple"}`)
-	if bytes.Equal(got, want) == false {
+	if !bytes.Equal(got, want) {
 		t.Errorf("Could not decode credential header")
 	}
 }
@@ -129,7 +129,7 @@ func TestMarshal(t *testing.T) {
 	}
 	got, _ := Marshal(auths)
 	want := []byte(`{"auths":{"index.docker.io":{"auth":"b2N0b2NhdDpjb3JyZWN0LWhvcnNlLWJhdHRlcnktc3RhcGxl"}}}`)
-	if bytes.Equal(got, want) == false {
+	if !bytes.Equal(got, want) {
 		t.Errorf("Could not decode credential header")
 	}
 }

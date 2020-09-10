@@ -53,7 +53,7 @@ func New(
 func (s *Service) Create(ctx context.Context, user *core.User, repo *core.Repository) (*core.Netrc, error) {
 	// if the repository is public and private mode is disabled,
 	// authentication is not required.
-	if repo.Private == false && s.private == false {
+	if !repo.Private && !s.private {
 		return nil, nil
 	}
 

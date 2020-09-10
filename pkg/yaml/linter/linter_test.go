@@ -232,14 +232,14 @@ func TestLint(t *testing.T) {
 			}
 
 			err = Lint(resources.Resources[0], test.trusted)
-			if err == nil && test.invalid == true {
+			if err == nil && test.invalid {
 				t.Logf("yaml: %s", test.path)
 				t.Logf("trusted: %v", test.trusted)
 				t.Errorf("Expect lint error")
 				return
 			}
 
-			if err != nil && test.invalid == false {
+			if err != nil && !test.invalid {
 				t.Logf("yaml: %s", test.path)
 				t.Logf("trusted: %v", test.trusted)
 				t.Errorf("Expect lint error is nil, got %s", err)

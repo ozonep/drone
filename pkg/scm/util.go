@@ -12,7 +12,7 @@ import (
 
 // regular expression to extract the pull request number
 // from the git ref (e.g. refs/pulls/{d}/head)
-var re = regexp.MustCompile("\\d+")
+var re = regexp.MustCompile(`\d+`)
 
 // Split splits the full repository name into segments.
 func Split(s string) (owner, name string) {

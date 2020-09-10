@@ -42,7 +42,7 @@ func convertRepository(src *scm.Repository, visibility string, trusted bool) *co
 // repository visibility based on the privacy flag.
 func convertVisibility(src *scm.Repository, visibility string) string {
 	switch {
-	case src.Private == true:
+	case src.Private:
 		return core.VisibilityPrivate
 	case visibility == core.VisibilityInternal:
 		return core.VisibilityInternal

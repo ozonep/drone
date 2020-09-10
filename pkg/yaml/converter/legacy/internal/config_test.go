@@ -66,7 +66,7 @@ func TestConvert(t *testing.T) {
 			t.Error(err)
 			return
 		}
-		if bytes.Equal(b, c) == false {
+		if !bytes.Equal(b, c) {
 			t.Errorf("Unexpected yaml conversion of %s", test.before)
 			dmp := diffmatchpatch.New()
 			diffs := dmp.DiffMain(string(b), string(c), false)
@@ -76,7 +76,7 @@ func TestConvert(t *testing.T) {
 }
 
 func TestWorkspacePath(t *testing.T) {
-	tests := []struct{
+	tests := []struct {
 		a string
 		b string
 	}{

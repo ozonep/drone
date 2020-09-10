@@ -51,7 +51,7 @@ func (r *renewer) Renew(ctx context.Context, user *core.User, force bool) error 
 		Refresh: user.Refresh,
 		Expires: time.Unix(user.Expiry, 0),
 	}
-	if expired(t) == false && force == false {
+	if !expired(t) && !force {
 		return nil
 	}
 	err := r.refresh.Refresh(t)

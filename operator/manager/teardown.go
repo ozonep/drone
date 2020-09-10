@@ -20,8 +20,8 @@ import (
 	"time"
 
 	"github.com/ozonep/drone/core"
-	"github.com/ozonep/drone/store/shared/db"
 	"github.com/ozonep/drone/pkg/scm"
+	"github.com/ozonep/drone/store/shared/db"
 
 	"github.com/hashicorp/go-multierror"
 	"github.com/sirupsen/logrus"
@@ -123,7 +123,7 @@ func (t *teardown) do(ctx context.Context, stage *core.Stage) error {
 	//
 	//
 
-	if isBuildComplete(stages) == false {
+	if !isBuildComplete(stages) {
 		logger.Debugln("manager: build pending completion of additional stages")
 		return nil
 	}
@@ -230,17 +230,17 @@ func (t *teardown) cancelDownstream(
 		}
 
 		var skip bool
-		if failed == true && s.OnFailure == false {
+		if failed && !s.OnFailure {
 			skip = true
 		}
-		if failed == false && s.OnSuccess == false {
+		if !failed && !s.OnSuccess {
 			skip = true
 		}
-		if skip == false {
+		if !skip {
 			continue
 		}
 
-		if areDepsComplete(s, stages) == false {
+		if !areDepsComplete(s, stages) {
 			continue
 		}
 
@@ -288,17 +288,9 @@ func (t *teardown) scheduleDownstream(
 				continue
 			}
 
-			// PROBLEM: isDep only checks the direct parent
-			// i think ....
-			// if isDep(stage, sibling) == false {
-			// 	continue
-			// }
-			if areDepsComplete(sibling, stages) == false {
+			if !areDepsComplete(sibling, stages) {
 				continue
 			}
-			// if isLastDep(stage, sibling, stages) == false {
-			// 	continue
-			// }
 
 			logger := logrus.WithFields(
 				logrus.Fields{

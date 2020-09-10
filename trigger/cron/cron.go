@@ -131,7 +131,7 @@ func (s *Scheduler) run(ctx context.Context) error {
 			continue
 		}
 
-		if repo.Active == false {
+		if !repo.Active {
 			logger.Traceln("cron: skip inactive repository")
 			continue
 		}

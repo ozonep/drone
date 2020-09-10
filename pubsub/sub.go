@@ -42,7 +42,7 @@ func (s *subscriber) publish(event *core.Message) {
 
 func (s *subscriber) close() {
 	s.Lock()
-	if s.done == false {
+	if !s.done {
 		close(s.quit)
 		s.done = true
 	}

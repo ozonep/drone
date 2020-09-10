@@ -80,7 +80,7 @@ func (s *service) Membership(ctx context.Context, user *core.User, name string) 
 		return false, false, err
 	}
 	switch {
-	case out.Active == false:
+	case !out.Active:
 		return false, false, nil
 	case out.Role == scm.RoleUndefined:
 		return false, false, nil

@@ -59,7 +59,7 @@ func NewClient(server, token string) *Client {
 // connectivity issues and want to monitor disconnects,
 // reconnects, and retries.
 func (s *Client) SetDebug(debug bool) {
-	if debug == true {
+	if debug {
 		s.client.Logger = log.New(os.Stderr, "", log.LstdFlags)
 	} else {
 		s.client.Logger = nil

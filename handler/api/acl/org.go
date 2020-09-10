@@ -62,13 +62,13 @@ func CheckMembership(service core.OrganizationService, admin bool) func(http.Han
 				WithField("organization.member", isMember).
 				WithField("organization.admin", isAdmin)
 
-			if isMember == false {
+			if !isMember {
 				render.Unauthorized(w, errors.ErrNotFound)
 				log.Debugln("api: organization membership is required")
 				return
 			}
 
-			if isAdmin == false && admin == true {
+			if !isAdmin && admin {
 				render.Unauthorized(w, errors.ErrNotFound)
 				log.Debugln("api: organization administrator is required")
 				return

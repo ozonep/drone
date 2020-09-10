@@ -266,8 +266,8 @@ func isPlatformEmpty(v yaml.Platform) bool {
 // object is empty.
 func isCloneEmpty(v yaml.Clone) bool {
 	return v.Depth == 0 &&
-		v.Disable == false &&
-		v.SkipVerify == false
+		!v.Disable &&
+		!v.SkipVerify
 }
 
 // helper function returns true if the concurrency

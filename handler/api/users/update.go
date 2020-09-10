@@ -62,7 +62,7 @@ func HandleUpdate(users core.UserStore, transferer core.Transferer) http.Handler
 			// if the user is inactive we should always
 			// disable administrative privileges since
 			// the user may still have some API access.
-			if user.Active == false {
+			if !user.Active {
 				user.Admin = false
 			}
 		}

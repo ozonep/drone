@@ -17,12 +17,12 @@ func TestIsSerial(t *testing.T) {
 			{Metadata: engine.Metadata{Name: "test"}},
 		},
 	}
-	if isSerial(spec) == false {
+	if !isSerial(spec) {
 		t.Errorf("Expect is serial true")
 	}
 
 	spec.Steps[1].DependsOn = []string{"build"}
-	if isSerial(spec) == true {
+	if isSerial(spec) {
 		t.Errorf("Expect is serial false")
 	}
 }

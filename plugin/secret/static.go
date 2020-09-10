@@ -38,7 +38,7 @@ func (c *staticController) Find(ctx context.Context, in *core.SecretArgs) (*core
 		// The secret can be restricted to non-pull request
 		// events. If the secret is restricted, return
 		// empty results.
-		if secret.PullRequest == false &&
+		if !secret.PullRequest &&
 			in.Build.Event == core.EventPullRequest {
 			continue
 		}

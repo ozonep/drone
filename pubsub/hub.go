@@ -54,13 +54,11 @@ func (h *hub) Subscribe(ctx context.Context) (<-chan *core.Message, <-chan error
 	errc := make(chan error)
 	go func() {
 		defer close(errc)
-		select {
-		case <-ctx.Done():
-			h.Lock()
-			delete(h.subs, s)
-			h.Unlock()
-			s.close()
-		}
+		<-ctx.Done()
+		h.Lock()
+		delete(h.subs, s)
+		h.Unlock()
+		s.close()
 	}()
 	return s.handler, errc
 }

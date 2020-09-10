@@ -110,7 +110,7 @@ func (w *baseWriter) WriteTag(v interface{}) {
 }
 
 func (w *baseWriter) WriteTagValue(k, v interface{}) {
-	if isZero(v) && w.zero == false {
+	if isZero(v) && !w.zero {
 		return
 	}
 	w.WriteTag(k)
@@ -165,7 +165,7 @@ func (w *indexWriter) WriteTag(v interface{}) {
 }
 
 func (w *indexWriter) WriteTagValue(k, v interface{}) {
-	if isZero(v) && w.zero == false {
+	if isZero(v) && !w.zero {
 		return
 	}
 	w.WriteTag(k)

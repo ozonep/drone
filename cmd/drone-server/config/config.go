@@ -97,6 +97,7 @@ type (
 		Pull       string `envconfig:"DRONE_GIT_IMAGE_PULL" default:"IfNotExists"`
 	}
 
+	// Cleanup does it
 	Cleanup struct {
 		Disabled bool          `envconfig:"DRONE_CLEANUP_DISABLED"`
 		Interval time.Duration `envconfig:"DRONE_CLEANUP_INTERVAL"         default:"24h"`

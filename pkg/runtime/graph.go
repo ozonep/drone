@@ -78,7 +78,7 @@ LOOP:
 			// if the dependency has not executed, the step
 			// is not ready for execution. Break to the
 			// next step in the specification list.
-			if state.state == nil || state.state.Exited == false {
+			if state.state == nil || !state.state.Exited {
 				break LOOP
 			}
 		}

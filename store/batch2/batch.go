@@ -304,20 +304,6 @@ UPDATE repos SET
 WHERE repo_id=:repo_id
 `
 
-const repoUpdateRemoteStmtPostgres = `
-UPDATE repos SET
- repo_namespace=$1
-,repo_name=$2
-,repo_slug=$3
-,repo_clone_url=$4
-,repo_ssh_url=$5
-,repo_html_url=$6
-,repo_private=$7
-,repo_branch=$8
-,repo_updated=$9
-WHERE repo_id=$10
-`
-
 const permInsertIgnoreStmt = `
 INSERT OR IGNORE INTO perms (
  perm_user_id

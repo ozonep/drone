@@ -177,7 +177,7 @@ func (c *Compiler) Compile(from *yaml.Pipeline) *engine.Spec {
 		// if the clone step is enabled, the service should
 		// not start until the clone step is complete. Add
 		// the clone step as a dependency in the graph.
-		if isSerial == false && from.Clone.Disable == false {
+		if !isSerial && !from.Clone.Disable {
 			step.DependsOn = append(step.DependsOn, cloneStepName)
 		}
 		spec.Steps = append(spec.Steps, step)
@@ -216,7 +216,7 @@ func (c *Compiler) Compile(from *yaml.Pipeline) *engine.Spec {
 		// not start until the clone step is complete. If
 		// no dependencies are defined, at a minimum, the
 		// step depends on the initial clone step completing.
-		if isSerial == false && from.Clone.Disable == false && len(step.DependsOn) == 0 {
+		if !isSerial && !from.Clone.Disable && len(step.DependsOn) == 0 {
 			step.DependsOn = append(step.DependsOn, cloneStepName)
 		}
 		spec.Steps = append(spec.Steps, step)

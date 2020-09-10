@@ -32,21 +32,6 @@ func isBuildComplete(stages []*core.Stage) bool {
 	return true
 }
 
-func isLastStage(stage *core.Stage, stages []*core.Stage) bool {
-	for _, sibling := range stages {
-		if stage.Number == sibling.Number {
-			continue
-		}
-		if sibling.Updated > stage.Updated {
-			return false
-		} else if sibling.Updated == stage.Updated &&
-			sibling.Number > stage.Number {
-			return false
-		}
-	}
-	return true
-}
-
 func isDep(a *core.Stage, b *core.Stage) bool {
 	for _, name := range b.DependsOn {
 		if name == a.Name {

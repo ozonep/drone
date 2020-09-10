@@ -10,10 +10,10 @@ import (
 	"context"
 	"time"
 
-	"github.com/ozonep/drone/pkg/drone/plugin/secret"
-	"github.com/ozonep/drone/pkg/yaml"
 	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/logger"
+	"github.com/ozonep/drone/pkg/drone/plugin/secret"
+	"github.com/ozonep/drone/pkg/yaml"
 	"github.com/ozonep/drone/plugin/registry/auths"
 
 	droneapi "github.com/ozonep/drone/pkg/drone"
@@ -88,7 +88,7 @@ func (c *externalController) List(ctx context.Context, in *core.RegistryArgs) ([
 		// The secret can be restricted to non-pull request
 		// events. If the secret is restricted, return
 		// empty results.
-		if (res.Pull == false && res.PullRequest == false) &&
+		if (!res.Pull && !res.PullRequest) &&
 			in.Build.Event == core.EventPullRequest {
 			logger.WithError(err).Trace("image_pull_secrets: pull_request access denied")
 			return nil, nil

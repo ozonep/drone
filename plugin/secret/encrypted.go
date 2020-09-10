@@ -21,9 +21,9 @@ import (
 	"encoding/base64"
 	"errors"
 
-	"github.com/ozonep/drone/pkg/yaml"
 	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/logger"
+	"github.com/ozonep/drone/pkg/yaml"
 )
 
 // Encrypted returns a new encrypted Secret controller.
@@ -52,7 +52,7 @@ func (c *encrypted) Find(ctx context.Context, in *core.SecretArgs) (*core.Secret
 	// if the build event is a pull request and the source
 	// repository is a fork, the secret is not exposed to
 	// the pipeline, for security reasons.
-	if in.Repo.Private == false &&
+	if !in.Repo.Private &&
 		in.Build.Event == core.EventPullRequest &&
 		in.Build.Fork != "" {
 		logger.Trace("secret: encrypted: restricted from forks")

@@ -136,8 +136,6 @@ func (s *webhookService) parsePullRequestHook(data []byte) (scm.Webhook, error) 
 	case "edited":
 		dst.Action = scm.ActionUpdate
 	case "closed":
-		// if merged == true
-		//    dst.Action = scm.ActionMerge
 		dst.Action = scm.ActionClose
 	case "reopened":
 		dst.Action = scm.ActionReopen
@@ -423,4 +421,4 @@ func convertDeploymentHook(src *deploymentHook) *scm.DeployHook {
 
 // regexp help determine if the named git object is a tag.
 // this is not meant to be 100% accurate.
-var tagRE = regexp.MustCompile("^v?(\\d+).(.+)")
+var tagRE = regexp.MustCompile(`^v?(\d+).(.+)`)
