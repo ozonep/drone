@@ -6,8 +6,8 @@ package mock_engine
 
 import (
 	context "context"
-	engine "github.com/ozonep/drone/pkg/runtime/engine"
 	gomock "github.com/golang/mock/gomock"
+	engine "github.com/ozonep/drone/pkg/runtime/engine"
 	io "io"
 	reflect "reflect"
 )
@@ -37,6 +37,7 @@ func (m *MockEngine) EXPECT() *MockEngineMockRecorder {
 
 // Setup mocks base method
 func (m *MockEngine) Setup(arg0 context.Context, arg1 *engine.Spec) error {
+	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Setup", arg0, arg1)
 	ret0, _ := ret[0].(error)
 	return ret0
@@ -44,11 +45,13 @@ func (m *MockEngine) Setup(arg0 context.Context, arg1 *engine.Spec) error {
 
 // Setup indicates an expected call of Setup
 func (mr *MockEngineMockRecorder) Setup(arg0, arg1 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Setup", reflect.TypeOf((*MockEngine)(nil).Setup), arg0, arg1)
 }
 
 // Create mocks base method
 func (m *MockEngine) Create(arg0 context.Context, arg1 *engine.Spec, arg2 *engine.Step) error {
+	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Create", arg0, arg1, arg2)
 	ret0, _ := ret[0].(error)
 	return ret0
@@ -56,11 +59,13 @@ func (m *MockEngine) Create(arg0 context.Context, arg1 *engine.Spec, arg2 *engin
 
 // Create indicates an expected call of Create
 func (mr *MockEngineMockRecorder) Create(arg0, arg1, arg2 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Create", reflect.TypeOf((*MockEngine)(nil).Create), arg0, arg1, arg2)
 }
 
 // Start mocks base method
 func (m *MockEngine) Start(arg0 context.Context, arg1 *engine.Spec, arg2 *engine.Step) error {
+	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Start", arg0, arg1, arg2)
 	ret0, _ := ret[0].(error)
 	return ret0
@@ -68,11 +73,13 @@ func (m *MockEngine) Start(arg0 context.Context, arg1 *engine.Spec, arg2 *engine
 
 // Start indicates an expected call of Start
 func (mr *MockEngineMockRecorder) Start(arg0, arg1, arg2 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Start", reflect.TypeOf((*MockEngine)(nil).Start), arg0, arg1, arg2)
 }
 
 // Wait mocks base method
 func (m *MockEngine) Wait(arg0 context.Context, arg1 *engine.Spec, arg2 *engine.Step) (*engine.State, error) {
+	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Wait", arg0, arg1, arg2)
 	ret0, _ := ret[0].(*engine.State)
 	ret1, _ := ret[1].(error)
@@ -81,11 +88,13 @@ func (m *MockEngine) Wait(arg0 context.Context, arg1 *engine.Spec, arg2 *engine.
 
 // Wait indicates an expected call of Wait
 func (mr *MockEngineMockRecorder) Wait(arg0, arg1, arg2 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Wait", reflect.TypeOf((*MockEngine)(nil).Wait), arg0, arg1, arg2)
 }
 
 // Tail mocks base method
 func (m *MockEngine) Tail(arg0 context.Context, arg1 *engine.Spec, arg2 *engine.Step) (io.ReadCloser, error) {
+	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Tail", arg0, arg1, arg2)
 	ret0, _ := ret[0].(io.ReadCloser)
 	ret1, _ := ret[1].(error)
@@ -94,11 +103,13 @@ func (m *MockEngine) Tail(arg0 context.Context, arg1 *engine.Spec, arg2 *engine.
 
 // Tail indicates an expected call of Tail
 func (mr *MockEngineMockRecorder) Tail(arg0, arg1, arg2 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Tail", reflect.TypeOf((*MockEngine)(nil).Tail), arg0, arg1, arg2)
 }
 
 // Destroy mocks base method
 func (m *MockEngine) Destroy(arg0 context.Context, arg1 *engine.Spec) error {
+	m.ctrl.T.Helper()
 	ret := m.ctrl.Call(m, "Destroy", arg0, arg1)
 	ret0, _ := ret[0].(error)
 	return ret0
@@ -106,5 +117,6 @@ func (m *MockEngine) Destroy(arg0 context.Context, arg1 *engine.Spec) error {
 
 // Destroy indicates an expected call of Destroy
 func (mr *MockEngineMockRecorder) Destroy(arg0, arg1 interface{}) *gomock.Call {
+	mr.mock.ctrl.T.Helper()
 	return mr.mock.ctrl.RecordCallWithMethodType(mr.mock, "Destroy", reflect.TypeOf((*MockEngine)(nil).Destroy), arg0, arg1)
 }
