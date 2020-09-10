@@ -90,7 +90,7 @@ func TestHandleCreate_ValidationError(t *testing.T) {
 		t.Errorf("Want response code %d, got %d", want, got)
 	}
 
-	got, want := &errors.Error{}, &errors.Error{Message: "Invalid Cronjob Name"}
+	got, want := &errors.Error{}, &errors.Error{Message: "invalid cronjob name"}
 	json.NewDecoder(w.Body).Decode(got)
 	if diff := cmp.Diff(got, want); len(diff) != 0 {
 		t.Errorf(diff)
@@ -122,7 +122,7 @@ func TestHandleCreate_BadExpression(t *testing.T) {
 		t.Errorf("Want response code %d, got %d", want, got)
 	}
 
-	got, want := &errors.Error{}, &errors.Error{Message: "Invalid Cronjob Expression"}
+	got, want := &errors.Error{}, &errors.Error{Message: "invalid cronjob expression"}
 	json.NewDecoder(w.Body).Decode(got)
 	if diff := cmp.Diff(got, want); len(diff) != 0 {
 		t.Errorf(diff)

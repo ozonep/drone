@@ -75,7 +75,7 @@ func TestHandleCreate_ValidationError(t *testing.T) {
 		t.Errorf("Want response code %d, got %d", want, got)
 	}
 
-	got, want := &errors.Error{}, &errors.Error{Message: "Invalid Secret Name"}
+	got, want := &errors.Error{}, &errors.Error{Message: "invalid secret name"}
 	json.NewDecoder(w.Body).Decode(got)
 	if diff := cmp.Diff(got, want); len(diff) != 0 {
 		t.Errorf(diff)

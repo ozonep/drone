@@ -89,7 +89,7 @@ func TestHandleUpdate_ValidationError(t *testing.T) {
 		t.Errorf("Want response code %d, got %d", want, got)
 	}
 
-	got, want := new(errors.Error), &errors.Error{Message: "Invalid Secret Value"}
+	got, want := new(errors.Error), &errors.Error{Message: "invalid secret value"}
 	json.NewDecoder(w.Body).Decode(got)
 	if diff := cmp.Diff(got, want); len(diff) != 0 {
 		t.Errorf(diff)
