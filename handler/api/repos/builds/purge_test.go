@@ -13,12 +13,12 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/ozonep/drone/handler/api/errors"
-	"github.com/ozonep/drone/handler/api/request"
-	"github.com/ozonep/drone/mock"
 	"github.com/go-chi/chi"
 	"github.com/golang/mock/gomock"
 	"github.com/google/go-cmp/cmp"
+	"github.com/ozonep/drone/handler/api/errors"
+	"github.com/ozonep/drone/handler/api/request"
+	"github.com/ozonep/drone/mock"
 )
 
 func TestPurge(t *testing.T) {

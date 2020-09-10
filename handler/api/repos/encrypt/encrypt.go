@@ -23,10 +23,10 @@ import (
 	"io"
 	"net/http"
 
-	"github.com/ozonep/drone/pkg/drone"
+	"github.com/go-chi/chi"
 	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/handler/api/render"
-	"github.com/go-chi/chi"
+	"github.com/ozonep/drone/pkg/drone"
 )
 
 type respEncrypted struct {

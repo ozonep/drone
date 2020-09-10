@@ -15,6 +15,8 @@
 package main
 
 import (
+	"strings"
+
 	"github.com/ozonep/drone/cmd/drone-server/config"
 	"github.com/ozonep/drone/pkg/login"
 	"github.com/ozonep/drone/pkg/login/bitbucket"
@@ -24,7 +26,6 @@ import (
 	"github.com/ozonep/drone/pkg/login/gogs"
 	"github.com/ozonep/drone/pkg/login/stash"
 	"github.com/ozonep/drone/pkg/scm/transport/oauth2"
-	"strings"
 
 	"github.com/google/wire"
 	"github.com/sirupsen/logrus"
@@ -93,7 +94,7 @@ func provideGiteaLogin(config config.Config) login.Middleware {
 	if config.Gitea.Server == "" {
 		return nil
 	}
-	return &gitea.Config {
+	return &gitea.Config{
 		ClientID:     config.Gitea.ClientID,
 		ClientSecret: config.Gitea.ClientSecret,
 		Server:       config.Gitea.Server,

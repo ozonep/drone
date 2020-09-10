@@ -20,8 +20,8 @@ import (
 	"sync"
 	"time"
 
-	"github.com/ozonep/drone/pkg/runtime/engine"
 	"github.com/natessilva/dag"
+	"github.com/ozonep/drone/pkg/runtime/engine"
 	"golang.org/x/sync/errgroup"
 )
 

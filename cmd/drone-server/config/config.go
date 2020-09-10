@@ -397,7 +397,7 @@ type (
 		PathStyle bool   `envconfig:"DRONE_S3_PATH_STYLE"`
 	}
 
-	//AzureBlob providers the storage configuration.
+	// AzureBlob providers the storage configuration.
 	AzureBlob struct {
 		ContainerName      string `envconfig:"DRONE_AZURE_BLOB_CONTAINER_NAME"`
 		StorageAccountName string `envconfig:"DRONE_AZURE_STORAGE_ACCOUNT_NAME"`

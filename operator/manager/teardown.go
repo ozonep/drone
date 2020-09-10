@@ -280,7 +280,6 @@ func (t *teardown) scheduleDownstream(
 	stage *core.Stage,
 	stages []*core.Stage,
 ) error {
-
 	var errs error
 	for _, sibling := range stages {
 		if sibling.Status == core.StatusWaiting {

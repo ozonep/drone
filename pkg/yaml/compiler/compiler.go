@@ -270,15 +270,6 @@ func (c *Compiler) gitCredentials() []byte {
 	return nil
 }
 
-// return a .netrc file. If the user-defined function is
-// nil, a nil netrc file is returned.
-func (c *Compiler) netrc() []byte {
-	if c.NetrcFunc != nil {
-		return c.NetrcFunc()
-	}
-	return nil
-}
-
 // return true if the step should be executed in privileged
 // mode. If the user-defined privileged function is nil,
 // a default value of false is returned.
@@ -305,7 +296,6 @@ func (c *Compiler) setupWorkspace(spec *engine.Spec) {
 		return
 	}
 	CreateWorkspace(spec)
-	return
 }
 
 func (c *Compiler) setupWorkspaceMount(step *engine.Step, base, path, full string) {

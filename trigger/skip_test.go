@@ -9,8 +9,8 @@ package trigger
 import (
 	"testing"
 
-	"github.com/ozonep/drone/pkg/yaml"
 	"github.com/ozonep/drone/core"
+	"github.com/ozonep/drone/pkg/yaml"
 )
 
 func Test_skipBranch(t *testing.T) {
@@ -84,54 +84,54 @@ func Test_skipEvent(t *testing.T) {
 }
 
 // func Test_skipPath(t *testing.T) {
-// 	tests := []struct {
-// 		config string
-// 		paths  []string
-// 		want   bool
-// 	}{
-// 		{
-// 			config: "trigger: { }",
-// 			paths:  []string{},
-// 			want:   false,
-// 		},
-// 		{
-// 			config: "trigger: { }",
-// 			paths:  []string{"README.md"},
-// 			want:   false,
-// 		},
-// 		{
-// 			config: "trigger: { paths: foo/* }",
-// 			paths:  []string{"foo/README"},
-// 			want:   false,
-// 		},
-// 		{
-// 			config: "trigger: { paths: foo/* }",
-// 			paths:  []string{"bar/README"},
-// 			want:   true,
-// 		},
-// 		// if empty changeset, never skip the pipeline
-// 		{
-// 			config: "trigger: { paths: foo/* }",
-// 			paths:  []string{},
-// 			want:   false,
-// 		},
-// 		// if max changeset, never skip the pipeline
-// 		{
-// 			config: "trigger: { paths: foo/* }",
-// 			paths:  make([]string, 400),
-// 			want:   false,
-// 		},
-// 	}
-// 	for i, test := range tests {
-// 		document, err := config.ParseString(test.config)
-// 		if err != nil {
-// 			t.Error(err)
-// 		}
-// 		got, want := skipPaths(document, test.paths), test.want
-// 		if got != want {
-// 			t.Errorf("Want test %d to return %v", i, want)
-// 		}
-// 	}
+//      tests := []struct {
+//              config string
+//              paths  []string
+//              want   bool
+//      }{
+//              {
+//                      config: "trigger: { }",
+//                      paths:  []string{},
+//                      want:   false,
+//              },
+//              {
+//                      config: "trigger: { }",
+//                      paths:  []string{"README.md"},
+//                      want:   false,
+//              },
+//              {
+//                      config: "trigger: { paths: foo/* }",
+//                      paths:  []string{"foo/README"},
+//                      want:   false,
+//              },
+//              {
+//                      config: "trigger: { paths: foo/* }",
+//                      paths:  []string{"bar/README"},
+//                      want:   true,
+//              },
+//              // if empty changeset, never skip the pipeline
+//              {
+//                      config: "trigger: { paths: foo/* }",
+//                      paths:  []string{},
+//                      want:   false,
+//              },
+//              // if max changeset, never skip the pipeline
+//              {
+//                      config: "trigger: { paths: foo/* }",
+//                      paths:  make([]string, 400),
+//                      want:   false,
+//              },
+//      }
+//      for i, test := range tests {
+//              document, err := config.ParseString(test.config)
+//              if err != nil {
+//                      t.Error(err)
+//              }
+//              got, want := skipPaths(document, test.paths), test.want
+//              if got != want {
+//                      t.Errorf("Want test %d to return %v", i, want)
+//              }
+//      }
 // }
 
 func Test_skipMessage(t *testing.T) {

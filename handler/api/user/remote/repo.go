@@ -17,12 +17,12 @@ package remote
 import (
 	"net/http"
 
+	"github.com/go-chi/chi"
 	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/handler/api/render"
 	"github.com/ozonep/drone/handler/api/request"
 	"github.com/ozonep/drone/logger"
-    "github.com/ozonep/drone/pkg/scm"
-	"github.com/go-chi/chi"
+	"github.com/ozonep/drone/pkg/scm"
 )
 
 // HandleRepo returns an http.HandlerFunc that writes a json-encoded

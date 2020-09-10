@@ -7,9 +7,9 @@ package kube
 import (
 	"bytes"
 
-	"github.com/ozonep/drone/pkg/runtime/engine"
 	"github.com/ghodss/yaml"
-	"k8s.io/api/core/v1"
+	"github.com/ozonep/drone/pkg/runtime/engine"
+	v1 "k8s.io/api/core/v1"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 )
 

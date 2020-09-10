@@ -17,6 +17,7 @@ package main
 import (
 	spec "github.com/ozonep/drone/cmd/drone-server/config"
 	"github.com/ozonep/drone/core"
+	"github.com/ozonep/drone/pkg/scm"
 	"github.com/ozonep/drone/plugin/admission"
 	"github.com/ozonep/drone/plugin/config"
 	"github.com/ozonep/drone/plugin/converter"
@@ -24,7 +25,6 @@ import (
 	"github.com/ozonep/drone/plugin/secret"
 	"github.com/ozonep/drone/plugin/validator"
 	"github.com/ozonep/drone/plugin/webhook"
-	"github.com/ozonep/drone/pkg/scm"
 
 	"github.com/google/wire"
 )

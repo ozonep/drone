@@ -29,7 +29,6 @@ func TestParse(t *testing.T) {
 	if err == nil {
 		t.Errorf("Want parse error, got nil")
 	}
-
 }
 
 func TestParseFile(t *testing.T) {

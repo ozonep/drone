@@ -12,7 +12,7 @@ import (
 
 	"github.com/ozonep/drone/core"
 
-	"github.com/hashicorp/golang-lru"
+	lru "github.com/hashicorp/golang-lru"
 )
 
 // content key pattern used in the cache, comprised of the

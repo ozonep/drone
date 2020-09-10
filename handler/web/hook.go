@@ -48,7 +48,6 @@ func HandleHook(
 	parser core.HookParser,
 ) http.HandlerFunc {
 	return func(w http.ResponseWriter, r *http.Request) {
-
 		if debugPrintHook {
 			// if DRONE_DEBUG_DUMP_HOOK=true print the http.Request
 			// headers and body to stdout.

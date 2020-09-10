@@ -49,7 +49,6 @@ func (s *contentService) Create(ctx context.Context, repo, path string, params *
 	}
 	res, err := s.client.do(ctx, "POST", endpoint, in, nil)
 	return res, err
-
 }
 
 func (s *contentService) Update(ctx context.Context, repo, path string, params *scm.ContentParams) (*scm.Response, error) {

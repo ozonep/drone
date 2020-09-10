@@ -17,8 +17,8 @@ package main
 import (
 	"github.com/ozonep/drone/cmd/drone-server/config"
 	"github.com/ozonep/drone/core"
-	"github.com/ozonep/drone/service/license"
 	"github.com/ozonep/drone/pkg/scm"
+	"github.com/ozonep/drone/service/license"
 
 	"github.com/google/wire"
 	"github.com/sirupsen/logrus"

@@ -154,7 +154,6 @@ func Migrate(db *sql.DB) error {
 	}
 	for _, migration := range migrations {
 		if _, ok := completed[migration.name]; ok {
-
 			continue
 		}
 
