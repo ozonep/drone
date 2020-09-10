@@ -192,6 +192,9 @@ func selectCompleted(db *sql.DB) (map[string]struct{}, error) {
 	defer rows.Close()
 	for rows.Next() {
 		var name string
+		if rows.Err() != nil {
+			return nil, err
+		}
 		if err := rows.Scan(&name); err != nil {
 			return nil, err
 		}

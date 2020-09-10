@@ -123,7 +123,7 @@ func (d *Datadog) do(ctx context.Context, unix int64) error {
 	}
 
 	endpoint := fmt.Sprintf("%s?api_key=%s", d.config.Endpoint, d.config.Token)
-	req, err := http.NewRequest("POST", endpoint, buf)
+	req, err := http.NewRequestWithContext(ctx, "POST", endpoint, buf)
 	if err != nil {
 		return err
 	}
