@@ -14,13 +14,13 @@
 
 // +build !oss
 
-package converter
+package config
 
 import (
 	"context"
 	"fmt"
 
-	"github.com/ozonep/drone/core"
+	"github.com/drone/drone/core"
 
 	lru "github.com/hashicorp/golang-lru"
 	"github.com/sirupsen/logrus"
@@ -34,22 +34,22 @@ const keyf = "%d|%d|%s|%s|%s|%s|%s"
 // This micro-optimization is intended for multi-pipeline
 // projects that would otherwise covert the file for each
 // pipeline execution.
-func Memoize(base core.ConvertService) core.ConvertService {
+func Memoize(base core.ConfigService) core.ConfigService {
 	// simple cache prevents the same yaml file from being
 	// requested multiple times in a short period.
-	cache, _ := lru.New(25)
+	cache, _ := lru.New(10)
 	return &memoize{base: base, cache: cache}
 }
 
 type memoize struct {
-	base  core.ConvertService
+	base  core.ConfigService
 	cache *lru.Cache
 }
 
-func (c *memoize) Convert(ctx context.Context, req *core.ConvertArgs) (*core.Config, error) {
+func (c *memoize) Find(ctx context.Context, req *core.ConfigArgs) (*core.Config, error) {
 	// this is a minor optimization that prevents caching if the
-	// base converter is a remote converter and is disabled.
-	if remote, ok := c.base.(*remote); ok && remote.client == nil {
+	// base converter is a global config service and is disabled.;
+	if global, ok := c.base.(*global); ok == true && global.client == nil {
 		return nil, nil
 	}
 
@@ -71,19 +71,19 @@ func (c *memoize) Convert(ctx context.Context, req *core.ConvertArgs) (*core.Con
 		WithField("rev", req.Build.After).
 		WithField("config", req.Repo.Config)
 
-	logger.Trace("extension: conversion: check cache")
+	logger.Trace("extension: configuration: check cache")
 
 	// check the cache for the file and return if exists.
 	cached, ok := c.cache.Get(key)
 	if ok {
-		logger.Trace("extension: conversion: cache hit")
+		logger.Trace("extension: configuration: cache hit")
 		return cached.(*core.Config), nil
 	}
 
-	logger.Trace("extension: conversion: cache miss")
+	logger.Trace("extension: configuration: cache miss")
 
-	// else convert the configuration file.
-	config, err := c.base.Convert(ctx, req)
+	// else find the configuration file.
+	config, err := c.base.Find(ctx, req)
 	if err != nil {
 		return nil, err
 	}
@@ -95,6 +95,7 @@ func (c *memoize) Convert(ctx context.Context, req *core.ConvertArgs) (*core.Con
 		return nil, nil
 	}
 
+	// if the configuration file was retrieved
 	// it is temporarily cached. Note that we do
 	// not cache if the commit sha is empty (gogs).
 	if req.Build.After != "" {

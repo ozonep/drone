@@ -710,7 +710,7 @@ func mockHandler(w http.ResponseWriter, r *http.Request) {
 		{
 			verb: "DELETE",
 			path: "/api/users/octocat",
-			code: 204,
+			code: http.StatusNoContent,
 		},
 		{
 			verb: "POST",
@@ -754,7 +754,7 @@ func mockHandler(w http.ResponseWriter, r *http.Request) {
 		{
 			verb: "POST",
 			path: "/api/repos/octocat/hello-world/repair",
-			code: 204,
+			code: http.StatusNoContent,
 		},
 		{
 			verb: "POST",
@@ -777,7 +777,7 @@ func mockHandler(w http.ResponseWriter, r *http.Request) {
 		{
 			verb: "DELETE",
 			path: "/api/repos/octocat/hello-world",
-			code: 204,
+			code: http.StatusNoContent,
 		},
 		//
 		// crons
@@ -797,12 +797,12 @@ func mockHandler(w http.ResponseWriter, r *http.Request) {
 		{
 			verb: "POST",
 			path: "/api/repos/octocat/hello-world/cron/nightly",
-			code: 204,
+			code: http.StatusNoContent,
 		},
 		{
 			verb: "DELETE",
 			path: "/api/repos/octocat/hello-world/cron/nightly",
-			code: 204,
+			code: http.StatusNoContent,
 		},
 		//
 		// builds
@@ -840,17 +840,17 @@ func mockHandler(w http.ResponseWriter, r *http.Request) {
 		{
 			verb: "DELETE",
 			path: "/api/repos/octocat/hello-world/builds/1",
-			code: 204,
+			code: http.StatusNoContent,
 		},
 		{
 			verb: "POST",
 			path: "/api/repos/octocat/hello-world/builds/1/approve/2",
-			code: 204,
+			code: http.StatusNoContent,
 		},
 		{
 			verb: "POST",
 			path: "/api/repos/octocat/hello-world/builds/1/decline/3",
-			code: 204,
+			code: http.StatusNoContent,
 		},
 		//
 		// logs
@@ -864,7 +864,7 @@ func mockHandler(w http.ResponseWriter, r *http.Request) {
 		{
 			verb: "DELETE",
 			path: "/api/repos/octocat/hello-world/builds/1/logs/2/3",
-			code: 204,
+			code: http.StatusNoContent,
 		},
 	}
 
@@ -877,8 +877,8 @@ func mockHandler(w http.ResponseWriter, r *http.Request) {
 		if route.path != path {
 			continue
 		}
-		if route.code == 204 {
-			w.WriteHeader(204)
+		if route.code == http.StatusNoContent {
+			w.WriteHeader(http.StatusNoContent)
 			return
 		}
 		body, err := ioutil.ReadFile(route.body)
@@ -889,5 +889,5 @@ func mockHandler(w http.ResponseWriter, r *http.Request) {
 		w.Write(body)
 		return
 	}
-	w.WriteHeader(404)
+	w.WriteHeader(http.StatusNotFound)
 }

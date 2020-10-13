@@ -10,14 +10,14 @@ import (
 	"context"
 	"time"
 
+	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/pkg/drone"
 	"github.com/ozonep/drone/pkg/drone/plugin/config"
-	"github.com/ozonep/drone/core"
 )
 
 // Global returns a configuration service that fetches the yaml
 // configuration from a remote endpoint.
-func Global(endpoint, signer string, skipVerify bool) core.ConfigService {
+func Global(endpoint, signer string, skipVerify bool, timeout time.Duration) core.ConfigService {
 	if endpoint == "" {
 		return new(global)
 	}
@@ -27,11 +27,13 @@ func Global(endpoint, signer string, skipVerify bool) core.ConfigService {
 			signer,
 			skipVerify,
 		),
+		timeout: timeout,
 	}
 }
 
 type global struct {
-	client config.Plugin
+	client  config.Plugin
+	timeout time.Duration
 }
 
 func (g *global) Find(ctx context.Context, in *core.ConfigArgs) (*core.Config, error) {
@@ -43,7 +45,7 @@ func (g *global) Find(ctx context.Context, in *core.ConfigArgs) (*core.Config, e
 	// hanging the build process indefinitely. The
 	// external service must return a request within
 	// one minute.
-	ctx, cancel := context.WithTimeout(ctx, time.Minute)
+	ctx, cancel := context.WithTimeout(ctx, g.timeout)
 	defer cancel()
 
 	req := &config.Request{

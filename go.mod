@@ -30,6 +30,8 @@ require (
 	github.com/docker/docker v17.12.0-ce-rc1.0.20200330121334-7f8b4b621b5d+incompatible
 	github.com/docker/go-connections v0.4.0 // indirect
 	github.com/docker/go-units v0.4.0
+	github.com/drone/drone v1.9.1
+	github.com/drone/go-scm v1.7.1-0.20200621203823-3731ec1f1136
 	github.com/dustin/go-humanize v1.0.0
 	github.com/ghodss/yaml v1.0.0
 	github.com/go-chi/chi v4.1.2+incompatible
@@ -93,7 +95,7 @@ require (
 	gotest.tools v2.2.0+incompatible // indirect
 	k8s.io/api v0.16.15
 	k8s.io/apimachinery v0.16.15
-	k8s.io/client-go v0.16.15
+	k8s.io/client-go v10.0.0+incompatible
 	sigs.k8s.io/yaml v1.2.0 // indirect
 )
 

@@ -17,19 +17,13 @@
 package config
 
 import (
-	"context"
-	"time"
-
-	"github.com/ozonep/drone/core"
+	"github.com/drone/drone/core"
 )
 
-// Global returns a no-op configuration service.
-func Global(string, string, bool, time.Duration) core.ConfigService {
+// Memoize caches the conversion results for subsequent calls.
+// This micro-optimization is intended for multi-pipeline
+// projects that would otherwise covert the file for each
+// pipeline execution.
+func Memoize(base core.ConfigService) core.ConfigService {
 	return new(noop)
-}
-
-type noop struct{}
-
-func (noop) Find(context.Context, *core.ConfigArgs) (*core.Config, error) {
-	return nil, nil
 }

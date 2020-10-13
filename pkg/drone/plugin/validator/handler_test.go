@@ -56,7 +56,7 @@ func TestHandler(t *testing.T) {
 	handler := Handler(key, plugin, nil)
 	handler.ServeHTTP(res, req)
 
-	if got, want := res.Code, 204; got != want {
+	if got, want := res.Code, http.StatusNoContent; got != want {
 		t.Errorf("Want status code %d, got %d", want, got)
 	}
 }
@@ -87,7 +87,7 @@ func TestHandler_Error(t *testing.T) {
 	handler := Handler(key, plugin, nil)
 	handler.ServeHTTP(res, req)
 
-	if got, want := res.Code, 400; got != want {
+	if got, want := res.Code, http.StatusBadRequest; got != want {
 		t.Errorf("Want status code %d, got %d", want, got)
 	}
 

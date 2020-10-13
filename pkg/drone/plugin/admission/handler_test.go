@@ -93,7 +93,7 @@ func TestHandler_NoContent(t *testing.T) {
 	handler := Handler(plugin, key, nil)
 	handler.ServeHTTP(res, req)
 
-	if got, want := res.Code, 204; got != want {
+	if got, want := res.Code, http.StatusNoContent; got != want {
 		t.Errorf("Want status code %d, got %d", want, got)
 	}
 }
@@ -122,7 +122,7 @@ func TestHandler_AccessDenied(t *testing.T) {
 	handler := Handler(plugin, key, nil)
 	handler.ServeHTTP(res, req)
 
-	if got, want := res.Code, 403; got != want {
+	if got, want := res.Code, http.StatusForbidden; got != want {
 		t.Errorf("Want status code %d, got %d", want, got)
 	}
 

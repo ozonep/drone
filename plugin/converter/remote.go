@@ -11,14 +11,14 @@ import (
 	"strings"
 	"time"
 
+	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/pkg/drone"
 	"github.com/ozonep/drone/pkg/drone/plugin/converter"
-	"github.com/ozonep/drone/core"
 )
 
 // Remote returns a conversion service that converts the
 // configuration file using a remote http service.
-func Remote(endpoint, signer, extension string, skipVerify bool) core.ConvertService {
+func Remote(endpoint, signer, extension string, skipVerify bool, timeout time.Duration) core.ConvertService {
 	if endpoint == "" {
 		return new(remote)
 	}
@@ -29,12 +29,14 @@ func Remote(endpoint, signer, extension string, skipVerify bool) core.ConvertSer
 			signer,
 			skipVerify,
 		),
+		timeout: timeout,
 	}
 }
 
 type remote struct {
 	client    converter.Plugin
 	extension string
+	timeout   time.Duration
 }
 
 func (g *remote) Convert(ctx context.Context, in *core.ConvertArgs) (*core.Config, error) {
@@ -50,7 +52,7 @@ func (g *remote) Convert(ctx context.Context, in *core.ConvertArgs) (*core.Confi
 	// hanging the build process indefinitely. The
 	// external service must return a request within
 	// one minute.
-	ctx, cancel := context.WithTimeout(ctx, time.Minute)
+	ctx, cancel := context.WithTimeout(ctx, g.timeout)
 	defer cancel()
 
 	req := &converter.Request{
