@@ -18,7 +18,6 @@ ENV DRONE_RUNNER_ARCH=amd64
 ENV DRONE_SERVER_PORT=:80
 ENV DRONE_SERVER_HOST=localhost
 ENV DRONE_DATADOG_ENABLED=false
-COPY --from=alpine /etc/ssl/certs/ca-certificates.crt /etc/ssl/certs/
 COPY --from=buster /go/src/github.com/ozonep/drone/release/linux/amd64/drone-server /bin/
 ENTRYPOINT ["/bin/drone-server"]
 

@@ -173,7 +173,7 @@ func TestToNetConfig(t *testing.T) {
 	a := toNetConfig(spec, step)
 	b := &network.NetworkingConfig{
 		EndpointsConfig: map[string]*network.EndpointSettings{
-			"abc123": &network.EndpointSettings{
+			"abc123": {
 				Aliases:   []string{"redis"},
 				NetworkID: "abc123"},
 		},
