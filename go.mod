@@ -15,13 +15,13 @@ require (
 	github.com/Azure/azure-pipeline-go v0.2.3 // indirect
 	github.com/Azure/azure-storage-blob-go v0.10.0
 	github.com/Azure/go-ansiterm v0.0.0-20170929234023-d6e3b3328b78 // indirect
-	github.com/Azure/go-autorest/autorest/adal v0.9.2 // indirect
-	github.com/Microsoft/go-winio v0.4.15-0.20200113171025-3fe6c5262873 // indirect
+	github.com/Azure/go-autorest/autorest/adal v0.9.5 // indirect
+	github.com/Microsoft/go-winio v0.4.15-0.20200908182639-5b44b70ab3ab // indirect
 	github.com/asaskevich/govalidator v0.0.0-20200907205600-7a23bdc65eef
-	github.com/aws/aws-sdk-go v1.34.18
+	github.com/aws/aws-sdk-go v1.35.7
 	github.com/bmatcuk/doublestar v1.3.2
 	github.com/buildkite/yaml v2.1.0+incompatible
-	github.com/containerd/containerd v1.4.0 // indirect
+	github.com/containerd/containerd v1.4.1 // indirect
 	github.com/coreos/go-semver v0.3.0
 	github.com/dchest/authcookie v0.0.0-20190824115100-f900d2294c8e
 	github.com/dchest/uniuri v0.0.0-20200228104902-7aecb25e1fe5
@@ -30,8 +30,6 @@ require (
 	github.com/docker/docker v17.12.0-ce-rc1.0.20200330121334-7f8b4b621b5d+incompatible
 	github.com/docker/go-connections v0.4.0 // indirect
 	github.com/docker/go-units v0.4.0
-	github.com/drone/drone v1.9.1
-	github.com/drone/go-scm v1.7.1-0.20200621203823-3731ec1f1136
 	github.com/dustin/go-humanize v1.0.0
 	github.com/ghodss/yaml v1.0.0
 	github.com/go-chi/chi v4.1.2+incompatible
@@ -50,7 +48,6 @@ require (
 	github.com/gosimple/slug v1.9.0
 	github.com/h2non/gock v1.0.15
 	github.com/hashicorp/cronexpr v1.1.1 // indirect
-	github.com/hashicorp/go-hclog v0.14.1 // indirect
 	github.com/hashicorp/go-multierror v1.1.0
 	github.com/hashicorp/go-retryablehttp v0.6.7
 	github.com/hashicorp/golang-lru v0.5.4
@@ -62,10 +59,8 @@ require (
 	github.com/kr/pretty v0.2.1 // indirect
 	github.com/kr/text v0.2.0 // indirect
 	github.com/lib/pq v1.8.0
-	github.com/mattn/go-colorable v0.1.7 // indirect
 	github.com/mattn/go-isatty v0.0.12
 	github.com/mattn/go-sqlite3 v1.14.2
-	github.com/mitchellh/go-testing-interface v1.14.1 // indirect
 	github.com/morikuni/aec v1.0.0 // indirect
 	github.com/natessilva/dag v0.0.0-20180124060714-7194b8dcc5c4
 	github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e // indirect
@@ -81,7 +76,7 @@ require (
 	github.com/stretchr/testify v1.6.1
 	github.com/unrolled/secure v1.0.8
 	github.com/vinzenz/yaml v0.0.0-20170920082545-91409cdd725d
-	golang.org/x/crypto v0.0.0-20200820211705-5c72a883971a
+	golang.org/x/crypto v0.0.0-20201002170205-7f63de1d35b0
 	golang.org/x/net v0.0.0-20200904194848-62affa334b73 // indirect
 	golang.org/x/oauth2 v0.0.0-20200902213428-5d25da1a8d43 // indirect
 	golang.org/x/sync v0.0.0-20200625203802-6e8e738ad208
