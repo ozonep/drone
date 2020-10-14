@@ -49,7 +49,7 @@ type memoize struct {
 func (c *memoize) Find(ctx context.Context, req *core.ConfigArgs) (*core.Config, error) {
 	// this is a minor optimization that prevents caching if the
 	// base converter is a global config service and is disabled.;
-	if global, ok := c.base.(*global); ok == true && global.client == nil {
+	if global, ok := c.base.(*global); ok && global.client == nil {
 		return nil, nil
 	}
 

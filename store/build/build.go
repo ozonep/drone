@@ -252,6 +252,9 @@ func (s *buildStore) create(ctx context.Context, build *core.Build, stages []*co
 				return err
 			}
 			stage.ID, err = res.LastInsertId()
+			if err != nil {
+				return err
+			}
 		}
 		return err
 	})

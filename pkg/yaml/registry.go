@@ -21,7 +21,7 @@ type (
 	// registry credentials and pointers to external
 	// registry credentials (e.g. from vault).
 	Registry struct {
-		Version string `json:"version,omitempt"`
+		Version string `json:"version,omitempty"`
 		Kind    string `json:"kind,omitempty"`
 		Type    string `json:"type,omitempty"`
 
