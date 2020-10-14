@@ -8,8 +8,8 @@ import (
 	"bytes"
 	"testing"
 
-	"github.com/ozonep/drone/pkg/runtime/engine"
 	"github.com/ozonep/drone/pkg/runtime"
+	"github.com/ozonep/drone/pkg/runtime/engine"
 )
 
 func TestWriteLine(t *testing.T) {

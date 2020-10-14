@@ -18,10 +18,10 @@ import (
 	"context"
 	"testing"
 
-	"github.com/ozonep/drone/mock"
-	"github.com/ozonep/drone/version"
 	"github.com/golang/mock/gomock"
 	"github.com/h2non/gock"
+	"github.com/ozonep/drone/mock"
+	"github.com/ozonep/drone/version"
 )
 
 var noContext = context.Background()

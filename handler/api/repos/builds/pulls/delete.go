@@ -18,10 +18,10 @@ import (
 	"net/http"
 	"strconv"
 
+	"github.com/go-chi/chi"
 	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/handler/api/render"
 	"github.com/ozonep/drone/logger"
-	"github.com/go-chi/chi"
 )
 
 // HandleDelete returns an http.HandlerFunc that handles an

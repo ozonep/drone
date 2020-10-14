@@ -17,8 +17,8 @@
 package main
 
 import (
-	"github.com/ozonep/drone/cmd/drone-server/config"
 	"github.com/google/wire"
+	"github.com/ozonep/drone/cmd/drone-server/config"
 )
 
 func InitializeApplication(config config.Config) (application, error) {

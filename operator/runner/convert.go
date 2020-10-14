@@ -17,9 +17,9 @@ package runner
 import (
 	"strings"
 
-	"github.com/ozonep/drone/pkg/runtime/engine"
-	"github.com/ozonep/drone/pkg/runtime"
 	"github.com/ozonep/drone/core"
+	"github.com/ozonep/drone/pkg/runtime"
+	"github.com/ozonep/drone/pkg/runtime/engine"
 )
 
 func convertVolumes(from []string) map[string]string {

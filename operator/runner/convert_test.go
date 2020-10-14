@@ -7,10 +7,10 @@ package runner
 import (
 	"testing"
 
-	"github.com/ozonep/drone/pkg/runtime/engine"
-	"github.com/ozonep/drone/pkg/runtime"
-	"github.com/ozonep/drone/core"
 	"github.com/google/go-cmp/cmp"
+	"github.com/ozonep/drone/core"
+	"github.com/ozonep/drone/pkg/runtime"
+	"github.com/ozonep/drone/pkg/runtime/engine"
 )
 
 // func Test_convertSecrets(t *testing.T) {

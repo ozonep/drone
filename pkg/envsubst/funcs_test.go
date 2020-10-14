@@ -93,9 +93,9 @@ func Test_substr(t *testing.T) {
 	}
 
 	got, want = toSubstr("12345678", "9", "1"), ""
-    if got != want {
-    	t.Errorf("Expect substr function to cut entire string if pos is itself out of bound")
-    }
+	if got != want {
+		t.Errorf("Expect substr function to cut entire string if pos is itself out of bound")
+	}
 
 	got, want = toSubstr("123456789123456789", "-300", "3"), "123"
 	if got != want {

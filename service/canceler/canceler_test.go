@@ -7,9 +7,9 @@ package canceler
 import (
 	"testing"
 
+	"github.com/go-chi/chi"
 	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/mock"
-	"github.com/go-chi/chi"
 
 	"github.com/golang/mock/gomock"
 )

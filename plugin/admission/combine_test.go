@@ -9,9 +9,9 @@ package admission
 import (
 	"testing"
 
+	"github.com/golang/mock/gomock"
 	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/mock"
-	"github.com/golang/mock/gomock"
 )
 
 func TestCombineAdmit(t *testing.T) {

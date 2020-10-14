@@ -8,11 +8,11 @@ import (
 	"context"
 	"testing"
 
+	"github.com/google/go-cmp/cmp"
 	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/mock"
 	"github.com/ozonep/drone/mock/mockscm"
 	"github.com/ozonep/drone/pkg/scm"
-	"github.com/google/go-cmp/cmp"
 
 	"github.com/golang/mock/gomock"
 )

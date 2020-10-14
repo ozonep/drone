@@ -9,9 +9,9 @@ import (
 	"testing"
 	"time"
 
-	"github.com/ozonep/drone/pkg/scm"
 	"github.com/google/go-cmp/cmp"
 	"github.com/h2non/gock"
+	"github.com/ozonep/drone/pkg/scm"
 )
 
 func TestRefresh(t *testing.T) {

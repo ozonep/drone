@@ -7,9 +7,9 @@ package registry
 import (
 	"testing"
 
-	"github.com/ozonep/drone/pkg/yaml"
-	"github.com/ozonep/drone/core"
 	"github.com/google/go-cmp/cmp"
+	"github.com/ozonep/drone/core"
+	"github.com/ozonep/drone/pkg/yaml"
 )
 
 var mockDockerAuthConfig = `{

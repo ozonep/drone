@@ -17,6 +17,7 @@ package main
 import (
 	"net/http"
 
+	"github.com/google/wire"
 	"github.com/ozonep/drone/cmd/drone-server/config"
 	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/handler/api"
@@ -27,7 +28,6 @@ import (
 	"github.com/ozonep/drone/operator/manager/rpc"
 	"github.com/ozonep/drone/operator/manager/rpc2"
 	"github.com/ozonep/drone/server"
-	"github.com/google/wire"
 
 	"github.com/go-chi/chi"
 	"github.com/go-chi/chi/middleware"

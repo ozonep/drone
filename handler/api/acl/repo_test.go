@@ -12,9 +12,9 @@ import (
 	"testing"
 	"time"
 
+	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/handler/api/request"
 	"github.com/ozonep/drone/mock"
-	"github.com/ozonep/drone/core"
 
 	"github.com/go-chi/chi"
 	"github.com/golang/mock/gomock"

@@ -9,9 +9,9 @@ package registry
 import (
 	"context"
 
-	"github.com/ozonep/drone/pkg/drone/plugin/registry"
 	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/logger"
+	"github.com/ozonep/drone/pkg/drone/plugin/registry"
 )
 
 // EndpointSource returns a registry credential provider

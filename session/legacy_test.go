@@ -11,9 +11,9 @@ import (
 	"testing"
 	"time"
 
+	"github.com/golang/mock/gomock"
 	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/mock"
-	"github.com/golang/mock/gomock"
 )
 
 func TestLegacyGet_NotLegacy(t *testing.T) {

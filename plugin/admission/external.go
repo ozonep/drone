@@ -10,9 +10,9 @@ import (
 	"context"
 	"time"
 
+	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/pkg/drone"
 	"github.com/ozonep/drone/pkg/drone/plugin/admission"
-	"github.com/ozonep/drone/core"
 )
 
 // External returns a new external Admission controller.

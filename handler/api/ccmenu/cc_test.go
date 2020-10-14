@@ -10,9 +10,9 @@ import (
 	"encoding/xml"
 	"testing"
 
-	"github.com/ozonep/drone/core"
 	"github.com/google/go-cmp/cmp"
 	"github.com/google/go-cmp/cmp/cmpopts"
+	"github.com/ozonep/drone/core"
 )
 
 var ignore = cmpopts.IgnoreFields(CCProjects{}, "Project.LastBuildTime")

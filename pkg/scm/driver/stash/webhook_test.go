@@ -13,8 +13,8 @@ import (
 	"strings"
 	"testing"
 
-	"github.com/ozonep/drone/pkg/scm"
 	"github.com/google/go-cmp/cmp"
+	"github.com/ozonep/drone/pkg/scm"
 )
 
 func TestWebhooks(t *testing.T) {

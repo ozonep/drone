@@ -7,8 +7,8 @@ package transform
 import (
 	"testing"
 
-	"github.com/ozonep/drone/pkg/runtime/engine"
 	"github.com/google/go-cmp/cmp"
+	"github.com/ozonep/drone/pkg/runtime/engine"
 )
 
 func TestWithLabels(t *testing.T) {

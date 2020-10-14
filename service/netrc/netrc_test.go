@@ -9,11 +9,11 @@ import (
 	"net/url"
 	"testing"
 
+	"github.com/golang/mock/gomock"
+	"github.com/google/go-cmp/cmp"
 	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/mock"
 	"github.com/ozonep/drone/pkg/scm"
-	"github.com/golang/mock/gomock"
-	"github.com/google/go-cmp/cmp"
 )
 
 var noContext = context.Background()

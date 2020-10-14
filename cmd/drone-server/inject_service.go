@@ -21,6 +21,7 @@ import (
 	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/livelog"
 	"github.com/ozonep/drone/metric/sink"
+	"github.com/ozonep/drone/pkg/scm"
 	"github.com/ozonep/drone/pubsub"
 	"github.com/ozonep/drone/service/canceler"
 	"github.com/ozonep/drone/service/canceler/reaper"
@@ -42,7 +43,6 @@ import (
 	"github.com/ozonep/drone/trigger"
 	"github.com/ozonep/drone/trigger/cron"
 	"github.com/ozonep/drone/version"
-	"github.com/ozonep/drone/pkg/scm"
 
 	"github.com/google/wire"
 )

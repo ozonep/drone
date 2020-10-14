@@ -28,13 +28,13 @@ func (s *webhookService) Parse(req *http.Request, fn scm.SecretFunc) (scm.Webhoo
 		return nil, err
 	}
 
-    secret := ""
+	secret := ""
 	var hook scm.Webhook
 	switch req.Header.Get("X-Gitea-Event") {
 	case "push":
 		var push *pushHook
-        hook, push, err = s.parsePushHook(data)
-        secret = push.Secret
+		hook, push, err = s.parsePushHook(data)
+		secret = push.Secret
 	case "create":
 		hook, err = s.parseCreateHook(data)
 	case "delete":
@@ -53,8 +53,8 @@ func (s *webhookService) Parse(req *http.Request, fn scm.SecretFunc) (scm.Webhoo
 	}
 
 	if secret == "" {
-    	secret = req.FormValue("secret")
-    }
+		secret = req.FormValue("secret")
+	}
 
 	// get the gitea signature key to verify the payload
 	// signature. If no key is provided, no validation
@@ -146,7 +146,7 @@ func (s *webhookService) parsePullRequestHook(data []byte) (scm.Webhook, error) 
 type (
 	// gitea push webhook payload
 	pushHook struct {
-	    Secret     string     `json:"secret"`
+		Secret     string     `json:"secret"`
 		Ref        string     `json:"ref"`
 		Before     string     `json:"before"`
 		After      string     `json:"after"`

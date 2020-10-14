@@ -21,9 +21,9 @@ import (
 	"net/http"
 	"time"
 
-	"github.com/ozonep/drone/pkg/drone-ui/dist"
 	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/handler/web/landingpage"
+	"github.com/ozonep/drone/pkg/drone-ui/dist"
 )
 
 func HandleIndex(host string, session core.Session, license core.LicenseService) http.HandlerFunc {

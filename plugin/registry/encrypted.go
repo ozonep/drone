@@ -21,9 +21,9 @@ import (
 	"encoding/base64"
 	"errors"
 
-	"github.com/ozonep/drone/pkg/yaml"
 	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/logger"
+	"github.com/ozonep/drone/pkg/yaml"
 	"github.com/ozonep/drone/plugin/registry/auths"
 )
 

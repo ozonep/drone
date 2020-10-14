@@ -102,9 +102,9 @@ func toSubstr(s string, args ...string) string {
 	}
 
 	if pos+length >= len(s) {
-	    if pos < len(s) {
-        		return s[pos:]
-        }
+		if pos < len(s) {
+			return s[pos:]
+		}
 		return ""
 	}
 

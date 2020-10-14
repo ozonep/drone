@@ -7,9 +7,9 @@ package compiler
 import (
 	"testing"
 
+	"github.com/google/go-cmp/cmp"
 	"github.com/ozonep/drone/pkg/runtime/engine"
 	"github.com/ozonep/drone/pkg/yaml"
-	"github.com/google/go-cmp/cmp"
 )
 
 func Test_toIgnoreErr(t *testing.T) {

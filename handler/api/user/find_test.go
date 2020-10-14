@@ -9,8 +9,8 @@ import (
 	"net/http/httptest"
 	"testing"
 
-	"github.com/ozonep/drone/handler/api/request"
 	"github.com/ozonep/drone/core"
+	"github.com/ozonep/drone/handler/api/request"
 
 	"github.com/google/go-cmp/cmp"
 )

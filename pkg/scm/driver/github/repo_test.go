@@ -10,9 +10,9 @@ import (
 	"io/ioutil"
 	"testing"
 
-	"github.com/ozonep/drone/pkg/scm"
 	"github.com/google/go-cmp/cmp"
 	"github.com/h2non/gock"
+	"github.com/ozonep/drone/pkg/scm"
 )
 
 func TestRepositoryFind(t *testing.T) {

@@ -18,9 +18,9 @@ import (
 	"encoding/json"
 	"net/http"
 
-	"github.com/ozonep/drone/pkg/yaml/signer"
 	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/handler/api/render"
+	"github.com/ozonep/drone/pkg/yaml/signer"
 
 	"github.com/go-chi/chi"
 )

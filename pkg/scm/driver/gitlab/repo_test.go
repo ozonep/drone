@@ -12,9 +12,9 @@ import (
 	"regexp"
 	"testing"
 
-	"github.com/ozonep/drone/pkg/scm"
 	"github.com/google/go-cmp/cmp"
 	"github.com/h2non/gock"
+	"github.com/ozonep/drone/pkg/scm"
 )
 
 // TODO(bradrydzewski) repository html link is missing
@@ -308,19 +308,19 @@ func TestRepositoryHookCreate(t *testing.T) {
 
 	gock.New("https://gitlab.com").
 		Post("/api/v4/projects/diaspora/diaspora/hooks").
-        MatchParam("token", "topsecret").
-        MatchParam("url", "https://ci.example.com/hook").
-        Reply(201).
+		MatchParam("token", "topsecret").
+		MatchParam("url", "https://ci.example.com/hook").
+		Reply(201).
 		Type("application/json").
 		SetHeaders(mockHeaders).
 		File("testdata/hook.json")
 
 	in := &scm.HookInput{
-    	Name:       "drone",
-    	Target:     "https://ci.example.com/hook",
-    	Secret:     "topsecret",
-    	SkipVerify: false,
-    }
+		Name:       "drone",
+		Target:     "https://ci.example.com/hook",
+		Secret:     "topsecret",
+		SkipVerify: false,
+	}
 
 	client := NewDefault()
 	got, res, err := client.Repositories.CreateHook(context.Background(), "diaspora/diaspora", in)
@@ -330,13 +330,13 @@ func TestRepositoryHookCreate(t *testing.T) {
 	}
 
 	want := new(scm.Hook)
-    raw, _ := ioutil.ReadFile("testdata/hook.json.golden")
-    json.Unmarshal(raw, want)
+	raw, _ := ioutil.ReadFile("testdata/hook.json.golden")
+	json.Unmarshal(raw, want)
 
-    if diff := cmp.Diff(got, want); diff != "" {
-    	t.Errorf("Unexpected Results")
-    	t.Log(diff)
-    }
+	if diff := cmp.Diff(got, want); diff != "" {
+		t.Errorf("Unexpected Results")
+		t.Log(diff)
+	}
 
 	t.Run("Request", testRequest(res))
 	t.Run("Rate", testRate(res))
@@ -346,7 +346,7 @@ func TestRepositoryHookCreate_SkipVerification(t *testing.T) {
 	defer gock.Off()
 
 	gock.New("https://gitlab.com").
-	    MatchParam("enable_ssl_verification", "false").
+		MatchParam("enable_ssl_verification", "false").
 		Post("/api/v4/projects/diaspora/diaspora/hooks").
 		MatchParam("token", "topsecret").
 		MatchParam("url", "https://ci.example.com/hook").

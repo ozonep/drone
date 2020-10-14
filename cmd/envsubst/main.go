@@ -2,9 +2,9 @@ package main
 
 import (
 	"bufio"
-	"os"
-	"log"
 	"fmt"
+	"log"
+	"os"
 
 	"github.com/ozonep/drone/pkg/envsubst"
 )
@@ -25,4 +25,3 @@ func main() {
 		stdout.Flush()
 	}
 }
-

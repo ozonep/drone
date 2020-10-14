@@ -9,8 +9,8 @@ package admission
 import (
 	"testing"
 
-	"github.com/ozonep/drone/core"
 	"github.com/golang/mock/gomock"
+	"github.com/ozonep/drone/core"
 )
 
 func TestOpen(t *testing.T) {

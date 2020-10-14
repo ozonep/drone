@@ -7,8 +7,8 @@ package syncer
 import (
 	"testing"
 
-	"github.com/ozonep/drone/core"
 	"github.com/google/go-cmp/cmp"
+	"github.com/ozonep/drone/core"
 )
 
 // import (

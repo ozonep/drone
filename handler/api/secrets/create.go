@@ -10,9 +10,9 @@ import (
 	"encoding/json"
 	"net/http"
 
+	"github.com/go-chi/chi"
 	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/handler/api/render"
-	"github.com/go-chi/chi"
 )
 
 type secretInput struct {

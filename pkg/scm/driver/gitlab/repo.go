@@ -47,22 +47,22 @@ type access struct {
 }
 
 type hook struct {
-	  ID                       int       `json:"id"`
-      URL                      string    `json:"url"`
-      ProjectID                int       `json:"project_id"`
-      PushEvents               bool      `json:"push_events"`
-      IssuesEvents             bool      `json:"issues_events"`
-      ConfidentialIssuesEvents bool      `json:"confidential_issues_events"`
-      MergeRequestsEvents      bool      `json:"merge_requests_events"`
-      TagPushEvents            bool      `json:"tag_push_events"`
-      NoteEvents               bool      `json:"note_events"`
-      ConfidentialNoteEvents   bool      `json:"confidential_note_events"`
-      JobEvents                bool      `json:"job_events"`
-      PipelineEvents           bool      `json:"pipeline_events"`
-      WikiPageEvents           bool      `json:"wiki_page_events"`
-      DeploymentEvents         bool      `json:"deployment_events"`
-      EnableSslVerification    bool      `json:"enable_ssl_verification"`
-      CreatedAt                time.Time `json:"created_at"`
+	ID                       int       `json:"id"`
+	URL                      string    `json:"url"`
+	ProjectID                int       `json:"project_id"`
+	PushEvents               bool      `json:"push_events"`
+	IssuesEvents             bool      `json:"issues_events"`
+	ConfidentialIssuesEvents bool      `json:"confidential_issues_events"`
+	MergeRequestsEvents      bool      `json:"merge_requests_events"`
+	TagPushEvents            bool      `json:"tag_push_events"`
+	NoteEvents               bool      `json:"note_events"`
+	ConfidentialNoteEvents   bool      `json:"confidential_note_events"`
+	JobEvents                bool      `json:"job_events"`
+	PipelineEvents           bool      `json:"pipeline_events"`
+	WikiPageEvents           bool      `json:"wiki_page_events"`
+	DeploymentEvents         bool      `json:"deployment_events"`
+	EnableSslVerification    bool      `json:"enable_ssl_verification"`
+	CreatedAt                time.Time `json:"created_at"`
 }
 
 type repositoryService struct {
@@ -118,12 +118,12 @@ func (s *repositoryService) CreateHook(ctx context.Context, repo string, input *
 		params.Set("token", input.Secret)
 	}
 	params.Set("enable_ssl_verification", strconv.FormatBool(!input.SkipVerify))
-    for k, v := range convertFromHookEvents(input.Events) {
-    	params.Set(k, strconv.FormatBool(v))
-    }
+	for k, v := range convertFromHookEvents(input.Events) {
+		params.Set(k, strconv.FormatBool(v))
+	}
 	for _, k := range input.NativeEvents {
-    	params.Set(k, "true")
-    }
+		params.Set(k, "true")
+	}
 
 	path := fmt.Sprintf("api/v4/projects/%s/hooks?%s", encode(repo), params.Encode())
 	out := new(hook)

@@ -12,9 +12,9 @@ import (
 	"net/http/httptest"
 	"testing"
 
+	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/handler/api/errors"
 	"github.com/ozonep/drone/mock"
-	"github.com/ozonep/drone/core"
 
 	"github.com/go-chi/chi"
 	"github.com/golang/mock/gomock"

@@ -10,8 +10,8 @@ import (
 	"os"
 	"testing"
 
-	"github.com/ozonep/drone/core"
 	"github.com/google/go-cmp/cmp"
+	"github.com/ozonep/drone/core"
 )
 
 func TestParse(t *testing.T) {
