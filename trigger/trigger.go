@@ -16,6 +16,7 @@ package trigger
 
 import (
 	"context"
+	"errors"
 	"runtime/debug"
 	"strings"
 	"time"
@@ -240,18 +241,17 @@ func (t *triggerer) Trigger(ctx context.Context, repo *core.Repository, base *co
 		Build:  tmpBuild,
 		Config: raw,
 	})
-	switch verr {
-	case core.ErrValidatorBlock:
+	if errors.Is(verr, core.ErrValidatorBlock) {
 		logger.Debugln("trigger: yaml validation error: block pipeline")
-	case core.ErrValidatorSkip:
+	}
+	if errors.Is(verr, core.ErrValidatorSkip) {
 		logger.Debugln("trigger: yaml validation error: skip pipeline")
 		return nil, nil
-	default:
-		if verr != nil {
-			logger = logger.WithError(err)
-			logger.Warnln("trigger: yaml validation error")
-			return t.createBuildError(ctx, repo, base, verr.Error())
-		}
+	}
+	if verr != nil {
+		logger = logger.WithError(err)
+		logger.Warnln("trigger: yaml validation error")
+		return t.createBuildError(ctx, repo, base, verr.Error())
 	}
 
 	err = linter.Manifest(manifest, repo.Trusted)
@@ -270,7 +270,7 @@ func (t *triggerer) Trigger(ctx context.Context, repo *core.Repository, base *co
 	// if pipeline validation failed with a block error, the
 	// pipeline verification should be set to false, which will
 	// force manual review and approval.
-	if verr == core.ErrValidatorBlock {
+	if errors.Is(verr, core.ErrValidatorBlock) {
 		verified = false
 	}
 

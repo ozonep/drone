@@ -9,6 +9,7 @@ package rpc
 import (
 	"context"
 	"encoding/json"
+	"errors"
 	"fmt"
 	"io"
 	"io/ioutil"
@@ -79,7 +80,8 @@ func (s *Client) Request(ctx context.Context, args *manager.Request) (*core.Stag
 	// to a client-side and server-side timeout. The timeout
 	// error is therefore expected behavior, and is not
 	// considered an error by the system.
-	if err == context.DeadlineExceeded {
+
+	if errors.Is(err, context.DeadlineExceeded) {
 		return nil, nil // no error
 	}
 	return out, err

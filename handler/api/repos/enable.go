@@ -15,6 +15,7 @@
 package repos
 
 import (
+	"errors"
 	"net/http"
 	"os"
 
@@ -88,7 +89,7 @@ func HandleEnable(
 		}
 
 		err = repos.Activate(r.Context(), repo)
-		if err == core.ErrRepoLimit {
+		if errors.Is(err, core.ErrRepoLimit) {
 			render.ErrorCode(w, err, 402)
 			logger.FromRequest(r).
 				WithError(err).

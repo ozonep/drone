@@ -17,6 +17,7 @@ package manager
 import (
 	"context"
 	"encoding/json"
+	"errors"
 	"time"
 
 	"github.com/ozonep/drone/core"
@@ -159,7 +160,7 @@ func (s *setup) updateBuild(ctx context.Context, build *core.Build) (bool, error
 	build.Updated = time.Now().Unix()
 	build.Status = core.StatusRunning
 	err := s.Builds.Update(noContext, build)
-	if err == db.ErrOptimisticLock {
+	if errors.Is(err, db.ErrOptimisticLock) {
 		return false, nil
 	}
 	if err != nil {

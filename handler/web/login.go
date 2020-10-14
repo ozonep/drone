@@ -71,7 +71,7 @@ func HandleLogin(
 		logger.Debugf("attempting authentication")
 
 		user, err := users.FindLogin(ctx, account.Login)
-		if err == sql.ErrNoRows {
+		if errors.Is(err, sql.ErrNoRows) {
 			user = &core.User{
 				Login:     account.Login,
 				Email:     account.Email,

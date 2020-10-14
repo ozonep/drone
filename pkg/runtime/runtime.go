@@ -16,6 +16,7 @@ package runtime
 
 import (
 	"context"
+	"errors"
 	"io"
 	"sync"
 	"time"
@@ -118,7 +119,7 @@ func (r *Runtime) execGraph(ctx context.Context) error {
 			default:
 			}
 			r.mu.Lock()
-			skip := r.error == ErrInterrupt
+			skip := errors.Is(r.error, ErrInterrupt)
 			r.mu.Unlock()
 			if skip {
 				return nil
@@ -147,7 +148,7 @@ func (r *Runtime) execAll(group []*engine.Step) <-chan error {
 	// if a previous step returned error code 78
 	// the pipeline process skips all subsequent
 	// pipeline steps.
-	if r.error == ErrInterrupt {
+	if errors.Is(r.error, ErrInterrupt) {
 		close(done)
 		return done
 	}
@@ -180,7 +181,7 @@ func (r *Runtime) exec(step *engine.Step) error {
 
 	if r.hook.BeforeEach != nil {
 		state := snapshot(r, step, nil)
-		if err := r.hook.BeforeEach(state); err == ErrSkip {
+		if err := r.hook.BeforeEach(state); errors.Is(err, ErrSkip) {
 			return nil
 		} else if err != nil {
 			return err

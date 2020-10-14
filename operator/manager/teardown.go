@@ -17,6 +17,7 @@ package manager
 import (
 	"context"
 	"encoding/json"
+	"errors"
 	"time"
 
 	"github.com/ozonep/drone/core"
@@ -151,7 +152,7 @@ func (t *teardown) do(ctx context.Context, stage *core.Stage) error {
 	}
 
 	err = t.Builds.Update(noContext, build)
-	if err == db.ErrOptimisticLock {
+	if errors.Is(err, db.ErrOptimisticLock) {
 		logger.WithError(err).
 			Warnln("manager: build updated by another goroutine")
 		return nil
@@ -259,7 +260,7 @@ func (t *teardown) cancelDownstream(
 		s.Started = time.Now().Unix()
 		s.Stopped = time.Now().Unix()
 		err := t.Stages.Update(noContext, s)
-		if err == db.ErrOptimisticLock {
+		if errors.Is(err, db.ErrOptimisticLock) {
 			t.resync(ctx, s)
 			continue
 		}
@@ -303,7 +304,7 @@ func (t *teardown) scheduleDownstream(
 			sibling.Status = core.StatusPending
 			sibling.Updated = time.Now().Unix()
 			err := t.Stages.Update(noContext, sibling)
-			if err == db.ErrOptimisticLock {
+			if errors.Is(err, db.ErrOptimisticLock) {
 				t.resync(ctx, sibling)
 				continue
 			}

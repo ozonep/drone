@@ -105,7 +105,7 @@ func (p *parser) Parse(req *http.Request, secretFunc func(string) string) (*core
 	}
 
 	payload, err := p.client.Webhooks.Parse(req, fn)
-	if err == scm.ErrUnknownEvent {
+	if errors.Is(err, scm.ErrUnknownEvent) {
 		return nil, nil, nil
 	}
 	if err != nil {

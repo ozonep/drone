@@ -16,6 +16,7 @@ package users
 
 import (
 	"encoding/json"
+	"errors"
 	"net/http"
 	"time"
 
@@ -82,7 +83,7 @@ func HandleCreate(users core.UserStore, service core.UserService, sender core.We
 		}
 
 		err = users.Create(r.Context(), user)
-		if err == core.ErrUserLimit {
+		if errors.Is(err, core.ErrUserLimit) {
 			render.ErrorCode(w, err, 402)
 			logger.FromRequest(r).WithError(err).
 				Errorln("api: cannot create user")

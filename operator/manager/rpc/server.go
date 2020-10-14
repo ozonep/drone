@@ -9,6 +9,7 @@ package rpc
 import (
 	"context"
 	"encoding/json"
+	"errors"
 	"io"
 	"net/http"
 	"strconv"
@@ -273,11 +274,11 @@ func writeBadRequest(w http.ResponseWriter, err error) {
 }
 
 func writeError(w http.ResponseWriter, err error) {
-	if err == context.DeadlineExceeded {
+	if errors.Is(err, context.DeadlineExceeded) {
 		w.WriteHeader(524) // should retry
-	} else if err == context.Canceled {
+	} else if errors.Is(err, context.Canceled) {
 		w.WriteHeader(524) // should retry
-	} else if err == db.ErrOptimisticLock {
+	} else if errors.Is(err, db.ErrOptimisticLock) {
 		w.WriteHeader(409) // should abort
 	} else {
 		w.WriteHeader(400) // should fail

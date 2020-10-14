@@ -16,6 +16,7 @@ package status
 
 import (
 	"context"
+	"errors"
 	"fmt"
 
 	"github.com/ozonep/drone/core"
@@ -88,7 +89,7 @@ func (s *service) Send(ctx context.Context, user *core.User, req *core.StatusInp
 		State:  convertStatus(req.Build.Status),
 		Target: fmt.Sprintf("%s/%s/%d", s.base, req.Repo.Slug, req.Build.Number),
 	})
-	if err == scm.ErrNotSupported {
+	if errors.Is(err, scm.ErrNotSupported) {
 		return nil
 	}
 	return err

@@ -98,12 +98,14 @@ func (r *Runner) handleError(ctx context.Context, stage *core.Stage, err error) 
 	stage.Status = core.StatusError
 	stage.Error = err.Error()
 	stage.Stopped = time.Now().Unix()
-	switch v := err.(type) {
-	case *runtime.ExitError:
+	var e1 *runtime.ExitError
+	var e2 *runtime.OomError
+	if errors.As(err, &e1) {
 		stage.Error = ""
 		stage.Status = core.StatusFailing
-		stage.ExitCode = v.Code
-	case *runtime.OomError:
+		stage.ExitCode = e1.Code
+	}
+	if errors.As(err, &e2) {
 		stage.Error = "OOM kill signaled by host operating system"
 	}
 	return r.Manager.AfterAll(ctx, stage)
@@ -583,7 +585,7 @@ func (r *Runner) poll(ctx context.Context) error {
 	defer cancel()
 
 	_, err = r.Manager.Accept(ctx, p.ID, r.Machine)
-	if err == db.ErrOptimisticLock {
+	if errors.Is(err, db.ErrOptimisticLock) {
 		return nil
 	} else if err != nil {
 		logger.WithError(err).

@@ -8,6 +8,7 @@ package validator
 
 import (
 	"context"
+	"errors"
 	"time"
 
 	"github.com/ozonep/drone/core"
@@ -53,14 +54,13 @@ func (g *remote) Validate(ctx context.Context, in *core.ValidateArgs) error {
 	}
 	client := validator.Client(g.endpoint, g.secret, g.skipVerify)
 	err := client.Validate(ctx, req)
-	switch err {
-	case validator.ErrBlock:
+	if errors.Is(err, validator.ErrBlock) {
 		return core.ErrValidatorBlock
-	case validator.ErrSkip:
-		return core.ErrValidatorSkip
-	default:
-		return err
 	}
+	if errors.Is(err, validator.ErrBlock) {
+		return core.ErrValidatorSkip
+	}
+	return err
 }
 
 func toRepo(from *core.Repository) drone.Repo {

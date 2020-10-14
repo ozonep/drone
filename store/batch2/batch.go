@@ -52,7 +52,7 @@ func (b *batchUpdater) Batch(ctx context.Context, user *core.User, batch *core.B
 
 		_, err := execer.Exec(stmt, now, user.ID)
 		if err != nil {
-			return fmt.Errorf("batch: cannot reset permissions: %s", err)
+			return fmt.Errorf("batch: cannot reset permissions: %w", err)
 		}
 
 		// if the repository exists with the same name,
@@ -68,7 +68,7 @@ func (b *batchUpdater) Batch(ctx context.Context, user *core.User, batch *core.B
 			}
 			res, err := execer.Exec(stmt, args...)
 			if err != nil {
-				return fmt.Errorf("batch: cannot remove duplicate repository: %s: %s: %s", repo.Slug, repo.UID, err)
+				return fmt.Errorf("batch: cannot remove duplicate repository: %s: %s: %w", repo.Slug, repo.UID, err)
 			}
 			rows, _ := res.RowsAffected()
 			if rows > 0 {
@@ -102,7 +102,7 @@ func (b *batchUpdater) Batch(ctx context.Context, user *core.User, batch *core.B
 			}
 			_, err = execer.Exec(stmt, args...)
 			if err != nil {
-				return fmt.Errorf("batch: cannot insert repository: %s: %s: %s", repo.Slug, repo.UID, err)
+				return fmt.Errorf("batch: cannot insert repository: %s: %s: %w", repo.Slug, repo.UID, err)
 			}
 
 			//
@@ -125,7 +125,7 @@ func (b *batchUpdater) Batch(ctx context.Context, user *core.User, batch *core.B
 				now,
 			)
 			if err != nil {
-				return fmt.Errorf("batch: cannot insert permissions: %s: %s: %s", repo.Slug, repo.UID, err)
+				return fmt.Errorf("batch: cannot insert permissions: %s: %s: %w", repo.Slug, repo.UID, err)
 			}
 		}
 
@@ -174,7 +174,7 @@ func (b *batchUpdater) Batch(ctx context.Context, user *core.User, batch *core.B
 			}
 			_, err = execer.Exec(stmt, args...)
 			if err != nil {
-				return fmt.Errorf("batch: cannot update repository: %s: %s: %s", repo.Slug, repo.UID, err)
+				return fmt.Errorf("batch: cannot update repository: %s: %s: %w", repo.Slug, repo.UID, err)
 			}
 			// }
 
@@ -193,7 +193,7 @@ func (b *batchUpdater) Batch(ctx context.Context, user *core.User, batch *core.B
 				now,
 			)
 			if err != nil {
-				return fmt.Errorf("batch: cannot insert permissions: %s: %s: %s", repo.Slug, repo.UID, err)
+				return fmt.Errorf("batch: cannot insert permissions: %s: %s: %w", repo.Slug, repo.UID, err)
 			}
 		}
 
@@ -211,7 +211,7 @@ func (b *batchUpdater) Batch(ctx context.Context, user *core.User, batch *core.B
 
 			_, err = execer.Exec(stmt, user.ID, repo.UID)
 			if err != nil {
-				return fmt.Errorf("batch: cannot revoking permissions: %s: %s: %s", repo.Slug, repo.UID, err)
+				return fmt.Errorf("batch: cannot revoking permissions: %s: %s: %w", repo.Slug, repo.UID, err)
 			}
 		}
 

@@ -17,6 +17,7 @@ package manager
 import (
 	"bytes"
 	"context"
+	"errors"
 	"io"
 	"time"
 
@@ -225,7 +226,7 @@ func (m *Manager) Accept(ctx context.Context, id int64, machine string) (*core.S
 	stage.Updated = time.Now().Unix()
 
 	err = m.Stages.Update(noContext, stage)
-	if err == db.ErrOptimisticLock {
+	if errors.Is(err, db.ErrOptimisticLock) {
 		logger = logger.WithError(err)
 		logger.Debugln("manager: stage processed by another agent")
 	} else if err != nil {

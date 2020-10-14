@@ -16,6 +16,7 @@ package validator
 
 import (
 	"encoding/json"
+	"errors"
 	"io/ioutil"
 	"net/http"
 
@@ -90,12 +91,12 @@ func (p *handler) ServeHTTP(w http.ResponseWriter, r *http.Request) {
 		return
 	}
 
-	if err == ErrSkip {
+	if errors.Is(err, ErrSkip) {
 		w.WriteHeader(498)
 		return
 	}
 
-	if err == ErrBlock {
+	if errors.Is(err, ErrBlock) {
 		w.WriteHeader(499)
 		return
 	}

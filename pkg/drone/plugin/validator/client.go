@@ -16,6 +16,7 @@ package validator
 
 import (
 	"context"
+	"errors"
 
 	"github.com/ozonep/drone/pkg/drone"
 	"github.com/ozonep/drone/pkg/drone/plugin/internal/client"
@@ -36,7 +37,8 @@ type pluginClient struct {
 
 func (c *pluginClient) Validate(ctx context.Context, in *Request) error {
 	err := c.client.Do(ctx, in, nil)
-	if xerr, ok := err.(*drone.Error); ok {
+	var xerr *drone.Error
+	if errors.As(err, &xerr) {
 		if xerr.Code == 498 {
 			return ErrSkip
 		}

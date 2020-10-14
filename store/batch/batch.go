@@ -52,7 +52,7 @@ func (b *batchUpdater) Batch(ctx context.Context, user *core.User, batch *core.B
 
 		_, err := execer.Exec(stmt, now, user.ID)
 		if err != nil {
-			return fmt.Errorf("Error resetting permissions: %s", err)
+			return fmt.Errorf("Error resetting permissions: %w", err)
 		}
 
 		for _, repo := range batch.Insert {
@@ -77,7 +77,7 @@ func (b *batchUpdater) Batch(ctx context.Context, user *core.User, batch *core.B
 			}
 			_, err = execer.Exec(stmt, args...)
 			if err != nil {
-				return fmt.Errorf("Error inserting repository: %s: %s: %s", repo.Slug, repo.UID, err)
+				return fmt.Errorf("Error inserting repository: %s: %s: %w", repo.Slug, repo.UID, err)
 			}
 
 			//
@@ -100,7 +100,7 @@ func (b *batchUpdater) Batch(ctx context.Context, user *core.User, batch *core.B
 				now,
 			)
 			if err != nil {
-				return fmt.Errorf("Error inserting permissions: %s: %s: %s", repo.Slug, repo.UID, err)
+				return fmt.Errorf("Error inserting permissions: %s: %s: %w", repo.Slug, repo.UID, err)
 			}
 		}
 
@@ -117,7 +117,7 @@ func (b *batchUpdater) Batch(ctx context.Context, user *core.User, batch *core.B
 			}
 			_, err = execer.Exec(stmt, args...)
 			if err != nil {
-				return fmt.Errorf("Error updating repository: %s: %s: %s", repo.Slug, repo.UID, err)
+				return fmt.Errorf("Error updating repository: %s: %s: %w", repo.Slug, repo.UID, err)
 			}
 
 			stmt = permInsertIgnoreStmt
@@ -135,7 +135,7 @@ func (b *batchUpdater) Batch(ctx context.Context, user *core.User, batch *core.B
 				now,
 			)
 			if err != nil {
-				return fmt.Errorf("Error inserting permissions: %s: %s: %s", repo.Slug, repo.UID, err)
+				return fmt.Errorf("Error inserting permissions: %s: %s: %w", repo.Slug, repo.UID, err)
 			}
 		}
 
@@ -153,7 +153,7 @@ func (b *batchUpdater) Batch(ctx context.Context, user *core.User, batch *core.B
 
 			_, err = execer.Exec(stmt, user.ID, repo.UID)
 			if err != nil {
-				return fmt.Errorf("Error revoking permissions: %s: %s: %s", repo.Slug, repo.UID, err)
+				return fmt.Errorf("Error revoking permissions: %s: %s: %w", repo.Slug, repo.UID, err)
 			}
 		}
 
