@@ -17,11 +17,11 @@ package web
 import (
 	"net/http"
 
-	"github.com/ozonep/drone/pkg/drone-ui/dist"
 	"github.com/ozonep/drone/core"
 	"github.com/ozonep/drone/handler/web/landingpage"
 	"github.com/ozonep/drone/handler/web/link"
 	"github.com/ozonep/drone/logger"
+	"github.com/ozonep/drone/pkg/drone-ui/dist"
 	"github.com/ozonep/drone/pkg/login"
 	"github.com/ozonep/drone/pkg/scm"
 
@@ -132,11 +132,11 @@ func (s Server) Handler() http.Handler {
 	h := http.FileServer(dist.New())
 	h = setupCache(h)
 	r.Handle("/favicon.png", h)
-	r.Handle("/js/*filepath", h)
-	r.Handle("/css/*filepath", h)
-	r.Handle("/img/*filepath", h)
-	r.Handle("/images/*filepath", h)
-	r.Handle("/static2/*filepath", h2)
+	r.Handle("/js/*", h)
+	r.Handle("/css/*", h)
+	r.Handle("/img/*", h)
+	r.Handle("/images/*", h)
+	r.Handle("/static2/*", h2)
 	r.NotFound(HandleIndex(s.Host, s.Session, s.Licenses))
 
 	return r
