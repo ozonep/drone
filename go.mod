@@ -60,7 +60,7 @@ require (
 	github.com/kr/text v0.2.0 // indirect
 	github.com/lib/pq v1.8.0
 	github.com/mattn/go-isatty v0.0.12
-	github.com/mattn/go-sqlite3 v1.14.2
+	github.com/mattn/go-sqlite3 v1.14.4
 	github.com/morikuni/aec v1.0.0 // indirect
 	github.com/natessilva/dag v0.0.0-20180124060714-7194b8dcc5c4
 	github.com/niemeyer/pretty v0.0.0-20200227124842-a10e7caefd8e // indirect
