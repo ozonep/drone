@@ -10,9 +10,9 @@ EXPOSE 80 443
 VOLUME /data
 RUN [ ! -e /etc/nsswitch.conf ] && echo 'hosts: files dns' > /etc/nsswitch.conf
 ENV GODEBUG netdns=go
-ENV XDG_CACHE_HOME /data
-ENV DRONE_DATABASE_DRIVER sqlite3
-ENV DRONE_DATABASE_DATASOURCE /data/database.sqlite
+ENV XDG_CACHE_HOME=/data
+ENV DRONE_DATABASE_DRIVER=sqlite3
+ENV DRONE_DATABASE_DATASOURCE=/data/database.sqlite
 ENV DRONE_RUNNER_OS=linux
 ENV DRONE_RUNNER_ARCH=amd64
 ENV DRONE_SERVER_PORT=:80
