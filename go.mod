@@ -50,7 +50,7 @@ require (
 	github.com/hashicorp/go-multierror v1.1.0
 	github.com/hashicorp/go-retryablehttp v0.6.7
 	github.com/hashicorp/golang-lru v0.5.4
-	github.com/hashicorp/nomad/api v0.0.0-20200908210522-302011166a4d
+	github.com/hashicorp/nomad/api v0.0.0-20201102214658-c6f410f5512d
 	github.com/imdario/mergo v0.3.11 // indirect
 	github.com/jmoiron/sqlx v1.2.0
 	github.com/joho/godotenv v1.3.0
