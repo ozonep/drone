@@ -19,7 +19,7 @@ require (
 	github.com/Microsoft/go-winio v0.4.15-0.20200908182639-5b44b70ab3ab // indirect
 	github.com/asaskevich/govalidator v0.0.0-20200907205600-7a23bdc65eef
 	github.com/aws/aws-sdk-go v1.35.7
-	github.com/bmatcuk/doublestar v1.3.2
+	github.com/bmatcuk/doublestar v1.3.3
 	github.com/buildkite/yaml v2.1.0+incompatible
 	github.com/containerd/containerd v1.4.1 // indirect
 	github.com/coreos/go-semver v0.3.0
@@ -40,7 +40,6 @@ require (
 	github.com/google/go-cmp v0.5.2
 	github.com/google/go-jsonnet v0.16.0
 	github.com/google/gofuzz v1.2.0 // indirect
-	github.com/google/uuid v1.1.2 // indirect
 	github.com/google/wire v0.4.0
 	github.com/googleapis/gnostic v0.4.0 // indirect
 	github.com/gorilla/mux v1.8.0 // indirect
@@ -72,18 +71,17 @@ require (
 	github.com/robfig/cron v1.2.0
 	github.com/segmentio/ksuid v1.0.3
 	github.com/sergi/go-diff v1.1.0
-	github.com/sirupsen/logrus v1.6.0
+	github.com/sirupsen/logrus v1.7.0
 	github.com/stretchr/testify v1.6.1
 	github.com/unrolled/secure v1.0.8
 	github.com/vinzenz/yaml v0.0.0-20170920082545-91409cdd725d
-	golang.org/x/crypto v0.0.0-20201002170205-7f63de1d35b0
-	golang.org/x/net v0.0.0-20200904194848-62affa334b73 // indirect
+	golang.org/x/crypto v0.0.0-20201016220609-9e8e0b390897
+	golang.org/x/net v0.0.0-20201031054903-ff519b6c9102 // indirect
 	golang.org/x/oauth2 v0.0.0-20200902213428-5d25da1a8d43 // indirect
-	golang.org/x/sync v0.0.0-20200625203802-6e8e738ad208
-	golang.org/x/sys v0.0.0-20200908134130-d2e65c121b96 // indirect
+	golang.org/x/sync v0.0.0-20201020160332-67f06af15bc9
 	golang.org/x/time v0.0.0-20200630173020-3af7569d3a1e // indirect
-	google.golang.org/genproto v0.0.0-20200904004341-0bd0a958aa1d // indirect
-	google.golang.org/grpc v1.31.1 // indirect
+	google.golang.org/genproto v0.0.0-20201102152239-715cce707fb0 // indirect
+	google.golang.org/grpc v1.33.1 // indirect
 	gopkg.in/alecthomas/kingpin.v2 v2.2.6
 	gopkg.in/check.v1 v1.0.0-20200902074654-038fdea0a05b // indirect
 	gopkg.in/yaml.v2 v2.3.0
