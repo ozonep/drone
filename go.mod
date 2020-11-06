@@ -1,10 +1,13 @@
 module github.com/ozonep/drone
 
-replace github.com/docker/docker => github.com/docker/engine v17.12.0-ce-rc1.0.20200309214505-aa6a9891b09c+incompatible
-
-replace github.com/googleapis/gnostic => github.com/googleapis/gnostic v0.4.0
-
-replace github.com/h2non/gock => gopkg.in/h2non/gock.v1 v1.0.15
+replace (
+	github.com/docker/docker => github.com/docker/engine v17.12.0-ce-rc1.0.20200309214505-aa6a9891b09c+incompatible
+	github.com/googleapis/gnostic => github.com/googleapis/gnostic v0.4.0
+	github.com/h2non/gock => gopkg.in/h2non/gock.v1 v1.0.15
+	k8s.io/api => k8s.io/api v0.17.13
+	k8s.io/apimachinery => k8s.io/apimachinery v0.17.13
+	k8s.io/client-go => k8s.io/client-go v0.17.13
+)
 
 require (
 	github.com/99designs/httpsignatures-go v0.0.0-20170731043157-88528bf4ca7e
