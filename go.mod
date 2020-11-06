@@ -2,13 +2,9 @@ module github.com/ozonep/drone
 
 replace github.com/docker/docker => github.com/docker/engine v17.12.0-ce-rc1.0.20200309214505-aa6a9891b09c+incompatible
 
-replace (
-	github.com/googleapis/gnostic => github.com/googleapis/gnostic v0.4.0
-	github.com/h2non/gock => gopkg.in/h2non/gock.v1 v1.0.14
-	k8s.io/api => k8s.io/api v0.16.15
-	k8s.io/apimachinery => k8s.io/apimachinery v0.16.15
-	k8s.io/client-go => k8s.io/client-go v0.16.15
-)
+replace github.com/googleapis/gnostic => github.com/googleapis/gnostic v0.4.0
+
+replace github.com/h2non/gock => gopkg.in/h2non/gock.v1 v1.0.15
 
 require (
 	github.com/99designs/httpsignatures-go v0.0.0-20170731043157-88528bf4ca7e
@@ -34,7 +30,6 @@ require (
 	github.com/go-chi/chi v4.1.2+incompatible
 	github.com/go-chi/cors v1.1.1
 	github.com/go-sql-driver/mysql v1.5.0
-	github.com/gogo/protobuf v1.3.1 // indirect
 	github.com/golang/mock v1.4.4
 	github.com/google/go-cmp v0.5.2
 	github.com/google/go-jsonnet v0.16.0
@@ -83,9 +78,9 @@ require (
 	gopkg.in/check.v1 v1.0.0-20200902074654-038fdea0a05b // indirect
 	gopkg.in/yaml.v2 v2.3.0
 	gotest.tools v2.2.0+incompatible // indirect
-	k8s.io/api v0.16.15
-	k8s.io/apimachinery v0.16.15
-	k8s.io/client-go v10.0.0+incompatible
+	k8s.io/api v0.17.13
+	k8s.io/apimachinery v0.17.13
+	k8s.io/client-go v0.17.13
 	sigs.k8s.io/yaml v1.2.0 // indirect
 )
 
